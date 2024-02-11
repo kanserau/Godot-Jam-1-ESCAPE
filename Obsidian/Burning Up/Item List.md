@@ -1,4 +1,4 @@
-Core Mechanics
+# Core Mechanics
 **Victory**
 - Player wins if
 	- Distance from sun = target value.
@@ -83,3 +83,8 @@ Emergencies
 - [ ] Solar flare can be stopped with Shields
 - [ ] A solar flare that isn't stopped causes SIGNIFICANT ship integrity loss
 - [ ] Space Debris
+
+# Other
+## The Manual
+This is all the player gets for a tutorial. It tells the player:
+- 

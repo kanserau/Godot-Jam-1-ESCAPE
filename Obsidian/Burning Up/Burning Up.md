@@ -23,22 +23,17 @@ The ship can output 400 power. Ship is at best efficiency at 300 power. I.e when
 
 ## Emergencies
 There are three broad types of emergencies. System Failure, Structural Damage, and Internal Emergency. System failures are likely to occur when the ship is hit with a solar flare.
-While shields are not active, your ship is taking constant damage. While shields are active, your ship can only power the thrusters enough
 
 System Failures
-- Engine Failure
-	- The engine can fail for different reasons. The reason affects the solution.
-		- Overheating: Emergency cooling required. Indicated by smoke.
-		- Oil/fuel leak: Indicated by BLACK or CLEAR liquid pooling. Repairs required. If player forgets gloves.
-		- 
-- Life Support Failure
-	- Life support failure prevents life support from activating.
-- Shield Failure.
-	- A shield failure prevents the shield from activating. It causes a specific alarm to blare and a blue light to flash.
+- **Engine Failure**: The engine can fail for different reasons. The reason affects the solution. When the engine fails, power output ceases. This indirectly causes Oxygen and Shields to stop working.
+	- Overheating: Emergency cooling required. Indicated by smoke.
+	- Oil/fuel leak: Indicated by BLACK or CLEAR liquid pooling. Repairs required. If player forgets gloves.
+- **Oxygen Failure**: Oxygen failure the oxygen to shut down until fixed, causing crew damage.
+- **Shield Failure**: A shield failure prevents the shield from activating. It causes a specific alarm to blare and a blue light to flash.
 
 Structural Damage
-- Hull breach: These can occur at random points on the ship. When a hull breach is active, it nullifies life support until it's fixed. These must be fixed in a similar way to fire suppression, by locating the breach, and deploying structural foam.
-- Electrical failure: This causes a random electrical system to stop working. Includes fire suppression, structural foam, shields, life support.
+- **Hull breach**: These can occur at random points on the ship. When a hull breach is active, it nullifies life support until it's fixed. These must be fixed in a similar way to fire suppression, by locating the breach, and deploying structural foam.
+- **Electrical failure**: This causes a random electrical system to stop working. Includes fire suppression, structural foam, shields, life support.
 
 Internal Emergencies
 - Crew member dead
@@ -48,6 +43,7 @@ Internal Emergencies
 	- Dead captain: The last crew member to die. Game over.
 	- Dead technician: Reduced 
 	- Dead gunner: Nothing happens. Padding.
+	- Dead cook: Reduced performance.
 - Fire
 	- Fire causes damage to crew. Fire must be isolated, then active fire suppression used. Using fire suppression in the incorrect location means the fire continues, and the fire suppression must recharge. Infinite uses.
 

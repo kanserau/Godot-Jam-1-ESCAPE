@@ -51,6 +51,7 @@ Core Mechanics
 	- [ ] Thrust. Modifies ship speed. Thrust consumes power and generates heat. If too high, reduces ship integrity.
 	- [ ] Oxygen. Should always be active. While inactive, causes Crew Damage, which kills crew if it gets too high.
 	- [ ] Shields. Consumes significant power. Protects from heat spikes/solar flares from the sun.
+	- [ ] Weapons. Consumes moderate power. Causes damage to space debris.
 
 Ship Integrity
 - Rate of emergencies increases proportionally inverse to ship integrity
@@ -61,6 +62,12 @@ Ship Integrity
 - At certain intervals, emergencies occur. Emergencies are random.
 
 Emergencies
+- Engine Failure: overheating
+- Engine failure: oil leak
+- Engine failure: fuel leak
+- Oxygen failure
+- Shield failure
+- Hull Breach
 - Fire
 	- Fire is assigned a location
 	- Fire accrues Crew Damage
@@ -75,3 +82,4 @@ Emergencies
 	- [ ] This is preceded by a warning that provides just enough time to get failed shields running.
 - [ ] Solar flare can be stopped with Shields
 - [ ] A solar flare that isn't stopped causes SIGNIFICANT ship integrity loss
+- [ ] Space Debris

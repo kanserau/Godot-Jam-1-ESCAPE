@@ -23,6 +23,7 @@ The Status Display is beside the Power Shunting Display and above the gauge rack
 	- Researcher Karl Langstrom
 	- Medical Officer John Doctor
 	- Gunner William Bannon
+	- Second Technician Harold Tinner
 ### Alert Feed
 Lists emergencies and details, i.e type and location or affected system.
 - Time displayed in 24hrs (optional). Each in-game minute is one second IRL.
@@ -132,7 +133,7 @@ The ship can output 400 power. Ship is at best efficiency at 300 power. I.e when
 	- 2 boxes: ON. Weapons active. Damages space debris.
 
 ## Maintenance
-### HULL INTEGRITY
+### SHIP INTEGRITY
 Ship integrity is constantly declining due to the heat of the sun. Should be a high value like, 100k.
 - This is a *hidden value*.
 - It declines at a constant rate.
@@ -142,10 +143,10 @@ Ship integrity is constantly declining due to the heat of the sun. Should be a h
 
 ## Emergencies
 - There are three broad types of emergencies: System Failure, Structural Damage, and Internal Emergency.
-- Emergencies happen at regular intervals and they cluster. This gives the player multiple problems to address at once forces him to prioritise.
+- Emergencies happen at regular intervals and they cluster. This gives the player multiple problems to address at once and forces him to prioritise.
 	- Think of a sine wave, where the problems happen in a clustered stagger toward the peak, then there's a bit of downtime in the troughs.
-	- Ship integrity has the effective of causing a *greater number* of problems to occur in the peak.
-- System failures are gauranteed to occur when the ship is hit with a solar flare. They can also happen randomly.
+	- Ship integrity has the effect of causing a *greater number* of problems to occur in the peak.
+- System failures are guaranteed to occur when the ship is hit with a solar flare. They can also happen randomly.
 ### System Failures
 - **Generator Failure**: 
 - **Electrical failure**: This causes a random system to stop working. Includes fire suppression, repair drones, thrusters, shields, life support.
@@ -155,26 +156,27 @@ Ship integrity is constantly declining due to the heat of the sun. Should be a h
 	- **Weapons Failure**
 ### Structural Damage
 - **Hull breach**: These can occur at random points on the ship. When a hull breach is active, it nullifies life support until it's fixed. These must be fixed in a similar way to fire suppression, by locating the breach, and deploying structural foam.
-- **Fire**:
-	- Fires occur at a random location.
 ### Internal Emergencies
-- Crew member dead: Ship integrity declines faster for each dead crew member.
-	- When a crew member dies, the ship suffers a random debuff from a limited list and a unique announcement is made. If all crew members die, it's game over.
-	- Dead pilot: Reduced thrust performance.
-	- Dead scientist: Increased Shield power drain.
-	- Dead captain: The last crew member to die. Game over.
-	- Dead technician: Reduced 
-	- Dead gunner: Nothing happens. Padding.
-	- Dead cook: Reduced performance.
-- Fire
-	- Fire causes damage to crew. Fire must be isolated, then active fire suppression used. Using fire suppression in the incorrect location means the fire continues, and the fire suppression must recharge. Infinite uses.
+- **Fire**
+	- Fires occur at a random location.
+	- Fire spreads to adjacent location if not suppressed quickly enough.
+	- Fire damages crew members based on location:
+		- crew quarters: medical officer
+		- bridge: pilot
+		- ==engine room: player (optional)==
+		- maintenance corridor: technician
+		- cargo bay: gunner
+		- galley: chef
+		- laboratory: researcher
+		- Note: captain does not take damage from fire.
+	- Fire reduces ship integrity
+	- Fixed by entering correct command in terminal. (action and location must match)
+- **Dead crew member**:
+	- **Experience mode**: Ship integrity starts low declines faster for each dead crew member.
+	- **Arcade mode**: Ship integrity starts high and declines more slowly for each dead crew member.
 
-Player Damage
-Player damage is a unique emergency. While the player won't die from things that hurt them, they will become disorientated from things like pain, lack of oxygen, concussion, and so on.
-- Burns: Touching hot parts without switching to gloves. Burns disorient with colour.
-- Oxygen deprivation: When life support is disengaged or there's a hull breach, player might suffer a lack of oxygen, which disorients the player.
-
-
-# Scenes
-- game starts in the warp
-- captain saying one of a few random introductions
+==Player Damage (optional)
+Player damage is a unique emergency. While the player won't die from things that hurt them, they will become disorientated from things like pain, lack of oxygen, concussion, and so on.==
+- ==Burns: Touching fire damages the player. This is the only source of damage.==
+- ==Health is recovered over time==
+- ==Oxygen deprivation: when oxygen is low, player's screen slowly fades to black.==

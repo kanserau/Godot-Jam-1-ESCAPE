@@ -105,11 +105,6 @@ Includes the following readings:
 	- Appearance: As per flight equivalent (vertical speed indicator)
 	- Lore: Works by measuring rate of change in gravitational pull. Useful for planetary takeoffs and landings.
 	- Affected by THRUST LEVEL and ALTITUDE
-- **Fuel Gauge**:
-	- Displays ship's current fuel level from E to F.
-	- Appearance: Like you would expect
-	- Lore: Scans tank and calculates how much empty space vs. floating liquid there is.
-	- Affected by THRUST LEVEL and EMERGENCIES (fuel leak)
 - **Thrust Gauge**:
 	- Displays current thrust level. 
 	- Appearance: Like an RPM gauge. Green area indicates "efficient" usage. Red (above green) indicates "dangerous usage"
@@ -128,7 +123,7 @@ The ship can output 400 power. Ship is at best efficiency at 300 power. I.e when
 	- When at 5 boxes, additional boxes cannot be added until others are reduced (alternatively, new boxes are displayed red until other boxes are reduced, turning them blue)
 	- There is no benefit to using less than maximum power.
 - **The Engine** or **Thrust**
-	- The thrust must be kept in optimal cruise range (2 boxes) to ensure the fastest and safest escape from the sun. Low thrust is inefficient but allows for other systems to be boosted.  - both escape ETA and remaining fuel are displayed, however you must calculate (based on the manual's formula) how much actual time you have (there is a handy rough cheat sheet).
+	- The thrust must be kept in optimal cruise range (2 boxes) to ensure the fastest and safest escape from the sun. Low thrust is inefficient but allows for other systems to be boosted. 
 	- 3 boxes/levels of power.
 	- Box 1: 100 thrust. (best cost) (maintains ship position)
 	- Box 2: 400 thrust. (best efficiency) (positive vertical speed)

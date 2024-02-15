@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://ox7maxg57gi0"]
+[gd_scene load_steps=7 format=3 uid="uid://ox7maxg57gi0"]
 
 [ext_resource type="PackedScene" uid="uid://b0x8o5y6sjjl1" path="res://player/player.tscn" id="1_eg4cr"]
+[ext_resource type="Texture2D" uid="uid://g6hw45rrlylj" path="res://assets/skybox/plain_starfield_1.png" id="1_v7rtf"]
+[ext_resource type="PackedScene" uid="uid://ue4fkbj8d010" path="res://room.tscn" id="2_2lfa6"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ghyge"]
+panorama = ExtResource("1_v7rtf")
+
+[sub_resource type="Sky" id="Sky_nx0o5"]
+sky_material = SubResource("PanoramaSkyMaterial_ghyge")
 
 [sub_resource type="Environment" id="Environment_dmqff"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4lorb"]
-size = Vector3(60, 2, 60)
-
-[sub_resource type="BoxMesh" id="BoxMesh_4qw5l"]
-size = Vector3(60, 2, 60)
+background_mode = 2
+background_energy_multiplier = 3.0
+sky = SubResource("Sky_nx0o5")
 
 [node name="Main" type="Node"]
 
@@ -19,15 +24,7 @@ environment = SubResource("Environment_dmqff")
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 12, 0)
 shadow_enabled = true
 
-[node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-collision_mask = 15
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("BoxShape3D_4lorb")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-mesh = SubResource("BoxMesh_4qw5l")
+[node name="Room" parent="." instance=ExtResource("2_2lfa6")]
 
 [node name="Player" parent="." instance=ExtResource("1_eg4cr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19784, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.446615, 0)

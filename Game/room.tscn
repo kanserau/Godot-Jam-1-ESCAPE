@@ -1,0 +1,128 @@
+[gd_scene load_steps=16 format=3 uid="uid://ue4fkbj8d010"]
+
+[ext_resource type="Material" uid="uid://bj2ge7ce42n88" path="res://assets/materials/floor/floor.tres" id="1_texys"]
+[ext_resource type="Shader" path="res://assets/materials/glass/glass.gdshader" id="2_0o6ga"]
+[ext_resource type="PackedScene" uid="uid://qdj1fl0qduto" path="res://assets/props/toolbox/metal_tool_chest_1k.gltf" id="3_yyy0w"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_0veqt"]
+material = ExtResource("1_texys")
+size = Vector2(20, 20)
+orientation = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ju46t"]
+points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_aafbo"]
+material = ExtResource("1_texys")
+flip_faces = true
+size = Vector2(20, 20)
+orientation = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k20ln"]
+render_priority = 0
+shader = ExtResource("2_0o6ga")
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/roughness = 0.15
+shader_parameter/normal_strength = 1.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_8w8w1"]
+material = SubResource("ShaderMaterial_k20ln")
+flip_faces = true
+size = Vector2(20, 6)
+orientation = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rr3vs"]
+points = PackedVector3Array(0, -3, -10, 0, 3, -10, 0, -3, 10, 0, 3, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_my1u6"]
+material = ExtResource("1_texys")
+flip_faces = true
+size = Vector2(20, 6)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fnbql"]
+points = PackedVector3Array(10, 3, 0, 10, -3, 0, -10, 3, 0, -10, -3, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_132bq"]
+material = ExtResource("1_texys")
+size = Vector2(20, 6)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_su80x"]
+points = PackedVector3Array(10, 3, 0, 10, -3, 0, -10, 3, 0, -10, -3, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ii3ib"]
+material = ExtResource("1_texys")
+size = Vector2(20, 6)
+orientation = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iocsb"]
+points = PackedVector3Array(0, -3, -10, 0, 3, -10, 0, -3, 10, 0, 3, 10)
+
+[node name="Room" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="Walls"]
+mesh = SubResource("QuadMesh_0veqt")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Ground/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ju46t")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("QuadMesh_aafbo")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ju46t")
+
+[node name="West Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 0)
+mesh = SubResource("QuadMesh_8w8w1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/West Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/West Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_rr3vs")
+
+[node name="North Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+mesh = SubResource("QuadMesh_my1u6")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/North Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/North Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fnbql")
+
+[node name="South Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
+mesh = SubResource("QuadMesh_132bq")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/South Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/South Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_su80x")
+
+[node name="East Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 0)
+mesh = SubResource("QuadMesh_ii3ib")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/East Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/East Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_iocsb")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="metal_tool_chest_1k" parent="." instance=ExtResource("3_yyy0w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 6)

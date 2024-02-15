@@ -1,0 +1,52 @@
+Studio names: Team Nomad. Nomad.
+Game names:
+Into the Fire
+Dust Crew
+Star Requiem
+SPF0
+Dead on Arrival
+A Small Error
+Cooked
+Closer
+The Engineer's First Flight
+Bad Warp
+Sun Dancer
+Deadly Eclipse
+Walking on the Sun
+Sun Scraper
+Star Walkers
+
+
+
+Note: using the wrong tool damages the ship.
+tools: Welder, soldering iron
+Welder fixes damaged metal.
+Soldering fixes electronics and terminals.
+
+Generator failure: Use primer 1-3 times (slow). Turn ignition (takes a couple of seconds to start).
+Engine/Thrusters failure: Wiring fault, pneumatic leak.
+	Wiring fault: DIsengage power, solder (welding will damage ship integrity), reengage power.
+		Visual: Sparks.
+		Auditory: Sparking sounds.
+	Gas leak: Disengage power, weld pipes, reengage power.
+		Visual: Steam jet from pipes.
+		Auditory: Hissing
+
+Air Scrubber failure: Air filter damaged, Icing.
+	Ice on Filter: Weld to melt ice fast, solder to melt ice slow.
+		Visual: Ice on the filter.
+		Auditory: None
+	Gas leak: Disengage power, weld pipes, reengage power.
+		Visual: Steam jet from pipes.
+		Auditory: Hissing.
+
+Shields: Initiate reboot sequence from the terminal.
+	Visual: None.
+	Auditory: Alarm sound.
+Weapons: Use terminal repair command, targeting weapons.
+	Visual: None
+	Auditory: Alarm sound.
+Terminal failure: Turn off the terminal. Solder the terminal. Turn on the terminal.
+
+
+Crew members display: Also have crew ID (for defib command) and location (to prioritise fires/breaches).

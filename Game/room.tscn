@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ue4fkbj8d010"]
+[gd_scene load_steps=23 format=3 uid="uid://ue4fkbj8d010"]
 
 [ext_resource type="Material" uid="uid://bj2ge7ce42n88" path="res://assets/materials/floor/floor.tres" id="1_texys"]
 [ext_resource type="Shader" path="res://assets/materials/glass/glass.gdshader" id="2_0o6ga"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bw5jc31jcc3rm" path="res://assets/props/door/door-dark.tscn" id="6_dif8w"]
 [ext_resource type="PackedScene" uid="uid://cjomvdd1kryd4" path="res://assets/props/keypad/keypad.glb" id="6_h8djp"]
 [ext_resource type="PackedScene" uid="uid://br6nry3u5mqa8" path="res://assets/props/intercom/scene.gltf" id="7_i1qts"]
+[ext_resource type="PackedScene" uid="uid://e2ux88ndghcv" path="res://assets/props/toon-tools/scene.gltf" id="8_ye4ug"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_0veqt"]
 material = ExtResource("1_texys")
@@ -154,6 +155,9 @@ visible = false
 
 [node name="intercom" parent="Props/Door Dark" instance=ExtResource("7_i1qts")]
 transform = Transform3D(-0.005, 0, -4.37114e-10, 0, 0.005, 0, 4.37114e-10, 0, -0.005, 0, 1.48572, -0.0299997)
+
+[node name="toon tools" parent="Props" instance=ExtResource("8_ye4ug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.56781, 3.84113)
 
 [node name="Lights" type="Node3D" parent="."]
 

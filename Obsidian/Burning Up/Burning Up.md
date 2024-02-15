@@ -72,6 +72,7 @@ Use this display to respond to hull breaches, fires, crew death, .
 	- "*suppress*" + Location: Extinguishes fire at the location.
 	- "*repair*" + Location: Repairs hull breaches at the location.
 		- Possible Locations:
+			- cockpit
 			- crew quarters
 			- bridge
 			- engine room
@@ -235,6 +236,13 @@ A list of every possible emergency.
 - Alert feed failure
 - Power shunting display failure
 - Emergency response/command terminal failure
+- Fire
+- Hull breach
+- Solar flare
+- Space debris
+
+
+
 
 # Values Likely to be Changed
 This is a list of all values that I would like to be able to tweak before releasing.

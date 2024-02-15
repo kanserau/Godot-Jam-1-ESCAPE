@@ -93,19 +93,19 @@
       "isCountable": true,
       "isDirectory": false,
       "noteCount": 1,
-      "wordCount": 2391,
+      "wordCount": 2404,
       "wordCountTowardGoal": 0,
       "wordGoal": null,
-      "pageCount": 7.97,
-      "characterCount": 14351,
-      "nonWhitespaceCharacterCount": 11706,
-      "readingTimeInMinutes": 9.022641509433962,
+      "pageCount": 8.013333333333334,
+      "characterCount": 14417,
+      "nonWhitespaceCharacterCount": 11753,
+      "readingTimeInMinutes": 9.071698113207548,
       "linkCount": 0,
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1707647738126,
-      "modifiedDate": 1707987566436,
-      "sizeInBytes": 14351
+      "modifiedDate": 1707989185780,
+      "sizeInBytes": 14417
     },
     "Burning Up/Scrapped Ideas.md": {
       "isCountable": true,
@@ -124,6 +124,24 @@
       "createdDate": 1707897217867,
       "modifiedDate": 1707897229122,
       "sizeInBytes": 562
+    },
+    "Burning Up/The Captain.md": {
+      "isCountable": true,
+      "isDirectory": false,
+      "noteCount": 1,
+      "wordCount": 410,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 1.3666666666666667,
+      "characterCount": 2400,
+      "nonWhitespaceCharacterCount": 1960,
+      "readingTimeInMinutes": 1.5471698113207548,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1707989110014,
+      "modifiedDate": 1707989414145,
+      "sizeInBytes": 2400
     }
   }
 }

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Eltis intercom - processed scan
+* source:	https://sketchfab.com/3d-models/eltis-intercom-processed-scan-3603f3b2152e4a9fac41fcf0c98e7b3a
+* author:	Yo.Ri (https://sketchfab.com/grox777)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Eltis intercom - processed scan" (https://sketchfab.com/3d-models/eltis-intercom-processed-scan-3603f3b2152e4a9fac41fcf0c98e7b3a) by Yo.Ri (https://sketchfab.com/grox777) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

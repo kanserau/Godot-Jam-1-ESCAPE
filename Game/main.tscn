@@ -20,10 +20,6 @@ sky = SubResource("Sky_nx0o5")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dmqff")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 12, 0)
-shadow_enabled = true
-
 [node name="Room" parent="." instance=ExtResource("2_2lfa6")]
 
 [node name="Player" parent="." instance=ExtResource("1_eg4cr")]

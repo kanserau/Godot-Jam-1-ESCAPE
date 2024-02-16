@@ -1,1 +1,0 @@
-The theme should be ambient, forboding, lonely.

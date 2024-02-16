@@ -1,0 +1,177 @@
+[gd_scene load_steps=23 format=3 uid="uid://ue4fkbj8d010"]
+
+[ext_resource type="Material" uid="uid://bj2ge7ce42n88" path="res://assets/materials/floor/floor.tres" id="1_texys"]
+[ext_resource type="Shader" path="res://assets/materials/glass/glass.gdshader" id="2_0o6ga"]
+[ext_resource type="PackedScene" uid="uid://qdj1fl0qduto" path="res://assets/props/toolbox/metal_tool_chest_1k.gltf" id="3_yyy0w"]
+[ext_resource type="PackedScene" uid="uid://dywybntaextrq" path="res://assets/props/fire-extinguisher/fire-extinguisher.tscn" id="4_jl75w"]
+[ext_resource type="PackedScene" uid="uid://bw5jc31jcc3rm" path="res://assets/props/door/door-dark.tscn" id="6_dif8w"]
+[ext_resource type="PackedScene" uid="uid://cjomvdd1kryd4" path="res://assets/props/keypad/keypad.glb" id="6_h8djp"]
+[ext_resource type="PackedScene" uid="uid://br6nry3u5mqa8" path="res://assets/props/intercom/scene.gltf" id="7_i1qts"]
+[ext_resource type="PackedScene" uid="uid://e2ux88ndghcv" path="res://assets/props/toon-tools/scene.gltf" id="8_ye4ug"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_0veqt"]
+material = ExtResource("1_texys")
+size = Vector2(20, 20)
+orientation = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ju46t"]
+points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_aafbo"]
+material = ExtResource("1_texys")
+flip_faces = true
+size = Vector2(20, 20)
+orientation = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k20ln"]
+render_priority = 0
+shader = ExtResource("2_0o6ga")
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/roughness = 0.15
+shader_parameter/normal_strength = 1.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_8w8w1"]
+material = SubResource("ShaderMaterial_k20ln")
+flip_faces = true
+size = Vector2(20, 6)
+orientation = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rr3vs"]
+points = PackedVector3Array(0, -3, -10, 0, 3, -10, 0, -3, 10, 0, 3, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_my1u6"]
+material = ExtResource("1_texys")
+flip_faces = true
+size = Vector2(20, 6)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fnbql"]
+points = PackedVector3Array(10, 3, 0, 10, -3, 0, -10, 3, 0, -10, -3, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_132bq"]
+material = ExtResource("1_texys")
+size = Vector2(20, 6)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_su80x"]
+points = PackedVector3Array(10, 3, 0, 10, -3, 0, -10, 3, 0, -10, -3, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ii3ib"]
+material = ExtResource("1_texys")
+size = Vector2(20, 6)
+orientation = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iocsb"]
+points = PackedVector3Array(0, -3, -10, 0, 3, -10, 0, -3, 10, 0, 3, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0aof"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mgfhm"]
+material = SubResource("StandardMaterial3D_b0aof")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.02
+
+[node name="Room" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="Walls"]
+mesh = SubResource("QuadMesh_0veqt")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Ground/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ju46t")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("QuadMesh_aafbo")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ju46t")
+
+[node name="West Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 0)
+mesh = SubResource("QuadMesh_8w8w1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/West Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/West Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_rr3vs")
+
+[node name="North Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+mesh = SubResource("QuadMesh_my1u6")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/North Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/North Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fnbql")
+
+[node name="South Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
+mesh = SubResource("QuadMesh_132bq")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/South Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/South Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_su80x")
+
+[node name="East Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 0)
+mesh = SubResource("QuadMesh_ii3ib")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/East Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/East Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_iocsb")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="metal_tool_chest_1k" parent="Props" instance=ExtResource("3_yyy0w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 6)
+
+[node name="fire extinguisher" type="Node3D" parent="Props"]
+transform = Transform3D(-0.001, 0, -8.74228e-11, 0, 0.001, 0, 8.74228e-11, 0, -0.001, -8, 0.5, 10)
+
+[node name="scaled" parent="Props/fire extinguisher" instance=ExtResource("4_jl75w")]
+transform = Transform3D(0.5, 0, 3.55271e-15, 0, 0.5, 0, -3.55271e-15, 0, 0.5, 0, 0, 0)
+
+[node name="Door Dark" parent="Props" instance=ExtResource("6_dif8w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, 5)
+
+[node name="keypad" parent="Props/Door Dark" instance=ExtResource("6_h8djp")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.08498, 0)
+visible = false
+
+[node name="intercom" parent="Props/Door Dark" instance=ExtResource("7_i1qts")]
+transform = Transform3D(-0.005, 0, -4.37114e-10, 0, 0.005, 0, 4.37114e-10, 0, -0.005, 0, 1.48572, -0.0299997)
+
+[node name="toon tools" parent="Props" instance=ExtResource("8_ye4ug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.56781, 3.84113)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("CylinderMesh_mgfhm")
+skeleton = NodePath("../../Props")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+light_color = Color(1, 0.792157, 0.85098, 1)
+light_energy = 8.0
+light_size = 1.0
+light_bake_mode = 1
+omni_range = 50.0
+omni_attenuation = 0.659754
+omni_shadow_mode = 0

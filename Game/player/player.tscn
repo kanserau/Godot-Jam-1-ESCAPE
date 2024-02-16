@@ -1,24 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0x8o5y6sjjl1"]
+[gd_scene load_steps=5 format=3 uid="uid://b0x8o5y6sjjl1"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_fyl6a"]
+[ext_resource type="PackedScene" uid="uid://u487vc0826f6" path="res://assets/props/crowbar/crowbar_01_1k.gltf" id="2_0qgtd"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_os2fv"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_53mmj"]
+radius = 0.3
+height = 1.75
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_bn072"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8ar8"]
+radius = 0.3
+height = 1.75
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 13
+floor_stop_on_slope = false
 script = ExtResource("1_fyl6a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
-mesh = SubResource("CylinderMesh_os2fv")
+mesh = SubResource("CapsuleMesh_53mmj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_bn072")
+shape = SubResource("CapsuleShape3D_x8ar8")
 
 [node name="Neck" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.728316, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="crowbar_01_1k" parent="Neck" instance=ExtResource("2_0qgtd")]
+transform = Transform3D(-0.852868, 0.492404, 0.173648, 0.5, 0.866025, 0, -0.150384, 0.0868241, -0.984808, 0.3, -0.2, -0.4)

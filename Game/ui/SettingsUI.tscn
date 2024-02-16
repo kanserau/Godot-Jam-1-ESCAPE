@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://i7xq588f64tv"]
+
+[ext_resource type="Script" path="res://ui/SettingsUI.gd" id="1_5k8dg"]
+[ext_resource type="Theme" uid="uid://duyhmdjgt61qo" path="res://resources/settings_theme.tres" id="2_7tijr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6wxl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_o1lf7"]
+
+[sub_resource type="Theme" id="Theme_fuyow"]
+
+[node name="Control" type="Control"]
+material = SubResource("ShaderMaterial_f6wxl")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1_5k8dg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("CanvasTexture_o1lf7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_fuyow")
+split_offset = 800
+
+[node name="BGM Slider" type="HSlider" parent="ScrollContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 1
+mouse_default_cursor_shape = 13
+theme = ExtResource("2_7tijr")
+min_value = -60.0
+max_value = 5.0
+
+[node name="BGM Label" type="Label" parent="ScrollContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_7tijr")
+theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 16
+text = "BGM"
+horizontal_alignment = 1
+
+[node name="Space2" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_fuyow")
+split_offset = 800
+
+[node name="SFX Slider" type="HSlider" parent="ScrollContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 1
+mouse_default_cursor_shape = 13
+theme = ExtResource("2_7tijr")
+min_value = -60.0
+max_value = 5.0
+
+[node name="SFX Label" type="Label" parent="ScrollContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_7tijr")
+theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 16
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="ScrollContainer/VBoxContainer/HSplitContainer/BGM Slider" to="." method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="ScrollContainer/VBoxContainer/HSplitContainer2/SFX Slider" to="." method="_on_sfx_value_changed"]

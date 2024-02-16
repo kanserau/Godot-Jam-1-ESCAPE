@@ -14,9 +14,12 @@ var target_camera_rotation = 0.0
 
 # Listens to everything
 func _unhandled_input(event) -> void: 
-	if event is InputEventMouseButton:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	elif event.is_action_pressed("ui_cancel"):
+	if get_tree().paused:
+		return
+
+	if event.is_action_pressed("escape"):
+		SceneManager.pause_game()
+		SceneManager.add_overlay("res://ui/SettingsUI.tscn")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -25,17 +28,18 @@ func _unhandled_input(event) -> void:
 			camera.rotate_x(-event.relative.y * 0.001)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:

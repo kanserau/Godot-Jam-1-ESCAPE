@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cppb36k5xfhxx"]
+
+[ext_resource type="Texture2D" uid="uid://ovjrci4jhqeo" path="res://assets/props/console/Windows_9X_BSOD.png" id="1_u4xga"]
+
+[resource]
+albedo_texture = ExtResource("1_u4xga")

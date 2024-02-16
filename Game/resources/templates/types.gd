@@ -1,0 +1,33 @@
+enum SystemFailures {
+	POWER_GENERATOR,
+	ENGINE,
+	ATMOSPHERE_GENERATOR,
+	SHIELDS,
+	WEAPONS,
+	TERMINAL
+}
+
+enum StructuralFailures {
+	HULLBREACH
+}
+
+enum InternalEmergencies {
+	FIRE
+}
+
+enum Locations {
+	CREW_QUARTERS,
+	BRIDGE,
+	ENGINE_ROOM,
+	MAINTENANCE_CORRIDOR,
+	CARGO_BAY,
+	GALLEY,
+	LABORATORY
+}
+
+enum CrewStatus {
+	VITALS_NORMAL,
+	DISTRESS_DETECTED,
+	CRITICAL, 
+	DECEASED
+}

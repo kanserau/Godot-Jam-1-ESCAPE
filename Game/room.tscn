@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ue4fkbj8d010"]
+[gd_scene load_steps=30 format=3 uid="uid://ue4fkbj8d010"]
 
 [ext_resource type="Material" uid="uid://bj2ge7ce42n88" path="res://assets/materials/floor/floor.tres" id="1_texys"]
 [ext_resource type="Shader" path="res://assets/materials/glass/glass.gdshader" id="2_0o6ga"]
@@ -13,10 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://bunxwviy6nkku" path="res://assets/props/generator/Basic_generator.tscn" id="9_otxs2"]
 [ext_resource type="PackedScene" uid="uid://og3ycu8pbs8w" path="res://assets/props/console/wall_mounted/wall_mounted_console.tscn" id="12_sdsj8"]
 [ext_resource type="PackedScene" uid="uid://dh32cwmtsr7jt" path="res://assets/props/console/desk/desk_console.tscn" id="13_wck3q"]
+[ext_resource type="PackedScene" uid="uid://balok5b4ubm81" path="res://assets/props/alarm_light/alarm_light.tscn" id="14_ar27j"]
+[ext_resource type="MeshLibrary" uid="uid://r7p2udfdee1s" path="res://assets/props/modular_pipes/pipes.meshlib" id="15_1b02u"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_0veqt"]
 material = ExtResource("1_texys")
-size = Vector2(20, 20)
+size = Vector2(10, 10)
 orientation = 1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ju46t"]
@@ -25,7 +27,7 @@ points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
 [sub_resource type="QuadMesh" id="QuadMesh_aafbo"]
 material = ExtResource("1_texys")
 flip_faces = true
-size = Vector2(20, 20)
+size = Vector2(10, 10)
 orientation = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k20ln"]
@@ -39,7 +41,7 @@ shader_parameter/edge_color = Color(0, 0, 0, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_8w8w1"]
 material = SubResource("ShaderMaterial_k20ln")
 flip_faces = true
-size = Vector2(20, 6)
+size = Vector2(10, 5)
 orientation = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rr3vs"]
@@ -48,21 +50,21 @@ points = PackedVector3Array(0, -3, -10, 0, 3, -10, 0, -3, 10, 0, 3, 10)
 [sub_resource type="QuadMesh" id="QuadMesh_my1u6"]
 material = ExtResource("8_tycko")
 flip_faces = true
-size = Vector2(20, 6)
+size = Vector2(10, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fnbql"]
 points = PackedVector3Array(10, 3, 0, 10, -3, 0, -10, 3, 0, -10, -3, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_132bq"]
 material = ExtResource("8_tycko")
-size = Vector2(20, 6)
+size = Vector2(10, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_su80x"]
 points = PackedVector3Array(10, 3, 0, 10, -3, 0, -10, 3, 0, -10, -3, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ii3ib"]
 material = ExtResource("8_tycko")
-size = Vector2(20, 6)
+size = Vector2(10, 5)
 orientation = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iocsb"]
@@ -92,7 +94,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_ju46t")
 
 [node name="Ceiling" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 mesh = SubResource("QuadMesh_aafbo")
 skeleton = NodePath("")
 
@@ -102,7 +104,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_ju46t")
 
 [node name="West Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 0)
 mesh = SubResource("QuadMesh_8w8w1")
 skeleton = NodePath("")
 
@@ -112,7 +114,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_rr3vs")
 
 [node name="North Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5)
 mesh = SubResource("QuadMesh_my1u6")
 skeleton = NodePath("")
 
@@ -122,7 +124,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_fnbql")
 
 [node name="South Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
 mesh = SubResource("QuadMesh_132bq")
 skeleton = NodePath("")
 
@@ -132,7 +134,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_su80x")
 
 [node name="East Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 0)
 material_override = ExtResource("4_nwbs3")
 mesh = SubResource("QuadMesh_ii3ib")
 skeleton = NodePath("")
@@ -145,22 +147,23 @@ shape = SubResource("ConvexPolygonShape3D_iocsb")
 [node name="Lights" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 mesh = SubResource("CylinderMesh_mgfhm")
 skeleton = NodePath("../../Props")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
 light_color = Color(1, 0.780392, 0.815686, 1)
-light_energy = 8.0
+light_energy = 2.0
+light_size = 1.0
 light_bake_mode = 1
-omni_range = 8.278
-omni_attenuation = 0.870551
+omni_range = 1.824
+omni_attenuation = 0.707107
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.02, 0)
 light_color = Color(1, 0.803922, 0.815686, 1)
-light_energy = 4.0
+light_energy = 3.0
 light_indirect_energy = 2.0
 shadow_enabled = true
 spot_range = 100.0
@@ -168,19 +171,31 @@ spot_attenuation = 0.353554
 spot_angle = 88.0
 spot_angle_attenuation = 0.307786
 
+[node name="alarm light" parent="Lights" instance=ExtResource("14_ar27j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.3774, 1.68683)
+
+[node name="pipes" type="GridMap" parent="."]
+mesh_library = ExtResource("15_1b02u")
+cell_size = Vector3(0.1, 0.1, 0.1)
+cell_scale = 0.004
+data = {
+"cells": PackedInt32Array(131114, 65486, 1441793, 35, 65489, 589826, 262171, 65489, 393221, 262163, 65489, 65540, 786451, 65489, 327686, 1048595, 65489, 65536, 1572883, 65489, 65543)
+}
+metadata/_editor_floor_ = Vector3(0, 24, 0)
+
 [node name="Props" type="Node3D" parent="."]
 
 [node name="metal_tool_chest_1k" parent="Props" instance=ExtResource("4_hn4r0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 6)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.5, 0, 3)
 
 [node name="fire extinguisher" type="Node3D" parent="Props"]
-transform = Transform3D(-0.001, 0, -8.74228e-11, 0, 0.001, 0, 8.74228e-11, 0, -0.001, -8, 0.5, 10)
+transform = Transform3D(-0.001, 0, -8.74228e-11, 0, 0.001, 0, 8.74228e-11, 0, -0.001, -3, 0.25, 5)
 
 [node name="scaled" parent="Props/fire extinguisher" instance=ExtResource("4_jl75w")]
 transform = Transform3D(0.5, 0, 3.55271e-15, 0, 0.5, 0, -3.55271e-15, 0, 0.5, 0, 0, 0)
 
 [node name="Door Dark" parent="Props" instance=ExtResource("6_dif8w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, 5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 2)
 
 [node name="keypad" parent="Props/Door Dark" instance=ExtResource("6_h8djp")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.08498, 0)
@@ -189,15 +204,13 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.08498, 0)
 transform = Transform3D(-0.005, 0, -4.37114e-10, 0, 0.005, 0, 4.37114e-10, 0, -0.005, 0, 1.48572, -0.0299997)
 
 [node name="toon tools" parent="Props" instance=ExtResource("8_ye4ug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.56781, 3.84113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.97, 1, 0.5)
 
 [node name="Basic Generator" parent="Props" instance=ExtResource("9_otxs2")]
-transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -6, 2.2, -3)
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -2, 2.2, 0)
+
+[node name="Desk console" parent="Props" instance=ExtResource("13_wck3q")]
+transform = Transform3D(-0.03, 0, -2.62268e-09, 0, 0.03, 0, 2.62268e-09, 0, -0.03, 3, 0.665, 4.5)
 
 [node name="wall mounted console" parent="Props" instance=ExtResource("12_sdsj8")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.174656, 1.26455, 9.70645)
-display = false
-
-[node name="Desk console" parent="." instance=ExtResource("13_wck3q")]
-transform = Transform3D(-0.03, 0, -2.62268e-09, 0, 0.03, 0, 2.62268e-09, 0, -0.03, 3.033, 0.665035, 9.15511)
-display = false
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.265, 4.7)

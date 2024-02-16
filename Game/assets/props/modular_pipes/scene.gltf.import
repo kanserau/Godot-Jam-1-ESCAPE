@@ -1,0 +1,517 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dkt28cnnnyaxp"
+path="res://.godot/imported/scene.gltf-80c7c47c63141b0f7030c8a7df4cddf3.scn"
+
+[deps]
+
+source_file="res://assets/props/modular_pipes/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-80c7c47c63141b0f7030c8a7df4cddf3.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"meshes": {
+"Sketchfab_Scene_ind_pipe_large_01_base_01_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_base_01_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_corner_01_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_corner_01_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_corner_02_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_corner_02_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_crossing_01_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_crossing_01_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_crossing_02_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_crossing_02_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_crossing_03_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_crossing_03_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_crossing_04_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_crossing_04_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_crossing_05_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_crossing_05_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_frame_01_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_frame_01_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_long_01_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_long_01_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_short_01_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_short_01_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_short_02_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_short_02_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_large_01_valve_01_inst_001_ind_pipe_large_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_large_01_valve_01_inst_001_ind_pipe_large_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_base_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_base_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_corner_01_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_corner_01_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_corner_02_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_corner_02_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_corner_03_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_corner_03_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_crossing_01_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_crossing_01_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_crossing_02_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_crossing_02_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_end_01_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_end_01_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_frame_01_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_frame_01_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_frame_02_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_frame_02_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_long_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_long_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_long_inst_001_lambert2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_long_inst_001_lambert2_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_short_01_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_short_01_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_medium_01_valve_01_inst_001_ind_pipe_medium_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_medium_01_valve_01_inst_001_ind_pipe_medium_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_base_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_base_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_corner_01_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_corner_01_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_corner_02_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_corner_02_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_crossing_01_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_crossing_01_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_crossing_02_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_crossing_02_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_crossing_03_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_crossing_03_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_end_01_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_end_01_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_end_02_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_end_02_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_end_03_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_end_03_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_end_04_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_end_04_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_frame_01_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_frame_01_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_frame_01_inst_002_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_frame_01_inst_002_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_long_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_long_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_short_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_short_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_valve_01_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_valve_01_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_valve_02_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_valve_02_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_01_valve_03_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_01_valve_03_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_02_base_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_02_base_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_02_corner_01_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_02_corner_01_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_02_crossing_01_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_02_crossing_01_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_02_long_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_02_long_inst_001_ind_pipe_small_01_mt_0.res"
+},
+"Sketchfab_Scene_ind_pipe_small_02_short_01_inst_001_ind_pipe_small_01_mt_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/props/modular_pipes/meshes/Sketchfab_Scene_ind_pipe_small_02_short_01_inst_001_ind_pipe_small_01_mt_0.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -15,6 +15,17 @@ enum InternalEmergencies {
 	FIRE
 }
 
+enum Events {
+	POWER_GENERATOR,
+	ENGINE,
+	ATMOSPHERE_GENERATOR,
+	SHIELDS,
+	WEAPONS,
+	TERMINAL,
+	HULLBREACH,
+	FIRE
+}
+
 enum Locations {
 	CREW_QUARTERS,
 	BRIDGE,
@@ -22,7 +33,8 @@ enum Locations {
 	MAINTENANCE_CORRIDOR,
 	CARGO_BAY,
 	GALLEY,
-	LABORATORY
+	LABORATORY,
+	COCKPIT
 }
 
 enum CrewStatus {

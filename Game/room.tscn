@@ -1,20 +1,45 @@
-[gd_scene load_steps=30 format=3 uid="uid://ue4fkbj8d010"]
+[gd_scene load_steps=41 format=3 uid="uid://ue4fkbj8d010"]
 
+[ext_resource type="Texture2D" uid="uid://g6hw45rrlylj" path="res://assets/skybox/plain_starfield_1.png" id="1_fb1y0"]
 [ext_resource type="Material" uid="uid://bj2ge7ce42n88" path="res://assets/materials/floor/floor.tres" id="1_texys"]
 [ext_resource type="Shader" path="res://assets/materials/glass/glass.gdshader" id="2_0o6ga"]
-[ext_resource type="PackedScene" uid="uid://ddo2c8htf6alp" path="res://assets/props/toolbox/metal_tool_chest_1k.tscn" id="4_hn4r0"]
-[ext_resource type="PackedScene" uid="uid://dywybntaextrq" path="res://assets/props/fire-extinguisher/fire-extinguisher.tscn" id="4_jl75w"]
+[ext_resource type="PackedScene" uid="uid://ddo2c8htf6alp" path="res://assets/props/tools/toolbox/metal_tool_chest_1k.tscn" id="4_hn4r0"]
+[ext_resource type="PackedScene" uid="uid://dywybntaextrq" path="res://assets/props/fire_extinguisher/fire_extinguisher.tscn" id="4_jl75w"]
 [ext_resource type="Material" uid="uid://cpjqe3010rwf0" path="res://assets/materials/metal/Matal046B/metal046B.tres" id="4_nwbs3"]
+[ext_resource type="MeshLibrary" uid="uid://covmv81ln287d" path="res://assets/props/modular_pipes/large_pipes.meshlib" id="6_5jidd"]
 [ext_resource type="PackedScene" uid="uid://bw5jc31jcc3rm" path="res://assets/props/door/door-dark.tscn" id="6_dif8w"]
-[ext_resource type="PackedScene" uid="uid://cjomvdd1kryd4" path="res://assets/props/keypad/keypad.glb" id="6_h8djp"]
+[ext_resource type="MeshLibrary" uid="uid://bul3bbtsdpb4k" path="res://assets/props/modular_pipes/small_pipes.meshlib" id="7_1wynt"]
 [ext_resource type="PackedScene" uid="uid://br6nry3u5mqa8" path="res://assets/props/intercom/scene.gltf" id="7_i1qts"]
+[ext_resource type="PackedScene" uid="uid://bxdo24l4ty54r" path="res://assets/props/console/desk_console.tscn" id="8_3u458"]
 [ext_resource type="Material" uid="uid://ci5ixg7iv1yau" path="res://assets/materials/metal/metallic_blue-1K/matallic_blue.tres" id="8_tycko"]
-[ext_resource type="PackedScene" uid="uid://e2ux88ndghcv" path="res://assets/props/toon-tools/scene.gltf" id="8_ye4ug"]
+[ext_resource type="PackedScene" uid="uid://e2ux88ndghcv" path="res://assets/props/tools/toon-tools/scene.gltf" id="8_ye4ug"]
+[ext_resource type="PackedScene" uid="uid://b1it0alu44ecb" path="res://assets/props/bottles/corona_bottle_yellow.tscn" id="9_0nin3"]
 [ext_resource type="PackedScene" uid="uid://bunxwviy6nkku" path="res://assets/props/generator/Basic_generator.tscn" id="9_otxs2"]
-[ext_resource type="PackedScene" uid="uid://og3ycu8pbs8w" path="res://assets/props/console/wall_mounted/wall_mounted_console.tscn" id="12_sdsj8"]
-[ext_resource type="PackedScene" uid="uid://dh32cwmtsr7jt" path="res://assets/props/console/desk/desk_console.tscn" id="13_wck3q"]
+[ext_resource type="PackedScene" uid="uid://jtbekr7mr26i" path="res://assets/props/bottles/corona_bottle_brown.tscn" id="10_hniwh"]
+[ext_resource type="PackedScene" uid="uid://dsnxggtutf120" path="res://assets/props/bottles/corona_bottle_green.tscn" id="11_ipgdo"]
+[ext_resource type="PackedScene" uid="uid://myncs6tc1cu1" path="res://assets/props/tools/wrench_set/scene.gltf" id="13_mcdm0"]
 [ext_resource type="PackedScene" uid="uid://balok5b4ubm81" path="res://assets/props/alarm_light/alarm_light.tscn" id="14_ar27j"]
-[ext_resource type="MeshLibrary" uid="uid://r7p2udfdee1s" path="res://assets/props/modular_pipes/pipes.meshlib" id="15_1b02u"]
+[ext_resource type="PackedScene" uid="uid://s8e1guti158n" path="res://assets/vfx/fire/fire.tscn" id="16_3u0vc"]
+[ext_resource type="PackedScene" uid="uid://bk86ug0hqp3f6" path="res://assets/props/barrels/waste_barrel.tscn" id="17_ix7pk"]
+[ext_resource type="PackedScene" uid="uid://chbwdyjgvjcur" path="res://assets/props/barrels/glass_barrel.tscn" id="18_cmm1p"]
+[ext_resource type="PackedScene" uid="uid://7ufllpb3x3eq" path="res://assets/props/barrels/energy_barrel.tscn" id="19_tbpnu"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_03s7o"]
+panorama = ExtResource("1_fb1y0")
+
+[sub_resource type="Sky" id="Sky_slcxt"]
+sky_material = SubResource("PanoramaSkyMaterial_03s7o")
+
+[sub_resource type="Environment" id="Environment_q0dan"]
+background_mode = 2
+background_energy_multiplier = 3.0
+background_canvas_max_layer = 1
+sky = SubResource("Sky_slcxt")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.1
+reflected_light_source = 1
+glow_enabled = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_0veqt"]
 material = ExtResource("1_texys")
@@ -81,6 +106,9 @@ height = 0.02
 [node name="Room" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q0dan")
+
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="Ground" type="MeshInstance3D" parent="Walls"]
@@ -94,7 +122,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_ju46t")
 
 [node name="Ceiling" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 mesh = SubResource("QuadMesh_aafbo")
 skeleton = NodePath("")
 
@@ -144,10 +172,28 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/East Wall/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_iocsb")
 
+[node name="big pipes" type="GridMap" parent="Walls"]
+mesh_library = ExtResource("6_5jidd")
+cell_size = Vector3(0.5, 0.5, 0.5)
+cell_scale = 0.01
+data = {
+"cells": PackedInt32Array(131076, 65527, 327684, 393220, 65527, 65540, 393222, 65527, 524289, 589828, 65527, 458763, 458759, 65527, 65543, 655367, 65527, 65546, 4, 65527, 196608)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="small pipes" type="GridMap" parent="Walls/big pipes"]
+mesh_library = ExtResource("7_1wynt")
+cell_size = Vector3(0.05, 0.1, 0.05)
+cell_scale = 0.01
+data = {
+"cells": PackedInt32Array(2752579, 65463, 1376258, 2752587, 65463, 1441794, 2752594, 65463, 1441794, 2424914, 65473, 983040, 2293835, 65473, 196612, 983122, 65473, 458764, 1966155, 65473, 589829, 655442, 65473, 458756, 655442, 65468, 1048578, 327762, 65473, 458757, 327762, 65458, 458763, -130990, 65458, 196614, -130990, 65473, 65547, 2752569, 65473, 917504, 2752524, 65473, 393219, 2752524, 65469, 1179650, 2752514, 65473, 917507, 2818040, 65473, 1114116, 2752514, 65468, 1179650, 2818040, 65468, 1179650, 2818040, 65478, 1507328, 2752514, 65478, 1507328, 2752524, 65478, 1507328, 2818040, 65523, 1179660, 2752514, 65523, 1179660, 2752524, 65523, 1310732, 2818038, 65528, 1310722, 2752524, 65528, 1310722, 2752514, 65528, 1310722, 3145720, 65458, 851979, 3080194, 65458, 851979, 3080204, 65459, 851979, 3080204, 2, 851979, 3080194, 2, 851979, 3145718, 2, 851979, 2293830, 65473, 131072, 2293790, 65473, 917505, 2293785, 65478, 1310721, 2424857, 65483, 327680, 1507403, 65473, 196618, 1638475, 65473, 327694)
+}
+metadata/_editor_floor_ = Vector3(0, 25, 0)
+
 [node name="Lights" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 2)
 mesh = SubResource("CylinderMesh_mgfhm")
 skeleton = NodePath("../../Props")
 
@@ -171,47 +217,69 @@ spot_attenuation = 0.353554
 spot_angle = 88.0
 spot_angle_attenuation = 0.307786
 
-[node name="alarm light" parent="Lights" instance=ExtResource("14_ar27j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.3774, 1.68683)
-
-[node name="pipes" type="GridMap" parent="."]
-mesh_library = ExtResource("15_1b02u")
-cell_size = Vector3(0.1, 0.1, 0.1)
-cell_scale = 0.004
-data = {
-"cells": PackedInt32Array(131114, 65486, 1441793, 35, 65489, 589826, 262171, 65489, 393221, 262163, 65489, 65540, 786451, 65489, 327686, 1048595, 65489, 65536, 1572883, 65489, 65543)
-}
-metadata/_editor_floor_ = Vector3(0, 24, 0)
-
 [node name="Props" type="Node3D" parent="."]
 
-[node name="metal_tool_chest_1k" parent="Props" instance=ExtResource("4_hn4r0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.5, 0, 3)
+[node name="Fire" parent="Props" instance=ExtResource("16_3u0vc")]
+transform = Transform3D(0.999999, 0, -0.00127409, 0, 1, 0, 0.00127409, 0, 0.999999, 2.60995, 1.11163, 3.84448)
 
-[node name="fire extinguisher" type="Node3D" parent="Props"]
-transform = Transform3D(-0.001, 0, -8.74228e-11, 0, 0.001, 0, 8.74228e-11, 0, -0.001, -3, 0.25, 5)
+[node name="desk console" parent="Props" instance=ExtResource("8_3u458")]
+transform = Transform3D(-0.8, 0, -7.54979e-08, 0, 0.5, 0, 1.20797e-07, 0, -0.5, 2.56952, 0.112187, 3.99628)
 
-[node name="scaled" parent="Props/fire extinguisher" instance=ExtResource("4_jl75w")]
-transform = Transform3D(0.5, 0, 3.55271e-15, 0, 0.5, 0, -3.55271e-15, 0, 0.5, 0, 0, 0)
+[node name="mess pile" type="Node3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1.68005)
+
+[node name="metal_tool_chest_1k" parent="Props/mess pile" instance=ExtResource("4_hn4r0")]
+transform = Transform3D(0.831944, 0, -0.554859, 0, 1, 0, 0.554859, 0, 0.831944, -0.173393, 0, 0.0113637)
+
+[node name="corona bottle yellow" parent="Props/mess pile" instance=ExtResource("9_0nin3")]
+transform = Transform3D(0.947434, 0, -0.319952, 0, 1, 0, 0.319952, 0, 0.947434, -1.27655, 0.0203025, -0.651723)
+
+[node name="corona bottle brown" parent="Props/mess pile" instance=ExtResource("10_hniwh")]
+transform = Transform3D(-3.38435e-08, -0.774249, 0.632881, 1, -4.37114e-08, 0, 2.76641e-08, 0.632881, 0.774249, -1.3107, 0.0634613, -0.385606)
+
+[node name="corona bottle green" parent="Props/mess pile" instance=ExtResource("11_ipgdo")]
+transform = Transform3D(0.882275, 0, 0.470735, 0, 1, 0, -0.470735, 0, 0.882275, -1.11142, -0.00116706, -0.32685)
+
+[node name="corona bottle green2" parent="Props/mess pile" instance=ExtResource("11_ipgdo")]
+transform = Transform3D(0.777242, 0.164755, -0.607248, 0.615662, -4.64242e-08, 0.788011, 0.129829, -0.986334, -0.101433, -1.95451, 0.0830399, -0.244385)
 
 [node name="Door Dark" parent="Props" instance=ExtResource("6_dif8w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 2)
-
-[node name="keypad" parent="Props/Door Dark" instance=ExtResource("6_h8djp")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.08498, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 0.312893)
 
 [node name="intercom" parent="Props/Door Dark" instance=ExtResource("7_i1qts")]
-transform = Transform3D(-0.005, 0, -4.37114e-10, 0, 0.005, 0, 4.37114e-10, 0, -0.005, 0, 1.48572, -0.0299997)
+transform = Transform3D(-0.005, 0, -4.37114e-10, 0, 0.005, 0, 4.37114e-10, 0, -0.005, 2.76294, 1.5745, -0.0299997)
 
-[node name="toon tools" parent="Props" instance=ExtResource("8_ye4ug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.97, 1, 0.5)
+[node name="alarm light" parent="Props/Door Dark" instance=ExtResource("14_ar27j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.37587, 3.07547, 0)
+
+[node name="fire extinguisher" type="Node3D" parent="Props/Door Dark"]
+transform = Transform3D(-0.001, 0, -8.74228e-11, 0, 0.001, 0, 8.74228e-11, 0, -0.001, 2.74548, 0.0696866, -0.135298)
+
+[node name="scaled" parent="Props/Door Dark/fire extinguisher" instance=ExtResource("4_jl75w")]
+transform = Transform3D(0.5, 0, 3.55271e-15, 0, 0.5, 0, -3.55271e-15, 0, 0.5, 0, 0, 0)
+
+[node name="wrench set" parent="Props/Door Dark" instance=ExtResource("13_mcdm0")]
+transform = Transform3D(3.82137e-15, 8.74228e-08, 2, 2, -8.74228e-08, 0, 8.74228e-08, 2, -8.74228e-08, 3.92746, 1.15656, -0.0505099)
+
+[node name="toon tools" parent="Props/Door Dark/wrench set" instance=ExtResource("8_ye4ug")]
+transform = Transform3D(-2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0, 0.5, 0.128672, 0.0102546, 0.0213327)
 
 [node name="Basic Generator" parent="Props" instance=ExtResource("9_otxs2")]
-transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -2, 2.2, 0)
+transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, -2.5, -0.2, -2.9)
 
-[node name="Desk console" parent="Props" instance=ExtResource("13_wck3q")]
-transform = Transform3D(-0.03, 0, -2.62268e-09, 0, 0.03, 0, 2.62268e-09, 0, -0.03, 3, 0.665, 4.5)
+[node name="barrels" type="Node3D" parent="Props"]
 
-[node name="wall mounted console" parent="Props" instance=ExtResource("12_sdsj8")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.265, 4.7)
-display = false
+[node name="waste barrel" parent="Props/barrels" instance=ExtResource("17_ix7pk")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.948532, -0.00116694, -4.02598)
+
+[node name="waste barrel2" parent="Props/barrels" instance=ExtResource("17_ix7pk")]
+transform = Transform3D(-0.00189729, 0.516798, 0.304821, 0.599996, 0.0022792, -0.000129661, -0.00126959, 0.304818, -0.516802, 0.831567, 0.462849, -2.83198)
+
+[node name="glass barrel" parent="Props/barrels" instance=ExtResource("18_cmm1p")]
+transform = Transform3D(0.48, 0, -3.72529e-08, 0, 0.48, 0, 3.72529e-08, 0, 0.48, 1.04461, 0.266639, -1.15027)
+
+[node name="glass barrel2" parent="Props/barrels" instance=ExtResource("18_cmm1p")]
+transform = Transform3D(0.48, 0, -4.47035e-08, 0, 0.48, 0, 4.47035e-08, 0, 0.48, 1.04461, 1.50891, -1.15027)
+
+[node name="energy barrel" parent="Props/barrels" instance=ExtResource("19_tbpnu")]
+transform = Transform3D(0.590107, 0, 0.108507, 0, 0.6, 0, -0.108507, 0, 0.590107, 0.805183, 0.212057, 0.273268)

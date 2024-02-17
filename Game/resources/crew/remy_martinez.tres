@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Crew" load_steps=2 format=3 uid="uid://f5jf8q7m2q2k"]
+
+[ext_resource type="Script" path="res://resources/templates/crew.gd" id="1_6xxl5"]
+
+[resource]
+script = ExtResource("1_6xxl5")
+id = "0871"
+name = "Remy Martinez"
+role = "Chef"
+location = 5
+status = 0

@@ -7,6 +7,9 @@ points = PackedVector3Array(0.756305, 0.137399, -0.31524, 0.756724, 0.129125, -0
 
 [node name="Basic Generator" instance=ExtResource("1_kjsjj")]
 
+[node name="Object_2" parent="Sketchfab_model/Generator_obj_cleaner_materialmerger_gles" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19, -0.1, 0.8)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Generator_obj_cleaner_materialmerger_gles/Object_2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Generator_obj_cleaner_materialmerger_gles/Object_2/StaticBody3D" index="0"]

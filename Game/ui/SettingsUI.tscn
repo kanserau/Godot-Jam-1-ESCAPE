@@ -1,9 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://i7xq588f64tv"]
+[gd_scene load_steps=8 format=3 uid="uid://i7xq588f64tv"]
 
 [ext_resource type="Script" path="res://ui/SettingsUI.gd" id="1_5k8dg"]
+[ext_resource type="Shader" path="res://assets/vfx/screen_blur.gdshader" id="1_dwui7"]
 [ext_resource type="Theme" uid="uid://duyhmdjgt61qo" path="res://resources/settings_theme.tres" id="2_7tijr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6wxl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blfgm"]
+shader = ExtResource("1_dwui7")
+shader_parameter/amount = 2.0
+shader_parameter/color = Color(0.82188, 0.822996, 0.978426, 1)
+shader_parameter/blend = 0.6
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o1lf7"]
 
@@ -23,6 +30,7 @@ mouse_filter = 1
 script = ExtResource("1_5k8dg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_blfgm")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

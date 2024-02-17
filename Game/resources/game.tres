@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="GameResource" load_steps=2 format=3 uid="uid://cegmeuv2w5tt6"]
+
+[ext_resource type="Script" path="res://resources/templates/game_resource.gd" id="1_rh1uv"]
+
+[resource]
+script = ExtResource("1_rh1uv")
+total_starting_power = 4
+current_thrust = 2
+current_atmosphere_generator = 1
+current_shields = 0
+current_weapons = 0
+minutes_per_second = 1
+thrust_1 = 100
+thrust_2 = 400
+thrust_3 = 600
+oxygen_low_concentration = 0
+oxygen_maintained = 1
+oxygen_high_concentration = 2
+low_oxygen = 200
+medium_oxygen = 300
+high_oxygen = 400
+oxygen_depletion_atmosphere_generator = 30
+oxygen_depletion_hull_breach = 40
+oxygen_regeneration = 20
+shields_on = 2
+weapons_on = 2
+initial_distance = 0.0
+target_distance = 270000.0
+sun_gravity = 100
+starting_sun_damage = 10.0
+emergency_cluster_frequency = 0.2
+starting_number_cluster_emergencies = 2
+ship_damage_emergency_rate_multiplier = 1.0
+ship_damage_emergency_quantity_multiplier = 1.0
+solar_flare_countdown = 10
+space_debris_countdown = 10
+space_debris_min_health = 200
+space_debris_max_health = 300
+fire_spread_rate = 0.2
+fire_crew_damage = 10
+fire_ship_damage = 10
+hull_breach_ship_damage = 10
+crew_health = 50
+crew_defib_window = 5
+prime_power_generator = 2
+ignition_power_generator = 1
+crowbar_terminal_hits = 4

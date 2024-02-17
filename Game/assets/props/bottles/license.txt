@@ -1,0 +1,11 @@
+Model Information:
+* title:	Corona Beer - Low Poly
+* source:	https://sketchfab.com/3d-models/corona-beer-low-poly-59be759d7bc146bcbb27b5f3e6fbb0f1
+* author:	Liorlevi99 (https://sketchfab.com/liorlevi99)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Corona Beer - Low Poly" (https://sketchfab.com/3d-models/corona-beer-low-poly-59be759d7bc146bcbb27b5f3e6fbb0f1) by Liorlevi99 (https://sketchfab.com/liorlevi99) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

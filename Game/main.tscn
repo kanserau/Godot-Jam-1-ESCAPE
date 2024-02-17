@@ -1,22 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ox7maxg57gi0"]
+[gd_scene load_steps=6 format=3 uid="uid://ox7maxg57gi0"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_4d61h"]
 [ext_resource type="AudioStream" uid="uid://xsqt8hlwju2i" path="res://assets/escape_the_sun.ogg" id="1_e4syv"]
 [ext_resource type="PackedScene" uid="uid://b0x8o5y6sjjl1" path="res://player/player.tscn" id="1_eg4cr"]
 [ext_resource type="Script" path="res://environment/BGM.gd" id="1_rfk7o"]
-[ext_resource type="Texture2D" uid="uid://g6hw45rrlylj" path="res://assets/skybox/plain_starfield_1.png" id="3_acwfc"]
 [ext_resource type="PackedScene" uid="uid://ue4fkbj8d010" path="res://room.tscn" id="4_deyi7"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ottdd"]
-panorama = ExtResource("3_acwfc")
-
-[sub_resource type="Sky" id="Sky_2hjgo"]
-sky_material = SubResource("PanoramaSkyMaterial_ottdd")
-
-[sub_resource type="Environment" id="Environment_1oxr7"]
-background_mode = 2
-background_energy_multiplier = 3.0
-sky = SubResource("Sky_2hjgo")
 
 [node name="Main" type="Node"]
 
@@ -33,10 +21,7 @@ autoplay = true
 mix_target = 1
 script = ExtResource("1_rfk7o")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
-environment = SubResource("Environment_1oxr7")
+[node name="Room" parent="Environment" instance=ExtResource("4_deyi7")]
 
-[node name="Room" parent="Environment/WorldEnvironment" instance=ExtResource("4_deyi7")]
-
-[node name="Player" parent="." instance=ExtResource("1_eg4cr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.446615, 0)
+[node name="Player" parent="Environment/Room" instance=ExtResource("1_eg4cr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03085, 1.44661, 2.25123)

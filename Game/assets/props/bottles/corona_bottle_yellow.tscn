@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1it0alu44ecb"]
+
+[ext_resource type="ArrayMesh" uid="uid://dd6rg8tn6yvqp" path="res://assets/props/bottles/mesh/Sketchfab_Scene_Circle_0.res" id="1_3h17p"]
+
+[node name="corona bottle yellow" type="Node3D"]
+
+[node name="transform" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="transform"]
+mesh = ExtResource("1_3h17p")
+skeleton = NodePath("../..")

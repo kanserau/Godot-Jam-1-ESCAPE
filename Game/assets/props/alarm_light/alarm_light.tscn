@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://balok5b4ubm81"]
+[gd_scene load_steps=7 format=3 uid="uid://balok5b4ubm81"]
 
 [ext_resource type="PackedScene" uid="uid://drck7dxhismcd" path="res://assets/props/alarm_light/scene.gltf" id="1_7dlye"]
 [ext_resource type="Script" path="res://assets/props/alarm_light/alarm light.gd" id="2_ovdjr"]
+
+[sub_resource type="Animation" id="Animation_pw5s8"]
+resource_name = "off"
+length = 4.0
+loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_sermx"]
 resource_name = "spin"
@@ -11,20 +16,21 @@ step = 4.0
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0/SpotLight3D")
+tracks/0/path = NodePath("Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0/beam1")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0.707, 0, 0, 0.707, 1, 1, 0.5, 0.5, -0.5, 0.5, 2, 1, 0, 0.707, -0.707, 0, 3, 1, -0.5, 0.5, -0.5, -0.5, 4, 1, -0.707, 0, 0, -0.707)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0/SpotLight3D2")
+tracks/1/path = NodePath("Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0/beam2")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, -0.707, 0, 0, 0.707, 1, 1, -0.5, -0.5, -0.5, 0.5, 2, 1, 0, 0.707, 0.707, 0, 3, 1, -0.5, 0.5, 0.5, 0.5, 4, 1, -0.707107, 0, 0, 0.707107)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thd1u"]
 _data = {
+"off": SubResource("Animation_pw5s8"),
 "spin": SubResource("Animation_sermx")
 }
 
@@ -42,7 +48,6 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_thd1u")
 }
-autoplay = "spin"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model" index="1"]
 
@@ -56,15 +61,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="Bec-Alerta-Rosu" parent="Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode" index="0"]
 transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 4.65661e-08, 0, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0" index="0"]
+[node name="glow" type="OmniLight3D" parent="Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0" index="0"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 5.68434e-15, 0, -5.68434e-15, 1, 2.19762, 0.0093177, -1.72343)
 light_color = Color(1, 0.0588235, 0.129412, 1)
-light_energy = 2.0
-light_indirect_energy = 4.0
+light_energy = 0.1
+light_indirect_energy = 0.1
+light_volumetric_fog_energy = 0.1
 light_size = 1.0
 omni_range = 0.15
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0" index="1"]
+[node name="beam1" type="SpotLight3D" parent="Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0" index="1"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.11051, 0.156866, -1.6192)
 rotation_order = 0
 light_color = Color(1, 0.0588235, 0.129412, 1)
@@ -75,7 +83,8 @@ spot_range = 10.0
 spot_attenuation = 0.176777
 spot_angle = 23.18
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0" index="2"]
+[node name="beam2" type="SpotLight3D" parent="Sketchfab_model/7d1bf0332ae443b699542c9798598de2_fbx/RootNode/Bec-Alerta-Rosu/Bec-Alerta-Rosu_Lumina_0" index="2"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.11051, 0.156866, -1.6192)
 rotation_order = 0
 light_color = Color(1, 0.0588235, 0.129412, 1)

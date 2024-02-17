@@ -24,7 +24,7 @@ func update_game_logic(delta):
 		apply_crew_damage()
 		apply_ship_events(delta)
 		apply_ship_movement()
-		print(GameManager.stats.ship_damage)
+		# print(GameManager.stats.ship_damage)
 
 func game_over() -> bool:
 	if GameManager.stats.distance >= GameManager.stats.target_distance:

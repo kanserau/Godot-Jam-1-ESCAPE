@@ -1,0 +1,141 @@
+[gd_scene load_steps=18 format=3 uid="uid://ca17oq1m5usk1"]
+
+[ext_resource type="MeshLibrary" uid="uid://covmv81ln287d" path="res://assets/props/modular_pipes/large_pipes.meshlib" id="1_ur4av"]
+[ext_resource type="Script" path="res://assets/props/modular_pipes/pipes.gd" id="2_m87eb"]
+[ext_resource type="MeshLibrary" uid="uid://bul3bbtsdpb4k" path="res://assets/props/modular_pipes/small_pipes.meshlib" id="2_p47aa"]
+[ext_resource type="Shader" path="res://assets/vfx/steam/steam.gdshader" id="3_awj78"]
+[ext_resource type="Texture2D" uid="uid://bqmsc0tp1fnq0" path="res://assets/vfx/steam/texture.png" id="4_5cy3k"]
+[ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="4_dfisd"]
+[ext_resource type="Texture2D" uid="uid://bale461vgestw" path="res://assets/vfx/fire/textures/Voronoi01.png" id="5_u4l5f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sct5t"]
+render_priority = 0
+shader = ExtResource("3_awj78")
+shader_parameter/NoiseScaling = Vector2(0.2, 0.2)
+shader_parameter/FlameVector = Vector2(0, 1)
+shader_parameter/NoiseRatio = 0.3
+shader_parameter/FireTexture = ExtResource("4_5cy3k")
+shader_parameter/NoiseTexture = ExtResource("5_u4l5f")
+
+[sub_resource type="Curve" id="Curve_aeosn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.394231, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_h13bo"]
+curve = SubResource("Curve_aeosn")
+
+[sub_resource type="Curve" id="Curve_208em"]
+_data = [Vector2(0, 0.233547), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2ravw"]
+curve = SubResource("Curve_208em")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cc3ka"]
+direction = Vector3(0, 0, 1)
+spread = 10.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_2ravw")
+scale_over_velocity_max = 20.0
+alpha_curve = SubResource("CurveTexture_h13bo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_856ah"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ab2g5"]
+direction = Vector3(-1, 0, 0)
+spread = 10.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_2ravw")
+scale_over_velocity_max = 20.0
+alpha_curve = SubResource("CurveTexture_h13bo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_my8ti"]
+direction = Vector3(1, -1, 0)
+spread = 10.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_2ravw")
+scale_over_velocity_max = 20.0
+alpha_curve = SubResource("CurveTexture_h13bo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2e2da"]
+direction = Vector3(0, -1, 0)
+spread = 10.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_2ravw")
+scale_over_velocity_max = 20.0
+alpha_curve = SubResource("CurveTexture_h13bo")
+
+[node name="big pipes" type="GridMap" node_paths=PackedStringArray("vfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27712, 0, -2.32326)
+mesh_library = ExtResource("1_ur4av")
+cell_size = Vector3(0.5, 0.5, 0.5)
+cell_scale = 0.01
+collision_layer = 3
+data = {
+"cells": PackedInt32Array(131076, 65527, 327684, 393220, 65527, 65540, 393222, 65527, 524289, 589828, 65527, 458763, 458759, 65527, 65543, 655367, 65527, 65546, 4, 65527, 196608)
+}
+script = ExtResource("2_m87eb")
+vfx = [NodePath("GPUParticles3D3"), NodePath("GPUParticles3D4"), NodePath("GPUParticles3D"), NodePath("GPUParticles3D2")]
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="small pipes" type="GridMap" parent="." node_paths=PackedStringArray("target")]
+mesh_library = ExtResource("2_p47aa")
+cell_size = Vector3(0.05, 0.1, 0.05)
+cell_scale = 0.01
+collision_layer = 3
+data = {
+"cells": PackedInt32Array(2752579, 65463, 1376258, 2752587, 65463, 1441794, 2752594, 65463, 1441794, 2424914, 65473, 983040, 2293835, 65473, 196612, 983122, 65473, 458764, 1966155, 65473, 589829, 655442, 65473, 458756, 655442, 65468, 1048578, 327762, 65473, 458757, 327762, 65458, 458763, -130990, 65458, 196614, -130990, 65473, 65547, 2752569, 65473, 917504, 2752524, 65473, 393219, 2752524, 65469, 1179650, 2752514, 65473, 917507, 2818040, 65473, 1114116, 2752514, 65468, 1179650, 2818040, 65468, 1179650, 2818040, 65478, 1507328, 2752514, 65478, 1507328, 2752524, 65478, 1507328, 2818040, 65523, 1179660, 2752514, 65523, 1179660, 2752524, 65523, 1310732, 2818038, 65528, 1310722, 2752524, 65528, 1310722, 2752514, 65528, 1310722, 3145720, 65458, 851979, 3080194, 65458, 851979, 3080204, 65459, 851979, 3080204, 2, 851979, 3080194, 2, 851979, 3145718, 2, 851979, 2293830, 65473, 131072, 2293790, 65473, 917505, 2293785, 65478, 1310721, 2424857, 65483, 327680, 1507403, 65473, 196618, 1638475, 65473, 327694)
+}
+script = ExtResource("4_dfisd")
+target = NodePath("..")
+metadata/_editor_floor_ = Vector3(0, 25, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75627, 3.07426, -3.01949)
+material_override = SubResource("ShaderMaterial_sct5t")
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_cc3ka")
+draw_pass_1 = SubResource("QuadMesh_856ah")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.69971, 2.52245, -3.01949)
+material_override = SubResource("ShaderMaterial_sct5t")
+emitting = false
+amount = 20
+explosiveness = 0.4
+process_material = SubResource("ParticleProcessMaterial_ab2g5")
+draw_pass_1 = SubResource("QuadMesh_856ah")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63754, 4.30192, -0.956301)
+material_override = SubResource("ShaderMaterial_sct5t")
+emitting = false
+amount = 20
+visibility_aabb = AABB(-4, -4, -4.97058, 8, 8, 8)
+process_material = SubResource("ParticleProcessMaterial_my8ti")
+draw_pass_1 = SubResource("QuadMesh_856ah")
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18885, 4.30192, -3.08909)
+material_override = SubResource("ShaderMaterial_sct5t")
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_2e2da")
+draw_pass_1 = SubResource("QuadMesh_856ah")

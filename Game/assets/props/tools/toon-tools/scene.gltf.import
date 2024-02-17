@@ -20,7 +20,7 @@ nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=1
+meshes/light_baking=3
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
@@ -29,6 +29,29 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Dark_gray": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/props/tools/toon-tools/Dark_gray.tres"
+},
+"Yellow": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/props/tools/toon-tools/Yellow.tres"
+},
+"lambert1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/props/tools/toon-tools/lambert1.tres"
+},
+"lightWood": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/props/tools/toon-tools/lightWood.tres"
+},
+"material": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/props/tools/toon-tools/material.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

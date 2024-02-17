@@ -39,16 +39,10 @@ Each of these events calls for its own line. Major events can be longer.
 ### Emergencies
 Minimum one for each of the following emergencies. These can be shorter as emergencies will be clustered so there will likely be a few lines in a row.
 - Power generator failure
-- Engine wiring fault
-- Engine piping damage
-- Atmosphere generator icing
-- Atmosphere generator piping damage
+- Engine fault
+- Atmosphere generator damage
 - Shield failure
 - Weapons failure
-- Crew status display failure
-- Alert feed failure
-- Power shunting display failure
-- Emergency response/command terminal failure
 - Solar flare detected
 - Space debris detected
 - Fire generic

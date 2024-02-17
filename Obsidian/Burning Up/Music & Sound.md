@@ -21,8 +21,8 @@ Alarms
 - Space debris warning alarm
 - Oxygen alarm
 - Engine alarm
-- Shield warning
-- Weapons warning
+- Shields down warning
+- Weapons down warning
 
 Interface
 - Confirm/enter
@@ -35,4 +35,7 @@ Environment
 - Fire
 - Hull breach
 - Engine noise
-- Electric buzzing
+- Subtle electric buzzing from terminal.
+- Electric sparking
+- Muffled explosions
+- Voice

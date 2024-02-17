@@ -47,6 +47,7 @@ Lists emergencies and details, i.e type and location or affected system.
 	- "Solar flare detected. Impact in 10s."
 	- "Debris detected. Impact in 10s."
 - **Location**
+	- "cockpit"
 	- "in crew quarters."
 	- "in bridge."
 	- "in engine room."
@@ -165,20 +166,14 @@ Ship Damage is constantly caused by the heat of the sun.
 	- Solution:
 		- Use big primer (slow).
 		- Turn ignition (takes a couple of seconds to start).
+		- (These are like buttons on the wall, no actual generator in room)
 - **Electrical failure**: This causes a random system to stop working. Includes the engine, atmosphere generator, shields and weapons, as well as any terminal.
 	- **Engine/thruster Failure**: Causes thrust to drop to 0. There are two types of failure: wiring and pneumatics.
 		- Wiring Fault: Short circuits in the wiring prevents the thrusters from working.
 			- Appearance: Sparking effect.
 			- Sound: Electrical buzzing
 			- Fix: Smack it with a crowbar. It just works.
-		- Pipe broken: Gas leaks from broken/bent pipes causing the thrusters to work at 1% efficiency.
-			- Appearance: Steam jets
-			- Fix: Use crowbar to bend back into place.
 	- **Atmosphere Generator Failure**: 
-		- Ice on filter
-			- Appearance: Ice on the exterior of the atmosphere generator.
-			- Auditory: Cracking sound to indicate ice has formed
-			- Fix: Use crowbar to smash ice a few times.
 		- Pipe broken
 			- Appearance: Pipe bent out of place, steam jet.
 			- Auditory: Sound of hissing steam.

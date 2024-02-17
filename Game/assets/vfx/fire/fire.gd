@@ -8,17 +8,13 @@ signal fix();
 @onready var collider: StaticBody3D = $node/StaticBody3D
 
 func _ready():
-	GameManager.connect_to_signal("event_triggered", self, "_on_event_triggered")
+	GameManager.connect_to_signal("cd", self, "_on_event_triggered")
 	fix.connect(_on_fix)
-		# TODO: REMOVE
-	var event = GameEvent.new()
-	event.event = GameEvent.GameTypes.Events.POWER_GENERATOR
-	event.weight = 1
-	GameManager.emit_signal("event_triggered", event)
 
 # TODO:
 # - adjust amount of particles
 # - move numbers to @export var
+
 func _on_event_triggered(event: GameEvent):
 	if event.event != GameEvent.GameTypes.Events.FIRE:
 		return

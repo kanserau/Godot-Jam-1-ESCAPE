@@ -38,7 +38,7 @@ tracks/2/path = NodePath("Neck/Area3D/CollisionShape3D:disabled")
 tracks/2/interp = 0
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, false, false, true]
@@ -68,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 
 [node name="crowbar_01_1k" parent="Neck" instance=ExtResource("2_0qgtd")]
-transform = Transform3D(-0.67359, 0.392402, -0.626336, 0.611425, 0.771951, -0.173924, 0.415253, -0.500111, -0.759904, 0.133333, -0.233333, -0.466667)
+transform = Transform3D(-0.8527, 0.492728, 0.173555, 0.500459, 0.865759, 0.000908371, -0.149809, 0.0876316, -0.984824, 0.3, -0.2, -0.4)
 
 [node name="Area3D" type="Area3D" parent="Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -0.5)

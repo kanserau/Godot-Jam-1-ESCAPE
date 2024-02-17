@@ -7,13 +7,7 @@ signal fix();
 func _ready():
 	fix.connect(_on_fix)
 	GameManager.connect_to_signal("event_triggered", self, "_on_event_triggered")
-	
-	# TODO: REMOVE
-	var event = GameEvent.new()
-	event.event = GameEvent.GameTypes.Events.ATMOSPHERE_GENERATOR
-	event.weight = 1
-	GameManager.emit_signal("event_triggered", event)
-	
+
 func _on_event_triggered(event: GameEvent):
 	if event.event == GameEvent.GameTypes.Events.ATMOSPHERE_GENERATOR:
 		o2_failure = event

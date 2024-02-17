@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Crew" load_steps=2 format=3 uid="uid://cows3mndwyhop"]
+
+[ext_resource type="Script" path="res://resources/templates/crew.gd" id="1_g0a4v"]
+
+[resource]
+script = ExtResource("1_g0a4v")
+id = "1056"
+name = "Ace Lander"
+role = "Pilot"
+location = 0
+status = 0

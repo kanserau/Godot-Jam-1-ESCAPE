@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Crew" load_steps=2 format=3 uid="uid://gmqpmueurb5c"]
+
+[ext_resource type="Script" path="res://resources/templates/crew.gd" id="1_xghb3"]
+
+[resource]
+script = ExtResource("1_xghb3")
+id = "0872"
+name = "Karl Langstrom"
+role = "Researcher"
+location = 6
+status = 0

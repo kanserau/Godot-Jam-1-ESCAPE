@@ -25,3 +25,5 @@ script = ExtResource("1_rfk7o")
 
 [node name="Player" parent="Environment/Room" instance=ExtResource("1_eg4cr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03085, 1.44661, 2.25123)
+
+[node name="Captain" type="AudioStreamPlayer" parent="."]

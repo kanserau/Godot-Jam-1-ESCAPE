@@ -2,7 +2,6 @@ extends Node
 
 var game_time = 0.0
 var accumulated_time = 0.0
-var previous_modulation_factor = 0.0
 var emergencies_triggered = false
 
 const GameTypes = preload("res://resources/templates/types.gd")

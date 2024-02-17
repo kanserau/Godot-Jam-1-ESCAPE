@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ox7maxg57gi0"]
+[gd_scene load_steps=10 format=3 uid="uid://ox7maxg57gi0"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_4d61h"]
 [ext_resource type="AudioStream" uid="uid://xsqt8hlwju2i" path="res://assets/escape_the_sun.ogg" id="1_e4syv"]
 [ext_resource type="PackedScene" uid="uid://b0x8o5y6sjjl1" path="res://player/player.tscn" id="1_eg4cr"]
 [ext_resource type="Script" path="res://environment/BGM.gd" id="1_rfk7o"]
@@ -20,6 +21,7 @@ sky = SubResource("Sky_2hjgo")
 [node name="Main" type="Node"]
 
 [node name="Game" type="Node" parent="."]
+script = ExtResource("1_4d61h")
 
 [node name="Environment" type="Node" parent="."]
 

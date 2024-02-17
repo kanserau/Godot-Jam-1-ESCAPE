@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://cpyojs3k52x66"]
+
+[ext_resource type="Script" path="res://resources/templates/event_resource.gd" id="1_i6gho"]
+
+[resource]
+script = ExtResource("1_i6gho")
+event = 0
+weight = 2

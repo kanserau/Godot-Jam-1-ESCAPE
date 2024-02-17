@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Crew" load_steps=2 format=3 uid="uid://t6s6c6yeptuy"]
+
+[ext_resource type="Script" path="res://resources/templates/crew.gd" id="1_p2f6n"]
+
+[resource]
+script = ExtResource("1_p2f6n")
+id = "0025"
+name = "Rod Tungsten"
+role = "Captain"
+location = 1
+status = 0

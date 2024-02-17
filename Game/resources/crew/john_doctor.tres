@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Crew" load_steps=2 format=3 uid="uid://dr6dewoc8gbas"]
+
+[ext_resource type="Script" path="res://resources/templates/crew.gd" id="1_wd6jc"]
+
+[resource]
+script = ExtResource("1_wd6jc")
+id = "0067"
+name = "John Doctor"
+role = "Medical Officer"
+location = 0
+status = 0

@@ -54,6 +54,7 @@ Lists emergencies and details, i.e type and location or affected system.
 	- "in cargo bay."
 	- "in galley."
 	- "in laboratory."
+	- "in cockpit."
 - **Examples**
 - "1310: Fire detected in bridge."
 - "0547: Hull breach detected in cargo bay."

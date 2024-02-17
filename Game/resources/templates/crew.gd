@@ -7,3 +7,4 @@ const GameTypes = preload("res://resources/templates/types.gd")
 @export var role: String
 @export var location: GameTypes.Locations
 @export var status: GameTypes.CrewStatus
+@export var health: int = 50

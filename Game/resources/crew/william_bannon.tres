@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Crew" load_steps=2 format=3 uid="uid://dtgnwlldh085k"]
+
+[ext_resource type="Script" path="res://resources/templates/crew.gd" id="1_55xkm"]
+
+[resource]
+script = ExtResource("1_55xkm")
+id = "1234"
+name = "William Bannon"
+role = "Gunner"
+location = 4
+status = 0

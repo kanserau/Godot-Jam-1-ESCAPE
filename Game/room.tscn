@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ue4fkbj8d010"]
+[gd_scene load_steps=41 format=3 uid="uid://ue4fkbj8d010"]
 
 [ext_resource type="Texture2D" uid="uid://g6hw45rrlylj" path="res://assets/skybox/plain_starfield_1.png" id="1_fb1y0"]
 [ext_resource type="Material" uid="uid://bj2ge7ce42n88" path="res://assets/materials/floor/floor.tres" id="1_texys"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bw5jc31jcc3rm" path="res://assets/props/door/door-dark.tscn" id="6_dif8w"]
 [ext_resource type="MeshLibrary" uid="uid://bul3bbtsdpb4k" path="res://assets/props/modular_pipes/small_pipes.meshlib" id="7_1wynt"]
 [ext_resource type="PackedScene" uid="uid://br6nry3u5mqa8" path="res://assets/props/intercom/scene.gltf" id="7_i1qts"]
-[ext_resource type="MeshLibrary" uid="uid://s6nr31wu7g1i" path="res://assets/props/modular_pipes/thin_pipes.meshlib" id="8_tn61g"]
+[ext_resource type="PackedScene" uid="uid://bxdo24l4ty54r" path="res://assets/props/console/desk_console.tscn" id="8_3u458"]
 [ext_resource type="Material" uid="uid://ci5ixg7iv1yau" path="res://assets/materials/metal/metallic_blue-1K/matallic_blue.tres" id="8_tycko"]
 [ext_resource type="PackedScene" uid="uid://e2ux88ndghcv" path="res://assets/props/tools/toon-tools/scene.gltf" id="8_ye4ug"]
 [ext_resource type="PackedScene" uid="uid://b1it0alu44ecb" path="res://assets/props/bottles/corona_bottle_yellow.tscn" id="9_0nin3"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://jtbekr7mr26i" path="res://assets/props/bottles/corona_bottle_brown.tscn" id="10_hniwh"]
 [ext_resource type="PackedScene" uid="uid://dsnxggtutf120" path="res://assets/props/bottles/corona_bottle_green.tscn" id="11_ipgdo"]
 [ext_resource type="PackedScene" uid="uid://myncs6tc1cu1" path="res://assets/props/tools/wrench_set/scene.gltf" id="13_mcdm0"]
-[ext_resource type="PackedScene" uid="uid://dh32cwmtsr7jt" path="res://assets/props/console/desk/desk_console.tscn" id="13_wck3q"]
 [ext_resource type="PackedScene" uid="uid://balok5b4ubm81" path="res://assets/props/alarm_light/alarm_light.tscn" id="14_ar27j"]
 [ext_resource type="PackedScene" uid="uid://s8e1guti158n" path="res://assets/vfx/fire/fire.tscn" id="16_3u0vc"]
 [ext_resource type="PackedScene" uid="uid://bk86ug0hqp3f6" path="res://assets/props/barrels/waste_barrel.tscn" id="17_ix7pk"]
@@ -178,9 +177,9 @@ mesh_library = ExtResource("6_5jidd")
 cell_size = Vector3(0.5, 0.5, 0.5)
 cell_scale = 0.01
 data = {
-"cells": PackedInt32Array(131076, 65527, 327684, 393220, 65527, 65540, 393222, 65527, 524289, 589828, 65527, 458763, 458759, 65527, 65543, 655367, 65527, 65546)
+"cells": PackedInt32Array(131076, 65527, 327684, 393220, 65527, 65540, 393222, 65527, 524289, 589828, 65527, 458763, 458759, 65527, 65543, 655367, 65527, 65546, 4, 65527, 196608)
 }
-metadata/_editor_floor_ = Vector3(0, 2, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="small pipes" type="GridMap" parent="Walls/big pipes"]
 mesh_library = ExtResource("7_1wynt")
@@ -189,13 +188,7 @@ cell_scale = 0.01
 data = {
 "cells": PackedInt32Array(2752579, 65463, 1376258, 2752587, 65463, 1441794, 2752594, 65463, 1441794, 2424914, 65473, 983040, 2293835, 65473, 196612, 983122, 65473, 458764, 1966155, 65473, 589829, 655442, 65473, 458756, 655442, 65468, 1048578, 327762, 65473, 458757, 327762, 65458, 458763, -130990, 65458, 196614, -130990, 65473, 65547, 2752569, 65473, 917504, 2752524, 65473, 393219, 2752524, 65469, 1179650, 2752514, 65473, 917507, 2818040, 65473, 1114116, 2752514, 65468, 1179650, 2818040, 65468, 1179650, 2818040, 65478, 1507328, 2752514, 65478, 1507328, 2752524, 65478, 1507328, 2818040, 65523, 1179660, 2752514, 65523, 1179660, 2752524, 65523, 1310732, 2818038, 65528, 1310722, 2752524, 65528, 1310722, 2752514, 65528, 1310722, 3145720, 65458, 851979, 3080194, 65458, 851979, 3080204, 65459, 851979, 3080204, 2, 851979, 3080194, 2, 851979, 3145718, 2, 851979, 2293830, 65473, 131072, 2293790, 65473, 917505, 2293785, 65478, 1310721, 2424857, 65483, 327680, 1507403, 65473, 196618, 1638475, 65473, 327694)
 }
-metadata/_editor_floor_ = Vector3(0, 24, 0)
-
-[node name="thin pipes" type="GridMap" parent="Walls/big pipes/small pipes"]
-mesh_library = ExtResource("8_tn61g")
-cell_size = Vector3(0.1, 0.2, 0.1)
-cell_scale = 0.01
-metadata/_editor_floor_ = Vector3(0, 12, 0)
+metadata/_editor_floor_ = Vector3(0, 25, 0)
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -225,6 +218,12 @@ spot_angle = 88.0
 spot_angle_attenuation = 0.307786
 
 [node name="Props" type="Node3D" parent="."]
+
+[node name="Fire" parent="Props" instance=ExtResource("16_3u0vc")]
+transform = Transform3D(0.999999, 0, -0.00127409, 0, 1, 0, 0.00127409, 0, 0.999999, 2.60995, 1.11163, 3.84448)
+
+[node name="desk console" parent="Props" instance=ExtResource("8_3u458")]
+transform = Transform3D(-0.8, 0, -7.54979e-08, 0, 0.5, 0, 1.20797e-07, 0, -0.5, 2.56952, 0.112187, 3.99628)
 
 [node name="mess pile" type="Node3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1.68005)
@@ -267,12 +266,6 @@ transform = Transform3D(-2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0, 0.5, 
 
 [node name="Basic Generator" parent="Props" instance=ExtResource("9_otxs2")]
 transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, -2.5, -0.2, -2.9)
-
-[node name="Fire" parent="Props" instance=ExtResource("16_3u0vc")]
-transform = Transform3D(0.999999, 0, -0.00127409, 0, 1, 0, 0.00127409, 0, 0.999999, 2.22392, 1.37162, 3.49409)
-
-[node name="Desk console" parent="Props" instance=ExtResource("13_wck3q")]
-transform = Transform3D(-0.08, 0, -7.54979e-09, 0, 0.08, 0, 1.20797e-08, 0, -0.05, 2.10591, 1.52252, 3.82739)
 
 [node name="barrels" type="Node3D" parent="Props"]
 

@@ -30,6 +30,9 @@ func remove_overlay() -> void:
 		get_tree().root.remove_child(current_overlay)
 		current_overlay.queue_free()
 		current_overlay = null
+		
+func overlay_active() -> bool:
+	return current_overlay != null
 
 func pause_game() -> void:
 	get_tree().paused = true

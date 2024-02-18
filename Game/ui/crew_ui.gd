@@ -13,7 +13,6 @@ func _ready():
 		container.add_child(status)
 		labels.append(status)
 
-
 func _process(delta):
 	var n = 0
 	for crew in GameManager.crew_members:

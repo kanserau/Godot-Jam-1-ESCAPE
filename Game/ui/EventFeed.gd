@@ -28,8 +28,6 @@ func _input(event):
 	else:
 		get_viewport().set_input_as_handled()
 
-
-
 func _ready():
 	GameManager.connect("event_triggered", Callable(self, "_on_event_triggered"))
 	GameManager.connect("update_everything", Callable(self, "update_everything"))

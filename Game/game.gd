@@ -26,7 +26,6 @@ func _unhandled_input(event) -> void:
 	
 
 func _ready():
-
 	_on_event_timer_timeout()
 
 func _process(delta):

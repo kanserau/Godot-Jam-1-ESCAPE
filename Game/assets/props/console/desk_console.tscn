@@ -16,7 +16,7 @@ resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_nwqwn")
 uv1_scale = Vector3(1, -1, 1)
-uv1_offset = Vector3(-0.25, 0, 0)
+uv1_offset = Vector3(-0.27, 0, 0)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5asut"]
 viewport_path = NodePath("screens/screen 2")
@@ -97,12 +97,12 @@ size = Vector2i(1024, 1024)
 [node name="screen 2" type="SubViewport" parent="screens" index="1"]
 size = Vector2i(1024, 1024)
 
-[node name="EventFeed" parent="screens/screen 2" index="0" instance=ExtResource("4_po81h")]
+[node name="power ui" parent="screens/screen 2" index="0" instance=ExtResource("3_ew3yg")]
 
 [node name="screen 3" type="SubViewport" parent="screens" index="2"]
 size = Vector2i(1024, 1024)
 
-[node name="power ui" parent="screens/screen 3" index="0" instance=ExtResource("3_ew3yg")]
+[node name="EventFeed" parent="screens/screen 3" index="0" instance=ExtResource("4_po81h")]
 
 [node name="screen 4" type="SubViewport" parent="screens" index="3"]
 size = Vector2i(512, 1024)

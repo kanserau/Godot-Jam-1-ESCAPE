@@ -9,6 +9,7 @@ func change_scene(path) -> void:
 	if current_scene:
 		current_scene.queue_free()
 		
+		
 	var new_scene = load(path).instance()
 	get_tree().root.add_child(new_scene)
 

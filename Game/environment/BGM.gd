@@ -14,36 +14,36 @@ func _process(_delta):
 func on_volume_changed(new_volume_db):
 	self.volume_db = new_volume_db
 
-func on_event_triggered(event: GameEvent):
-
-	if event == GameTypes.SystemFailures:
-		match SystemFailures:
-			POWER_GENERATOR:
-				$Captain.play("")
-			ENGINE:
-				$Captain.play("ship engines")
-			ATMOSPHERE_GENERATOR:
-				$Captain.play("")
-			SHIELDS:
-				$Captain.play("")
-			WEAPONS:
-				$Captain.play("")
-			TERMINAL
-				$Captain.play("")
-	if event.event == GameTypes.CrewStatus.DECEASED
-		match Deceased:
-			Pilot: 
-				$Captain.play("pilot_dead")
-			Chef:
-				$Captain.play("")
-			Gunner:
-				$Captain.play("")
-			Captain:
-				$Captain.play("")
-			Doctor:
-				$Captain.play("")
-			Researcher:
-				$Captain.play("")
-			SecondTech
-				$Captain.play("")
+#func on_event_triggered(event: GameEvent):
+#
+	#if event == GameTypes.SystemFailures:
+		#match SystemFailures:
+			#POWER_GENERATOR:
+				#$Captain.play("")
+			#ENGINE:
+				#$Captain.play("ship engines")
+			#ATMOSPHERE_GENERATOR:
+				#$Captain.play("")
+			#SHIELDS:
+				#$Captain.play("")
+			#WEAPONS:
+				#$Captain.play("")
+			#TERMINAL
+				#$Captain.play("")
+	#if event.event == GameTypes.CrewStatus.DECEASED
+		#match Deceased:
+			#Pilot: 
+				#$Captain.play("pilot_dead")
+			#Chef:
+				#$Captain.play("")
+			#Gunner:
+				#$Captain.play("")
+			#Captain:
+				#$Captain.play("")
+			#Doctor:
+				#$Captain.play("")
+			#Researcher:
+				#$Captain.play("")
+			#SecondTech
+				#$Captain.play("")
 				

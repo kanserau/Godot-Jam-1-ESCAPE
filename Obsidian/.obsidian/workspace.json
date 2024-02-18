@@ -13,7 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Burning Up/Music & Sound.md",
+                "file": "Burning Up/The Captain.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "334ef16c926fd788",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1731eb6169beb7ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Burning Up/Burning Up.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Burning Up/Music & Sound.md",
+                "file": "Burning Up/The Captain.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Burning Up/Music & Sound.md",
+                "file": "Burning Up/The Captain.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Burning Up/Music & Sound.md"
+                "file": "Burning Up/The Captain.md"
               }
             }
           },
@@ -168,10 +186,11 @@
   "lastOpenFiles": [
     "Burning Up/Burning Up.md",
     "Burning Up/The Captain.md",
+    "Burning Up/The Manual.md",
     "Burning Up/Music & Sound.md",
-    "Burning Up/Sound.md",
     "Burning Up/Scrapped Ideas.md",
     "Burning Up/Item List.md",
+    "Burning Up/Sound.md",
     "Pasted image 20240204194651.png",
     "Pasted image 20240204194654.png",
     "Role-Playing Games/Mech RPG/Notes/On Justifying Mechs.md",
@@ -202,7 +221,6 @@
     "Videogames/Deadrun/deadrun outline.md",
     "Videogames/Synth Wizard",
     "Videogames/Defunctworld/Story.md",
-    "Videogames/Defunctworld/Defunctworld Outline.md",
     "Role-Playing Games/Yokai"
   ]
 }

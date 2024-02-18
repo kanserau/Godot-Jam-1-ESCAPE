@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://biy3ncc6g35lq"]
+
+[ext_resource type="Script" path="res://ui/Terminal.gd" id="1_evqg8"]
+[ext_resource type="Shader" path="res://assets/vfx/screen_blur.gdshader" id="2_k1cfl"]
+[ext_resource type="FontVariation" uid="uid://dkso7qb2tnmny" path="res://assets/fonts/plex_mono_bold.tres" id="3_rd7ox"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rrmw"]
+shader = ExtResource("2_k1cfl")
+shader_parameter/amount = 2.0
+shader_parameter/color = Color(0.82188, 0.822996, 0.978426, 1)
+shader_parameter/blend = 0.6
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d6yyp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_seua7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b35b6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgw07"]
+
+[node name="Terminal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_evqg8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_7rrmw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("CanvasTexture_d6yyp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="GameInfo" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_seua7")
+
+[node name="Scroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer/GameInfo"]
+layout_direction = 1
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="HistoryRows" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GameInfo/Scroll"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="InputArea" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/InputArea"]
+layout_mode = 2
+
+[node name="Caret" type="Label" parent="MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rd7ox")
+theme_override_font_sizes/font_size = 22
+text = " > "
+vertical_alignment = 1
+
+[node name="Input" type="LineEdit" parent="MarginContainer/VBoxContainer/InputArea/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_rd7ox")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b35b6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mgw07")
+text = " "
+max_length = 48
+caret_blink = true
+
+[connection signal="text_submitted" from="MarginContainer/VBoxContainer/InputArea/HBoxContainer/Input" to="." method="_on_input_text_submitted"]

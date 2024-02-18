@@ -15,6 +15,7 @@ class_name GameResource
 @export var thrust_1: int = 100
 @export var thrust_2: int = 400
 @export var thrust_3: int = 600
+@export var thrust_3_damage: int = 100
 
 @export var current_oxygen: int = 300
 @export var oxygen_low_concentration: int = 0

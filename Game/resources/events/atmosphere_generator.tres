@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_m4l73")
-event = 1
+event = 2
 weight = 1

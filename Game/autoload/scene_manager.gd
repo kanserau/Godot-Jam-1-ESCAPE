@@ -11,6 +11,7 @@ func change_scene(path) -> void:
 		
 		
 	var new_scene = load(path).instance()
+	current_scene = new_scene
 	get_tree().root.add_child(new_scene)
 
 func add_overlay(path) -> void:
@@ -18,7 +19,7 @@ func add_overlay(path) -> void:
 	current_overlay = overlay_scene
 	get_tree().root.add_child(overlay_scene)
 
-# tf happening here
+
 func remove_overlay() -> void:
 	if current_overlay:
 		get_tree().root.remove_child(current_overlay)

@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://doiuo31thi3qr"]
+
+[ext_resource type="Script" path="res://ui/EventFeed.gd" id="1_d0xib"]
+[ext_resource type="Shader" path="res://assets/vfx/screen_blur.gdshader" id="2_cm55b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xw8f2"]
+shader = ExtResource("2_cm55b")
+shader_parameter/amount = 2.0
+shader_parameter/color = Color(0.82188, 0.822996, 0.978426, 1)
+shader_parameter/blend = 0.6
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c6y1j"]
+
+[node name="EventFeed" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d0xib")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_xw8f2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("CanvasTexture_c6y1j")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="EventContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space" type="Control" parent="ScrollContainer/EventContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2

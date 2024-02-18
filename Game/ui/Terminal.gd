@@ -249,7 +249,7 @@ func handle_extinguish(instructions: String) -> String:
 	var found = false
 	for key in GameManager.active_event_locations.keys():
 		var location = GameManager.active_event_locations[key]
-		if key.event == GameTypes.Events.FIRE && GameTypes.Locations.keys()[location] == instructions.to_upper().replace(" ", "_"):
+		if key.event == GameTypes.Events.FIRE && location == instructions.to_upper().replace(" ", "_"):
 			GameManager.active_events.erase(key)
 			GameManager.active_event_locations.erase(key)
 			found = true
@@ -281,7 +281,7 @@ func handle_seal(instructions: String) -> String:
 	var found = false
 	for key in GameManager.active_event_locations.keys():
 		var location = GameManager.active_event_locations[key]
-		if key.event == GameTypes.Events.HULLBREACH && GameTypes.Locations.keys()[location] == instructions.to_upper().replace(" ", "_"):
+		if key.event == GameTypes.Events.HULLBREACH && location == instructions.to_upper().replace(" ", "_"):
 			GameManager.active_events.erase(key)
 			GameManager.active_event_locations.erase(key)
 			found = true

@@ -46,21 +46,20 @@ func update_game_logic(delta):
 		apply_crew_damage()
 		apply_ship_events(delta)
 		apply_ship_movement()
-		# print(GameManager.stats.ship_damage)
 
 func game_over() -> bool:
 	if GameManager.stats.distance >= GameManager.stats.target_distance:
-		print("Game won")
-		SceneManager.change_scene("a")
+		SceneManager.change_scene_and_delete("res://ui/defeat.tscn")
 		return true
+		
 	if len(GameManager.crew_members) == 0:
-		print("Crew died")
-		SceneManager.change_scene("b")
+		SceneManager.change_scene_and_delete("res://ui/defeat.tscn")
 		return true
+		
 	if GameManager.dead_crew_members.any(func(member: Crew): return member.location == GameTypes.Locations.ENGINE_ROOM):
-		print("Player died")
-		SceneManager.change_scene("b")
+		SceneManager.change_scene_and_delete("res://ui/defeat.tscn")
 		return true
+		
 	return false
 
 ##

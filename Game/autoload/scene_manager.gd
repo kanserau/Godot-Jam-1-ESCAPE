@@ -5,12 +5,17 @@ class_name GameSceneManager
 var current_scene: Node = null
 var current_overlay: Node = null
 
+func change_scene_and_delete(path) -> void:
+	# add preprocessing later 
+	# loader?
+	get_tree().change_scene_to_file(path)
+
 func change_scene(path) -> void:
 	if current_scene:
 		current_scene.queue_free()
 		
 		
-	var new_scene = load(path).instance()
+	var new_scene = load(path).instantiate()
 	current_scene = new_scene
 	get_tree().root.add_child(new_scene)
 

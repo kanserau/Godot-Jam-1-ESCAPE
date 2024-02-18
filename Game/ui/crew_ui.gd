@@ -12,8 +12,10 @@ func _ready():
 		status.name = crew.name
 		container.add_child(status)
 		labels.append(status)
+	GameManager.connect_to_signal("crew_members_damaged", self, "update_crew")
 
-func _process(delta):
+
+func update_crew():
 	var n = 0
 	for crew in GameManager.crew_members:
 		n += 1

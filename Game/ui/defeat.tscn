@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://n2u32bo4hs7q"]
+
+[ext_resource type="Texture2D" uid="uid://dvsx0gblmfclu" path="res://assets/skybox/ringed_gas_giant_planet.png" id="1_kxibt"]
+[ext_resource type="Script" path="res://ui/defeat.gd" id="1_yhc1b"]
+[ext_resource type="FontVariation" uid="uid://dkso7qb2tnmny" path="res://assets/fonts/plex_mono_bold.tres" id="2_1v6p6"]
+
+[node name="Defeat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yhc1b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1912.0
+offset_top = -1656.0
+offset_right = 5128.0
+offset_bottom = 1792.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_kxibt")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 1152.0
+offset_bottom = 144.0
+theme_override_fonts/bold_font = ExtResource("2_1v6p6")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 200
+bbcode_enabled = true
+text = "[color=\"yellow\"]In space, no one can see you cooking...[/color] "
+
+[node name="Statistics" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 208.0
+offset_right = 1136.0
+offset_bottom = 632.0
+horizontal_alignment = 1
+vertical_alignment = 1

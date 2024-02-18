@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddo2c8htf6alp" path="res://assets/props/tools/toolbox/metal_tool_chest_1k.tscn" id="4_hn4r0"]
 [ext_resource type="PackedScene" uid="uid://dywybntaextrq" path="res://assets/props/fire_extinguisher/fire_extinguisher.tscn" id="4_jl75w"]
 [ext_resource type="Material" uid="uid://cpjqe3010rwf0" path="res://assets/materials/metal/Matal046B/metal046B.tres" id="4_nwbs3"]
-[ext_resource type="PackedScene" uid="uid://ca17oq1m5usk1" path="res://assets/props/modular_pipes/connected_pipes.tscn" id="6_5xoou"]
+[ext_resource type="PackedScene" path="res://assets/props/modular_pipes/connected_pipes.tscn" id="6_5xoou"]
 [ext_resource type="PackedScene" uid="uid://bw5jc31jcc3rm" path="res://assets/props/door/door-dark.tscn" id="6_dif8w"]
 [ext_resource type="PackedScene" uid="uid://br6nry3u5mqa8" path="res://assets/props/intercom/scene.gltf" id="7_i1qts"]
 [ext_resource type="PackedScene" uid="uid://bxdo24l4ty54r" path="res://assets/props/console/desk_console.tscn" id="8_3u458"]

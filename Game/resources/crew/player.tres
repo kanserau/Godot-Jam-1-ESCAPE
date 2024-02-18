@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_oysgm")
-id = "9989"
+id = "9990"
 name = "PLAYER NAME"
 role = "Engineer"
 location = 2

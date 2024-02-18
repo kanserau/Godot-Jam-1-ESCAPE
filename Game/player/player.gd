@@ -21,7 +21,10 @@ func _unhandled_input(event) -> void:
 		SceneManager.pause_game()
 		SceneManager.add_overlay("res://ui/SettingsUI.tscn")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		
+	
+	if event.is_action_pressed("fix") and not $AnimationPlayer.is_playing():
+		$AnimationPlayer.queue("fix")
+	
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.001)
@@ -50,3 +53,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_3d_body_entered(body):
+	if body.has_signal("fix"):
+		body.emit_signal("fix")

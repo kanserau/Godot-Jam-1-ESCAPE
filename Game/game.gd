@@ -15,7 +15,18 @@ var debris_start: int = -1
 
 const GameTypes = preload("res://resources/templates/types.gd")
 
+func _unhandled_input(event) -> void: 
+	if event.is_action_pressed("events"):
+		SceneManager.add_overlay("res://ui/EventFeed.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if event.is_action_pressed("terminal"):
+		SceneManager.add_overlay("res://ui/Terminal.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	
+
 func _ready():
+
 	_on_event_timer_timeout()
 
 func _process(delta):
@@ -24,6 +35,7 @@ func _process(delta):
 	apply_random_events()
 	var minutes = GameManager.stats.seconds_per_calc
 	if accumulated_time >= 1.0 * minutes:
+		print(GameManager.active_events)
 		update_game_logic(game_time)
 		accumulated_time -= 1.0 * minutes
 
@@ -60,6 +72,8 @@ func apply_ship_damage():
 	for event in GameManager.active_events:
 		if event.event == GameTypes.Events.FIRE:
 			fire_count += 1
+	if GameManager.stats.current_thrust == 3:
+		GameManager.stats.ship_damage += GameManager.stats.thrust_3_damage
 		
 	GameManager.stats.ship_damage += GameManager.stats.starting_sun_damage
 	GameManager.stats.ship_damage += fire_count*GameManager.stats.fire_ship_damage
@@ -152,7 +166,7 @@ func calculate_sine_wave_modulation(current_time, ship_damage):
 	return sin(TAU * current_time / interval)
 
 func emergency_can_occur_again(event):
-	return event == GameTypes.Events.FIRE || GameTypes.Events.HULLBREACH
+	return event == GameTypes.Events.FIRE || event == GameTypes.Events.HULLBREACH
 
 func trigger_emergency_cluster(cluster_size):
 	var possible_events = []

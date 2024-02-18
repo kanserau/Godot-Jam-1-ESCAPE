@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmp42r0d06uf7"]
+
+[ext_resource type="Script" path="res://ui/InputResponse.gd" id="1_4x7u2"]
+[ext_resource type="FontFile" uid="uid://dafnrwg4yatol" path="res://assets/fonts/IBMPlexMono-SemiBoldItalic.ttf" id="1_otn6m"]
+[ext_resource type="FontVariation" uid="uid://dkso7qb2tnmny" path="res://assets/fonts/plex_mono_bold.tres" id="2_jmc40"]
+
+[node name="InputResponse" type="VBoxContainer"]
+script = ExtResource("1_4x7u2")
+
+[node name="History" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0980392, 0.109804, 1)
+theme_override_fonts/font = ExtResource("1_otn6m")
+theme_override_font_sizes/font_size = 15
+text = "asdwes"
+vertical_alignment = 1
+
+[node name="Response" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jmc40")
+theme_override_font_sizes/font_size = 18
+text = "asdwes"
+vertical_alignment = 1

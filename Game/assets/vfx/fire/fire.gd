@@ -8,6 +8,12 @@ signal fix();
 @onready var collider: StaticBody3D = $node/StaticBody3D
 
 func _ready():
+	smoke.emitting = false
+	collider.visible = false
+	base_flame.emitting = false
+	rising_flame.emitting = false
+	light.light_energy = 0
+	
 	GameManager.connect_to_signal("event_triggered", self, "_on_event_triggered")
 	fix.connect(_on_fix)
 

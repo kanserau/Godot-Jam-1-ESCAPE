@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://0x1o6uohaw0o"]
+[gd_scene load_steps=13 format=3 uid="uid://0x1o6uohaw0o"]
 
 [ext_resource type="Theme" uid="uid://duyhmdjgt61qo" path="res://resources/settings_theme.tres" id="1_bj0pt"]
+[ext_resource type="Script" path="res://ui/power_ui.gd" id="2_6xq8u"]
 [ext_resource type="Texture2D" uid="uid://caxvblfeamx4w" path="res://ui/icons/oxygen.png" id="3_8b8si"]
 [ext_resource type="Texture2D" uid="uid://dvj2n15cawvgp" path="res://ui/icons/engine.png" id="3_52mdt"]
 [ext_resource type="Texture2D" uid="uid://cswfjcprdhh8d" path="res://assets/props/console/desk/textures/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg" id="3_c6kjy"]
@@ -29,6 +30,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_bj0pt")
+script = ExtResource("2_6xq8u")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_c04yk")
@@ -72,6 +74,7 @@ theme_override_constants/v_separation = 40
 columns = 2
 
 [node name="Engine" type="VBoxContainer" parent="PanelContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/GridContainer/Engine"]
@@ -97,6 +100,7 @@ icon = ExtResource("3_52mdt")
 flat = true
 
 [node name="O2" type="VBoxContainer" parent="PanelContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/GridContainer/O2"]
@@ -123,6 +127,7 @@ icon = ExtResource("3_8b8si")
 flat = true
 
 [node name="Shields" type="VBoxContainer" parent="PanelContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/GridContainer/Shields"]
@@ -148,6 +153,7 @@ icon = ExtResource("4_jwdva")
 flat = true
 
 [node name="Weapons" type="VBoxContainer" parent="PanelContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/GridContainer/Weapons"]

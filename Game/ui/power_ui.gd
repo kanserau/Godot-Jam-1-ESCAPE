@@ -26,7 +26,7 @@ func _ready():
 	GameManager.connect_to_signal("event_triggered", self, "_on_event_triggered")
 	update_ui()
 
-func _on_event_triggered():
+func _on_event_triggered(_event: GameEvent):
 	update_ui()
 
 func available_power():

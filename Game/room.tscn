@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ue4fkbj8d010"]
+[gd_scene load_steps=40 format=3 uid="uid://ue4fkbj8d010"]
 
 [ext_resource type="Texture2D" uid="uid://g6hw45rrlylj" path="res://assets/skybox/plain_starfield_1.png" id="1_fb1y0"]
 [ext_resource type="Material" uid="uid://bj2ge7ce42n88" path="res://assets/materials/floor/floor.tres" id="1_texys"]
@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://ddo2c8htf6alp" path="res://assets/props/tools/toolbox/metal_tool_chest_1k.tscn" id="4_hn4r0"]
 [ext_resource type="PackedScene" uid="uid://dywybntaextrq" path="res://assets/props/fire_extinguisher/fire_extinguisher.tscn" id="4_jl75w"]
 [ext_resource type="Material" uid="uid://cpjqe3010rwf0" path="res://assets/materials/metal/Matal046B/metal046B.tres" id="4_nwbs3"]
-[ext_resource type="MeshLibrary" uid="uid://covmv81ln287d" path="res://assets/props/modular_pipes/large_pipes.meshlib" id="6_5jidd"]
+[ext_resource type="MeshLibrary" path="res://assets/props/modular_pipes/large_pipes.meshlib" id="6_5jidd"]
 [ext_resource type="PackedScene" uid="uid://bw5jc31jcc3rm" path="res://assets/props/door/door-dark.tscn" id="6_dif8w"]
-[ext_resource type="MeshLibrary" uid="uid://bul3bbtsdpb4k" path="res://assets/props/modular_pipes/small_pipes.meshlib" id="7_1wynt"]
+[ext_resource type="MeshLibrary" path="res://assets/props/modular_pipes/small_pipes.meshlib" id="7_1wynt"]
 [ext_resource type="PackedScene" uid="uid://br6nry3u5mqa8" path="res://assets/props/intercom/scene.gltf" id="7_i1qts"]
-[ext_resource type="PackedScene" uid="uid://bxdo24l4ty54r" path="res://assets/props/console/desk_console.tscn" id="8_3u458"]
+[ext_resource type="PackedScene" path="res://assets/props/console/desk_console.tscn" id="8_3u458"]
 [ext_resource type="Material" uid="uid://ci5ixg7iv1yau" path="res://assets/materials/metal/metallic_blue-1K/matallic_blue.tres" id="8_tycko"]
 [ext_resource type="PackedScene" uid="uid://e2ux88ndghcv" path="res://assets/props/tools/toon-tools/scene.gltf" id="8_ye4ug"]
 [ext_resource type="PackedScene" uid="uid://b1it0alu44ecb" path="res://assets/props/bottles/corona_bottle_yellow.tscn" id="9_0nin3"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://dsnxggtutf120" path="res://assets/props/bottles/corona_bottle_green.tscn" id="11_ipgdo"]
 [ext_resource type="PackedScene" uid="uid://myncs6tc1cu1" path="res://assets/props/tools/wrench_set/scene.gltf" id="13_mcdm0"]
 [ext_resource type="PackedScene" uid="uid://balok5b4ubm81" path="res://assets/props/alarm_light/alarm_light.tscn" id="14_ar27j"]
-[ext_resource type="PackedScene" uid="uid://s8e1guti158n" path="res://assets/vfx/fire/fire.tscn" id="16_3u0vc"]
 [ext_resource type="PackedScene" uid="uid://bk86ug0hqp3f6" path="res://assets/props/barrels/waste_barrel.tscn" id="17_ix7pk"]
 [ext_resource type="PackedScene" uid="uid://chbwdyjgvjcur" path="res://assets/props/barrels/glass_barrel.tscn" id="18_cmm1p"]
 [ext_resource type="PackedScene" uid="uid://7ufllpb3x3eq" path="res://assets/props/barrels/energy_barrel.tscn" id="19_tbpnu"]
@@ -218,9 +217,6 @@ spot_angle = 88.0
 spot_angle_attenuation = 0.307786
 
 [node name="Props" type="Node3D" parent="."]
-
-[node name="Fire" parent="Props" instance=ExtResource("16_3u0vc")]
-transform = Transform3D(0.999999, 0, -0.00127409, 0, 1, 0, 0.00127409, 0, 0.999999, 2.60995, 1.11163, 3.84448)
 
 [node name="desk console" parent="Props" instance=ExtResource("8_3u458")]
 transform = Transform3D(-0.8, 0, -7.54979e-08, 0, 0.5, 0, 1.20797e-07, 0, -0.5, 2.56952, 0.112187, 3.99628)

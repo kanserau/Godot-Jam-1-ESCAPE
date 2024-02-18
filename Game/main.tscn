@@ -1,15 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://ox7maxg57gi0"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_4d61h"]
 [ext_resource type="AudioStream" uid="uid://xsqt8hlwju2i" path="res://assets/escape_the_sun.ogg" id="1_e4syv"]
 [ext_resource type="PackedScene" uid="uid://b0x8o5y6sjjl1" path="res://player/player.tscn" id="1_eg4cr"]
+[ext_resource type="Script" path="res://Game.gd" id="1_oyxtc"]
 [ext_resource type="Script" path="res://environment/BGM.gd" id="1_rfk7o"]
 [ext_resource type="PackedScene" uid="uid://ue4fkbj8d010" path="res://room.tscn" id="4_deyi7"]
 
 [node name="Main" type="Node"]
 
 [node name="Game" type="Node" parent="."]
-script = ExtResource("1_4d61h")
+script = ExtResource("1_oyxtc")
+
+[node name="EventTimer" type="Timer" parent="Game"]
+one_shot = true
+
+[node name="SolarFlareTimer" type="Timer" parent="Game"]
+one_shot = true
+
+[node name="DebrisTimer" type="Timer" parent="Game"]
+one_shot = true
 
 [node name="Environment" type="Node" parent="."]
 
@@ -25,3 +34,7 @@ script = ExtResource("1_rfk7o")
 
 [node name="Player" parent="Environment/Room" instance=ExtResource("1_eg4cr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03085, 1.44661, 2.25123)
+
+[connection signal="timeout" from="Game/EventTimer" to="Game" method="_on_event_timer_timeout"]
+[connection signal="timeout" from="Game/SolarFlareTimer" to="Game" method="_on_solar_flare_timer_timeout"]
+[connection signal="timeout" from="Game/DebrisTimer" to="Game" method="_on_debris_timer_timeout"]

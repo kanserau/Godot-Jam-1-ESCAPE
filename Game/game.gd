@@ -3,15 +3,25 @@ extends Node
 var game_time = 0.0
 var accumulated_time = 0.0
 var emergencies_triggered = false
+var debris_triggered = true 
+var solar_flare_triggered = true
+var solar_flare_start: int = -1
+var debris_start: int = -1
+
+@onready var random_event_timer = $EventTimer
+@onready var solar_flare_timer = $SolarFlareTimer
+@onready var debris_timer = $DebrisTimer
+
 
 const GameTypes = preload("res://resources/templates/types.gd")
 
 func _ready():
-	pass
+	_on_event_timer_timeout()
 
 func _process(delta):
 	game_time += delta
 	accumulated_time += delta
+	apply_random_events()
 	var minutes = GameManager.stats.seconds_per_calc
 	if accumulated_time >= 1.0 * minutes:
 		update_game_logic(game_time)
@@ -20,6 +30,8 @@ func _process(delta):
 func update_game_logic(delta):
 	if !game_over():
 		apply_ship_damage()
+		apply_oxygen_change()
+		apply_weapons_damage()
 		apply_crew_damage()
 		apply_ship_events(delta)
 		apply_ship_movement()
@@ -27,9 +39,15 @@ func update_game_logic(delta):
 
 func game_over() -> bool:
 	if GameManager.stats.distance >= GameManager.stats.target_distance:
+		print("Game won")
 		SceneManager.change_scene("a")
 		return true
 	if len(GameManager.crew_members) == 0:
+		print("Crew died")
+		SceneManager.change_scene("b")
+		return true
+	if GameManager.dead_crew_members.any(func(member: Crew): return member.location == GameTypes.Locations.ENGINE_ROOM):
+		print("Player died")
 		SceneManager.change_scene("b")
 		return true
 	return false
@@ -52,13 +70,27 @@ func apply_ship_damage():
 # Crew damage
 ##
 func apply_crew_damage():
-	if GameManager.stats.current_oxygen <= GameManager.stats.low_oxygen:
-		for member in GameManager.crew_members:
+	for member in GameManager.crew_members:
+		if GameManager.stats.current_oxygen <= GameManager.stats.low_oxygen:
 			member.health -= GameManager.stats.crew_damage_low_oxygen
-	elif GameManager.stats.current_oxygen >= GameManager.stats.high_oxygen:
-		for member in GameManager.crew_members:
+		elif GameManager.stats.current_oxygen >= GameManager.stats.high_oxygen:
 			member.health -= GameManager.stats.crew_damage_high_oxygen
-	# TODO: Apply fire damage here
+
+		if member.location in GameManager.active_event_locations.values():
+			var fire_count = 0
+			for event in GameManager.active_event_locations:
+				if event.event == GameTypes.Events.FIRE:
+					fire_count += 1
+			member.health -= GameManager.stats.fire_crew_damage * fire_count
+		
+		if member.health > GameManager.stats.crew_defib_window:
+			member.status = GameTypes.CrewStatus.VITALS_NORMAL
+		elif member.health <= GameManager.stats.crew_defib_window and member.health > 0:
+			member.status = GameTypes.CrewStatus.CRITICAL
+		elif member.health <= 0:
+			member.status = GameTypes.CrewStatus.DECEASED
+			GameManager.dead_crew_members.append(member)
+
 	GameManager.crew_members = GameManager.crew_members.filter(func(member): return member.health > 0)
 	GameManager.emit_signal("crew_members_damaged")
 
@@ -145,11 +177,14 @@ func trigger_emergency_cluster(cluster_size):
 				break
 
 		if selected_event != null:
-			GameManager.emit_signal("event_triggered", selected_event)
-			GameManager.active_events.append(selected_event)
 			if not emergency_can_occur_again(selected_event.event):
 				possible_events.erase(selected_event)
+			else:
+				var location_keys = GameTypes.Locations.keys()
+				GameManager.active_event_locations[selected_event] = location_keys.pick_random()
 
+			GameManager.active_events.append(selected_event)
+			GameManager.emit_signal("event_triggered", selected_event)
 ##
 # Ship movement
 ##
@@ -165,3 +200,76 @@ func apply_ship_movement():
 			movement += GameManager.stats.thrust_3
 	GameManager.stats.distance += movement
 	GameManager.emit_signal("ship_moved", GameManager.stats.distance)
+
+##
+# O2
+##
+func apply_oxygen_change():
+	var ox_power = GameManager.stats.current_atmosphere_generator
+	if ox_power == 0:
+		GameManager.stats.current_oxygen -= GameManager.stats.oxygen_depletion_atmosphere_generator
+	elif ox_power == 2:
+		GameManager.stats.current_oxygen += GameManager.stats.oxygen_regeneration
+	
+	for event in GameManager.active_events:
+		if event.event == GameTypes.Events.FIRE:
+			GameManager.stats.current_oxygen -= GameManager.stats.oxygen_depletion_fire
+		elif event.event == GameTypes.Events.HULLBREACH:
+			GameManager.stats.current_oxygen -= GameManager.stats.oxygen_depletion_hull_breach
+	GameManager.emit_signal("change_oxygen", GameManager.stats.current_oxygen)
+
+## 
+# Weapons
+##
+func apply_weapons_damage():
+	if GameManager.stats.current_weapons == GameManager.stats.weapons_on:
+		if GameManager.stats.current_space_debris_health > 0:
+			GameManager.stats.current_space_debris_health -= GameManager.stats.space_debris_weapons_damage
+			GameManager.emit_signal("weapons_firing")
+
+##
+# Random events
+##
+func apply_random_events():
+	if !solar_flare_triggered and solar_flare_start >= random_event_timer.time_left:
+		var solar_flare_countdown = GameManager.stats.solar_flare_countdown
+
+		solar_flare_triggered = true
+		GameManager.emit_signal("warn_solar_flare", solar_flare_countdown)
+		solar_flare_timer.start(solar_flare_countdown)
+
+	if !debris_triggered and debris_start >= random_event_timer.time_left:
+		var debris_countdown = GameManager.stats.space_debris_countdown
+		var min_debris_health = GameManager.stats.space_debris_min_health
+		var max_debris_health = GameManager.stats.space_debris_max_health
+
+		debris_triggered = true
+		GameManager.stats.current_space_debris_health = randi_range(min_debris_health, max_debris_health)
+		GameManager.emit_signal("warn_debris", debris_countdown)
+		debris_timer.start(debris_countdown)
+
+
+func _on_debris_timer_timeout():
+	if GameManager.stats.current_space_debris_health > 0:
+		GameManager.emit_signal("space_debris_hit")
+		GameManager.stats.ship_damage += GameManager.stats.space_debris_damage
+
+
+func _on_solar_flare_timer_timeout():
+	GameManager.emit_signal("solar_flare_hit")
+	if GameManager.stats.current_shields != GameManager.stats.shields_on:
+		trigger_emergency_cluster(GameManager.stats.solar_flare_emergencies_size)
+
+
+func _on_event_timer_timeout():
+	var event_interval = GameManager.stats.random_event_interval
+	if solar_flare_timer.is_stopped():
+		solar_flare_start = randi_range(1, event_interval - 1)
+	
+	if debris_timer.is_stopped():
+		debris_start = randi_range(1, event_interval - 1)
+	
+	solar_flare_triggered = false
+	debris_triggered = false
+	random_event_timer.start(event_interval)
+

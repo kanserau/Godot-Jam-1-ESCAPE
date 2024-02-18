@@ -23,8 +23,9 @@ class_name GameResource
 @export var low_oxygen: int = 200
 @export var medium_oxygen: int = 300
 @export var high_oxygen: int = 400
-@export var oxygen_depletion_atmosphere_generator: int = 30
-@export var oxygen_depletion_hull_breach: int = 40
+@export var oxygen_depletion_atmosphere_generator: int = 10
+@export var oxygen_depletion_hull_breach: int = 5
+@export var oxygen_depletion_fire: int = 5
 @export var oxygen_regeneration: int = 20
 
 @export var shields_on: int = 2
@@ -44,10 +45,16 @@ class_name GameResource
 @export var cluster_peak_interval_min: int = 20
 @export var cluster_peak_interval_max: int = 2
 
+@export var random_event_interval: int = 30
+
 @export var solar_flare_countdown: int = 10
+@export var solar_flare_emergencies_size: int = 2
+
+@export var current_space_debris_health: int = 0
 @export var space_debris_countdown: int = 10
 @export var space_debris_min_health: int = 200
 @export var space_debris_max_health: int = 300
+@export var space_debris_weapons_damage: int = 50
 @export var space_debris_damage: int = 200
 
 @export var fire_spread_rate: float = 0.2
@@ -56,7 +63,8 @@ class_name GameResource
 @export var hull_breach_ship_damage: int = 10
 
 @export var crew_health: int = 50
-@export var crew_defib_window: int = 5
+@export var crew_defib_window: int = 15
+@export var crew_defib_regeneration: int = 20
 @export var crew_damage_low_oxygen: int = 10
 @export var crew_damage_high_oxygen: int = 5
 

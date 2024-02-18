@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource("1_6xxl5")
 id = "0871"
-name = "Remy Martinez"
+name = "Remy Cook"
 role = "Chef"
 location = 5
 status = 0
+health = 50

@@ -39,6 +39,7 @@ signal change_shields(new_value)
 
 func _ready():
 	stats = preload("res://resources/game.tres")
+	
 	load_event_resources()
 	load_crew_resources()
 	connect_to_signal("warn_solar_flare", self, "toggle_solar_flare_min")
@@ -52,27 +53,37 @@ func _ready():
 ##
 # Utilities
 ## 
+
+var event_resources = [
+	preload("res://resources/events/atmosphere_generator.tres"),
+	preload("res://resources/events/atmosphere_generator.tres"),
+	preload("res://resources/events/engine.tres"),
+	preload("res://resources/events/fire.tres"),
+	preload("res://resources/events/hull_breach.tres"),
+	preload("res://resources/events/power_generator.tres"),
+	preload("res://resources/events/shields.tres"),
+	preload("res://resources/events/terminal.tres"),
+	preload("res://resources/events/weapons.tres"),
+]
+
 func load_event_resources():
-	var dir = DirAccess.open("res://resources/events")
-	if dir != null:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if file_name.ends_with(".tres"):
-				var resource = load("res://resources/events/" + file_name)
-				events.append(resource)
-			file_name = dir.get_next()
+	for event in event_resources:
+		events.append(event)
+
+var crew_resources = [
+		 preload("res://resources/crew/john_doctor.tres")
+		 ,preload("res://resources/crew/player.tres")
+		 ,preload('res://resources/crew/rod_tungsten.tres')
+		 ,preload("res://resources/crew/harold_carter.tres")
+		 ,preload("res://resources/crew/karl_langstrom.tres")
+		 ,preload('res://resources/crew/remy_martinez.tres')
+		 ,preload('res://resources/crew/william_bannon.tres')
+]
 
 func load_crew_resources():
-	var dir = DirAccess.open("res://resources/crew")
-	if dir != null:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if file_name.ends_with(".tres"):
-				var resource = load("res://resources/crew/" + file_name)
-				crew_members.append(resource)
-			file_name = dir.get_next()
+	for crew in crew_resources:
+		crew_members.append(crew)
+
 
 func connect_to_signal(signal_name: String, target_node: Node, method_name: String):
 	if has_signal(signal_name) and target_node.has_method(method_name):

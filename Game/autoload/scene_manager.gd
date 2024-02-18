@@ -6,11 +6,13 @@ var current_scene: Node = null
 var current_overlay: Node = null
 
 func change_scene_and_delete(path) -> void:
+	print("CHANGING SCENE", path)
 	# add preprocessing later 
 	# loader?
 	get_tree().change_scene_to_file(path)
 
 func change_scene(path) -> void:
+	print("CHANGING SCENE 2", path)
 	if current_scene:
 		current_scene.queue_free()
 		

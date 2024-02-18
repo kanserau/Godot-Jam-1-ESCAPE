@@ -42,8 +42,7 @@ Environment
 - [ ] Subtle electric buzzing from terminal
 - [ ] Terminal sparking
 - [x] Muffled explosions
-- [ ] 
-- [ ] Voice
+- [ ] Voice:
 
 Events
 - [x] Game Over explosion

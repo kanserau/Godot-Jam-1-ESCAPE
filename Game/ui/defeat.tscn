@@ -39,7 +39,7 @@ theme_override_fonts/bold_font = ExtResource("2_1v6p6")
 theme_override_font_sizes/normal_font_size = 50
 theme_override_font_sizes/bold_font_size = 200
 bbcode_enabled = true
-text = "[color=\"yellow\"]In space, no one can see you cooking...[/color] "
+text = "[color=\"yellow\"]In space, no one can smell you cooking...[/color] "
 
 [node name="Statistics" type="Label" parent="."]
 layout_mode = 0

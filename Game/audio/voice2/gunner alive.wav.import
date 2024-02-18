@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnbk13808yjjq"
+path="res://.godot/imported/gunner alive.wav-a80b16fc6c22767ed793a1b96a0a4ea2.sample"
+
+[deps]
+
+source_file="res://audio/voice2/gunner alive.wav"
+dest_files=["res://.godot/imported/gunner alive.wav-a80b16fc6c22767ed793a1b96a0a4ea2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

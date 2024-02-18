@@ -62,7 +62,7 @@ func handle_text_response(text) -> String:
 			response = handle_shunt(instructions)
 		"defib":
 			response = handle_defib(instructions)
-		"supress":
+		"suppress":
 			response = handle_extinguish(instructions)
 		"repair":
 			response = handle_seal(instructions)
@@ -237,7 +237,7 @@ func handle_defib(instructions: String) -> String:
 	if instructions.is_empty():
 		return "Usage: defib [crew member id]"
 	var crew_id = instructions
-	for crew_member in GameManager.crew:
+	for crew_member in GameManager.crew_members:
 		if crew_member.id == crew_id and crew_member.status == GameTypes.CrewStatus.CRITICAL:
 			crew_member.health += GameManager.stats.crew_defib_regeneration
 			return "Defibrillation successful on crew member: " + crew_member.name
@@ -245,7 +245,7 @@ func handle_defib(instructions: String) -> String:
 
 func handle_extinguish(instructions: String) -> String:
 	if instructions.is_empty() or instructions.replace(" ", "_").to_upper() not in GameTypes.Locations.keys():
-		return "Usage: extinguish [location]"
+		return "Usage: suppress [location]"
 	var found = false
 	for key in GameManager.active_event_locations.keys():
 		var location = GameManager.active_event_locations[key]
@@ -277,7 +277,7 @@ func get_resolve(instructions: String) -> String:
 
 func handle_seal(instructions: String) -> String:
 	if instructions.is_empty() or instructions.to_upper().replace(" ", "_") not in GameTypes.Locations.keys():
-		return "Usage: suppress [location]"
+		return "Usage: repair [location]"
 	var found = false
 	for key in GameManager.active_event_locations.keys():
 		var location = GameManager.active_event_locations[key]

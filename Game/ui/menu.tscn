@@ -1,15 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dld8sohxtqk18"]
+[gd_scene load_steps=7 format=3 uid="uid://dld8sohxtqk18"]
 
 [ext_resource type="Script" path="res://ui/menu.gd" id="1_7g5a7"]
-[ext_resource type="Shader" path="res://assets/vfx/screen_blur.gdshader" id="2_s4kje"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vatw"]
-shader = ExtResource("2_s4kje")
-shader_parameter/amount = 2.0
-shader_parameter/color = Color(0.82188, 0.822996, 0.978426, 1)
-shader_parameter/blend = 0.6
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_41wja"]
+[ext_resource type="Texture2D" uid="uid://dvsx0gblmfclu" path="res://assets/skybox/ringed_gas_giant_planet.png" id="2_21ck3"]
+[ext_resource type="FontVariation" uid="uid://dkso7qb2tnmny" path="res://assets/fonts/plex_mono_bold.tres" id="3_i3m2u"]
+[ext_resource type="Texture2D" uid="uid://cweh8swys8ah4" path="res://assets/jam/inside-box.png" id="4_6h6e2"]
+[ext_resource type="Texture2D" uid="uid://bf5dpgtmg35xj" path="res://assets/jam/then-the-morning-comes.png" id="5_n7lum"]
+[ext_resource type="Texture2D" uid="uid://bpo4u1kd364x6" path="res://assets/jam/66-Escape.png" id="6_aphfp"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -21,29 +17,108 @@ grow_vertical = 2
 script = ExtResource("1_7g5a7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_3vatw")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2760.0
+offset_top = -1816.0
+offset_right = 4280.0
+offset_bottom = 1632.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("CanvasTexture_41wja")
+texture = ExtResource("2_21ck3")
+expand_mode = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 469.0
-offset_right = 288.0
-offset_bottom = 550.0
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(0, 200)
+[node name="MarginContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -132.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Start" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_i3m2u")
+theme_override_font_sizes/font_size = 90
+text = "START"
+
+[node name="Quit" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_i3m2u")
+theme_override_font_sizes/font_size = 90
+text = "QUIT"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -196.0
+offset_right = 576.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 375
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_6h6e2")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_n7lum")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 448.0
+offset_right = 1152.0
+offset_bottom = 510.0
+
+[node name="Game Name" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "Into The Sun"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 120.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_aphfp")
+expand_mode = 1
+
+[connection signal="pressed" from="MarginContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/Quit" to="." method="_on_quit_pressed"]

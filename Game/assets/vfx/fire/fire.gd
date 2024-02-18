@@ -7,6 +7,8 @@ signal fix();
 @onready var light: Light3D = $"node/OmniLight3D"
 @onready var collider: StaticBody3D = $node/StaticBody3D
 
+var captured_event: GameEvent = null
+
 func _ready():
 	smoke.emitting = false
 	collider.visible = false
@@ -24,7 +26,9 @@ func _ready():
 func _on_event_triggered(event: GameEvent):
 	if event.event != GameEvent.GameTypes.Events.FIRE:
 		return
-	
+	if GameManager.active_event_locations[event] != "ENGINE_ROOM":
+		return
+	captured_event = event
 	smoke.emitting = true
 	smoke.lifetime = 10
 	
@@ -40,6 +44,9 @@ func _on_event_triggered(event: GameEvent):
 
 
 func _on_fix():
+	if captured_event == null:
+		return
+	
 	if base_flame.emitting:
 		base_flame.emitting = false
 		rising_flame.lifetime = 0.8
@@ -55,3 +62,6 @@ func _on_fix():
 		smoke.lifetime = 1
 		smoke.emitting = false
 		collider.visible = false
+		
+		GameManager.active_events.erase(captured_event)
+		captured_event = null

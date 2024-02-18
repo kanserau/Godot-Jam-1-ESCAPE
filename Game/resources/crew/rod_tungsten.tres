@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource("1_p2f6n")
 id = "0025"
-name = "Rod Tungsten"
+name = "Igor Hoss"
 role = "Captain"
 location = 1
 status = 0
+health = 50

@@ -3,6 +3,7 @@ extends Control
 @onready var container = $ScrollContainer/EventContainer
 
 const GameTypes = preload("res://resources/templates/types.gd")
+const label_theme = preload("res://resources/settings_theme.tres")
 var event_labels = []
 var game_time = 0.0
 var accumulated_time = 0.0
@@ -43,6 +44,8 @@ func _process(delta):
 
 func create_label(text) -> Label:
 	var label = Label.new()
+	label.theme = label_theme
+	label.theme_type_variation = 'event-feed'
 	label.text = text
 	return label	
 

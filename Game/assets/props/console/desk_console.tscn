@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxdo24l4ty54r"]
+[gd_scene load_steps=19 format=3 uid="uid://bxdo24l4ty54r"]
 
 [ext_resource type="PackedScene" uid="uid://c3r2eag7o8k42" path="res://assets/props/console/desk/console.gltf" id="1_qhio2"]
 [ext_resource type="Script" path="res://assets/props/console/console_power_switch.gd" id="2_bwgb5"]
 [ext_resource type="PackedScene" uid="uid://capks138wgc7f" path="res://ui/crew_ui.tscn" id="2_xgqc8"]
 [ext_resource type="PackedScene" uid="uid://b0hsmvfat6i8p" path="res://ui/screen_saver.tscn" id="3_7xlh8"]
 [ext_resource type="PackedScene" uid="uid://0x1o6uohaw0o" path="res://ui/power_ui.tscn" id="3_ew3yg"]
+[ext_resource type="PackedScene" uid="uid://doiuo31thi3qr" path="res://ui/EventFeed.tscn" id="4_po81h"]
+[ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/Terminal.tscn" id="7_obri6"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nwqwn"]
 viewport_path = NodePath("screens/screen 1")
@@ -24,7 +26,7 @@ resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_5asut")
 uv1_scale = Vector3(1, -1, 1)
-uv1_offset = Vector3(0, -0.1, 0)
+uv1_offset = Vector3(-0.05, -0.15, 0)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gq5sw"]
 viewport_path = NodePath("screens/screen 3")
@@ -95,7 +97,7 @@ size = Vector2i(1024, 1024)
 [node name="screen 2" type="SubViewport" parent="screens" index="1"]
 size = Vector2i(1024, 1024)
 
-[node name="screen saver" parent="screens/screen 2" index="0" instance=ExtResource("3_7xlh8")]
+[node name="EventFeed" parent="screens/screen 2" index="0" instance=ExtResource("4_po81h")]
 
 [node name="screen 3" type="SubViewport" parent="screens" index="2"]
 size = Vector2i(1024, 1024)
@@ -110,4 +112,4 @@ size = Vector2i(512, 1024)
 [node name="screen 5" type="SubViewport" parent="screens" index="4"]
 size = Vector2i(1024, 1024)
 
-[node name="screen saver" parent="screens/screen 5" index="0" instance=ExtResource("3_7xlh8")]
+[node name="Terminal" parent="screens/screen 5" index="0" instance=ExtResource("7_obri6")]

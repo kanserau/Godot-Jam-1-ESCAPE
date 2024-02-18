@@ -12,30 +12,42 @@ Should be loud and chaotic. Blaring alarms, fire, engine whirring,
 Sound List
 
 Player
-- Footsteps
+- [x] Footsteps
+- [x] Multitool swing
+- [x] Multitool hit x3
 
 Alarms
-- Hull breach alarm
-- Fire alarm
-- Solar flare warning alarm
-- Space debris warning alarm
-- Oxygen alarm
-- Engine alarm
-- Shields down warning
-- Weapons down warning
+- [x] Hull breach alarm
+- [x] Fire alarm
+- [x] Solar flare warning alarm
+- [ ] Space debris warning alarm
+- [ ] Oxygen alarm
+- [ ] Engine alarm
+- [ ] Shields down warning
+- [ ] Weapons down warning
 
 Interface
-- Confirm/enter
-- Cancel/exit
-- Denied/option unavailable
-- Increase
-- Decrease
+- [ ] Confirm/enter
+- [ ] Cancel/exit
+- [ ] Denied/option unavailable
+- [ ] Increase
+- [ ] Decrease
 
 Environment
-- Fire
-- Hull breach
-- Engine noise
-- Subtle electric buzzing from terminal.
-- Electric sparking
-- Muffled explosions
-- Voice
+- [x] Fire
+- [x] 02 pipe leak/Steam
+- [x] Engine noise
+- [x] Engine down
+- [x] Shields Active
+- [ ] Subtle electric buzzing from terminal
+- [ ] Terminal sparking
+- [x] Muffled explosions
+- [ ] 
+- [ ] Voice
+
+Events
+- [x] Game Over explosion
+- [ ] Solar Flare Hit
+- [ ] Solar Flare Hits Shield
+- [x] Space Debris Destroyed x2
+- [x] Space Debris hits ship

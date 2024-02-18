@@ -2,15 +2,28 @@ extends Node
 
 class_name GameSignalManager
 
+const GameTypes = preload("res://resources/templates/types.gd")
+
 var stats: GameResource
 var crew_members: Array[Crew] = []
+var dead_crew_members: Array[Crew] = []
 var events: Array[GameEvent] = []
 var active_events: Array[GameEvent] 
+var active_event_locations = {}
 
 signal change_ship_damage(total_ship_damage)
 signal crew_members_damaged
 signal event_triggered(event: GameEvent)
 signal ship_moved(total_distance)
+
+signal warn_solar_flare(minutes)
+signal warn_debris(minutes)
+
+signal solar_flare_hit
+signal space_debris_hit
+signal weapons_firing
+
+signal change_oxygen(current_units)
 
 # Unused
 signal change_available_power(new_value)
@@ -18,10 +31,6 @@ signal change_thrust(new_value)
 signal change_weapons(new_value)
 signal change_atmosphere_generator(new_value)
 signal change_shields(new_value)
-
-signal create_hull_breach
-signal warn_solar_flare(minutes)
-signal start_solar_flare
 
 
 func _ready():

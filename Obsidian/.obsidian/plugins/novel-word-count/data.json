@@ -43,15 +43,15 @@
       "wordCountTowardGoal": 0,
       "wordGoal": null,
       "pageCount": 1.27,
-      "characterCount": 2204,
+      "characterCount": 2272,
       "nonWhitespaceCharacterCount": 1793,
       "readingTimeInMinutes": 1.4377358490566037,
       "linkCount": 0,
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1707989110014,
-      "modifiedDate": 1708169206338,
-      "sizeInBytes": 2204
+      "modifiedDate": 1708218545864,
+      "sizeInBytes": 2272
     },
     "Burning Up/Sound.md": {
       "isCountable": true,
@@ -71,6 +71,24 @@
       "modifiedDate": 1707642960953,
       "sizeInBytes": 0
     },
+    "Burning Up/Music & Sound.md": {
+      "isCountable": true,
+      "isDirectory": false,
+      "noteCount": 1,
+      "wordCount": 194,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.6466666666666666,
+      "characterCount": 992,
+      "nonWhitespaceCharacterCount": 789,
+      "readingTimeInMinutes": 0.7320754716981132,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1707647738154,
+      "modifiedDate": 1708233346818,
+      "sizeInBytes": 992
+    },
     "Burning Up/Scrapped Ideas.md": {
       "isCountable": true,
       "isDirectory": false,
@@ -89,42 +107,6 @@
       "modifiedDate": 1707897229122,
       "sizeInBytes": 562
     },
-    "Burning Up/Music & Sound.md": {
-      "isCountable": true,
-      "isDirectory": false,
-      "noteCount": 1,
-      "wordCount": 108,
-      "wordCountTowardGoal": 0,
-      "wordGoal": null,
-      "pageCount": 0.36,
-      "characterCount": 664,
-      "nonWhitespaceCharacterCount": 549,
-      "readingTimeInMinutes": 0.4075471698113208,
-      "linkCount": 0,
-      "embedCount": 0,
-      "aliases": null,
-      "createdDate": 1707647738154,
-      "modifiedDate": 1708175289068,
-      "sizeInBytes": 664
-    },
-    "Burning Up/Burning Up.md": {
-      "isCountable": true,
-      "isDirectory": false,
-      "noteCount": 1,
-      "wordCount": 2357,
-      "wordCountTowardGoal": 0,
-      "wordGoal": null,
-      "pageCount": 7.8566666666666665,
-      "characterCount": 14138,
-      "nonWhitespaceCharacterCount": 11537,
-      "readingTimeInMinutes": 8.894339622641509,
-      "linkCount": 0,
-      "embedCount": 0,
-      "aliases": null,
-      "createdDate": 1707647738126,
-      "modifiedDate": 1708170020158,
-      "sizeInBytes": 14138
-    },
     "Burning Up/Item List.md": {
       "isCountable": true,
       "isDirectory": false,
@@ -142,6 +124,24 @@
       "createdDate": 1707647738152,
       "modifiedDate": 1707898741970,
       "sizeInBytes": 2942
+    },
+    "Burning Up/Burning Up.md": {
+      "isCountable": true,
+      "isDirectory": false,
+      "noteCount": 1,
+      "wordCount": 2360,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 7.866666666666666,
+      "characterCount": 14432,
+      "nonWhitespaceCharacterCount": 11550,
+      "readingTimeInMinutes": 8.90566037735849,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1707647738126,
+      "modifiedDate": 1708218545863,
+      "sizeInBytes": 14432
     }
   }
 }

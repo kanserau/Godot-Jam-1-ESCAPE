@@ -1,16 +1,16 @@
-[gd_scene load_steps=42 format=3 uid="uid://ue4fkbj8d010"]
+[gd_scene load_steps=40 format=3 uid="uid://ue4fkbj8d010"]
 
 [ext_resource type="Texture2D" uid="uid://g6hw45rrlylj" path="res://assets/skybox/plain_starfield_1.png" id="1_fb1y0"]
-[ext_resource type="Script" path="res://power_outage.gd" id="1_p3enf"]
 [ext_resource type="Material" uid="uid://bj2ge7ce42n88" path="res://assets/materials/floor/floor.tres" id="1_texys"]
 [ext_resource type="Shader" path="res://assets/materials/glass/glass.gdshader" id="2_0o6ga"]
 [ext_resource type="PackedScene" uid="uid://ddo2c8htf6alp" path="res://assets/props/tools/toolbox/metal_tool_chest_1k.tscn" id="4_hn4r0"]
 [ext_resource type="PackedScene" uid="uid://dywybntaextrq" path="res://assets/props/fire_extinguisher/fire_extinguisher.tscn" id="4_jl75w"]
 [ext_resource type="Material" uid="uid://cpjqe3010rwf0" path="res://assets/materials/metal/Matal046B/metal046B.tres" id="4_nwbs3"]
-[ext_resource type="PackedScene" uid="uid://ca17oq1m5usk1" path="res://assets/props/modular_pipes/connected_pipes.tscn" id="6_5xoou"]
+[ext_resource type="MeshLibrary" path="res://assets/props/modular_pipes/large_pipes.meshlib" id="6_5jidd"]
 [ext_resource type="PackedScene" uid="uid://bw5jc31jcc3rm" path="res://assets/props/door/door-dark.tscn" id="6_dif8w"]
+[ext_resource type="MeshLibrary" path="res://assets/props/modular_pipes/small_pipes.meshlib" id="7_1wynt"]
 [ext_resource type="PackedScene" uid="uid://br6nry3u5mqa8" path="res://assets/props/intercom/scene.gltf" id="7_i1qts"]
-[ext_resource type="PackedScene" uid="uid://bxdo24l4ty54r" path="res://assets/props/console/desk_console.tscn" id="8_3u458"]
+[ext_resource type="PackedScene" path="res://assets/props/console/desk_console.tscn" id="8_3u458"]
 [ext_resource type="Material" uid="uid://ci5ixg7iv1yau" path="res://assets/materials/metal/metallic_blue-1K/matallic_blue.tres" id="8_tycko"]
 [ext_resource type="PackedScene" uid="uid://e2ux88ndghcv" path="res://assets/props/tools/toon-tools/scene.gltf" id="8_ye4ug"]
 [ext_resource type="PackedScene" uid="uid://b1it0alu44ecb" path="res://assets/props/bottles/corona_bottle_yellow.tscn" id="9_0nin3"]
@@ -19,11 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://dsnxggtutf120" path="res://assets/props/bottles/corona_bottle_green.tscn" id="11_ipgdo"]
 [ext_resource type="PackedScene" uid="uid://myncs6tc1cu1" path="res://assets/props/tools/wrench_set/scene.gltf" id="13_mcdm0"]
 [ext_resource type="PackedScene" uid="uid://balok5b4ubm81" path="res://assets/props/alarm_light/alarm_light.tscn" id="14_ar27j"]
-[ext_resource type="PackedScene" uid="uid://s8e1guti158n" path="res://assets/vfx/fire/fire.tscn" id="16_3u0vc"]
 [ext_resource type="PackedScene" uid="uid://bk86ug0hqp3f6" path="res://assets/props/barrels/waste_barrel.tscn" id="17_ix7pk"]
 [ext_resource type="PackedScene" uid="uid://chbwdyjgvjcur" path="res://assets/props/barrels/glass_barrel.tscn" id="18_cmm1p"]
 [ext_resource type="PackedScene" uid="uid://7ufllpb3x3eq" path="res://assets/props/barrels/energy_barrel.tscn" id="19_tbpnu"]
-[ext_resource type="PackedScene" uid="uid://dcxmd3esc5qg1" path="res://assets/props/button/button.tscn" id="23_ioagd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_03s7o"]
 panorama = ExtResource("1_fb1y0")
@@ -36,17 +34,15 @@ background_mode = 2
 background_energy_multiplier = 3.0
 background_canvas_max_layer = 1
 sky = SubResource("Sky_slcxt")
-ambient_light_source = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.1
 reflected_light_source = 1
 glow_enabled = true
-glow_intensity = 0.5
-glow_strength = 0.8
-glow_blend_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_0veqt"]
 material = ExtResource("1_texys")
-size = Vector2(15, 15)
+size = Vector2(10, 10)
 orientation = 1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ju46t"]
@@ -55,7 +51,7 @@ points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
 [sub_resource type="QuadMesh" id="QuadMesh_aafbo"]
 material = ExtResource("1_texys")
 flip_faces = true
-size = Vector2(15, 15)
+size = Vector2(10, 10)
 orientation = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k20ln"]
@@ -69,7 +65,7 @@ shader_parameter/edge_color = Color(0, 0, 0, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_8w8w1"]
 material = SubResource("ShaderMaterial_k20ln")
 flip_faces = true
-size = Vector2(15, 5)
+size = Vector2(10, 5)
 orientation = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rr3vs"]
@@ -78,21 +74,21 @@ points = PackedVector3Array(0, -3, -10, 0, 3, -10, 0, -3, 10, 0, 3, 10)
 [sub_resource type="QuadMesh" id="QuadMesh_my1u6"]
 material = ExtResource("8_tycko")
 flip_faces = true
-size = Vector2(15, 5)
+size = Vector2(10, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fnbql"]
 points = PackedVector3Array(10, 3, 0, 10, -3, 0, -10, 3, 0, -10, -3, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_132bq"]
 material = ExtResource("8_tycko")
-size = Vector2(15, 5)
+size = Vector2(10, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_su80x"]
 points = PackedVector3Array(10, 3, 0, 10, -3, 0, -10, 3, 0, -10, -3, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ii3ib"]
 material = ExtResource("8_tycko")
-size = Vector2(15, 5)
+size = Vector2(10, 5)
 orientation = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iocsb"]
@@ -106,11 +102,8 @@ top_radius = 1.0
 bottom_radius = 1.0
 height = 0.02
 
-[node name="Room" type="Node3D" node_paths=PackedStringArray("lights", "emergency_lights")]
+[node name="Room" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-script = ExtResource("1_p3enf")
-lights = [NodePath("Lights/MeshInstance3D/OmniLight3D"), NodePath("Lights/MeshInstance3D/SpotLight3D")]
-emergency_lights = [NodePath("Props/Door Dark/alarm light")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_q0dan")
@@ -138,7 +131,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_ju46t")
 
 [node name="West Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 0)
 mesh = SubResource("QuadMesh_8w8w1")
 skeleton = NodePath("")
 
@@ -148,7 +141,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_rr3vs")
 
 [node name="North Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5)
 mesh = SubResource("QuadMesh_my1u6")
 skeleton = NodePath("")
 
@@ -158,7 +151,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_fnbql")
 
 [node name="South Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
 mesh = SubResource("QuadMesh_132bq")
 skeleton = NodePath("")
 
@@ -168,7 +161,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_su80x")
 
 [node name="East Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 0)
 material_override = ExtResource("4_nwbs3")
 mesh = SubResource("QuadMesh_ii3ib")
 skeleton = NodePath("")
@@ -178,11 +171,23 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/East Wall/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_iocsb")
 
-[node name="big pipes" parent="Walls" instance=ExtResource("6_5xoou")]
-metadata/_editor_floor_ = Vector3(0, 1, 0)
+[node name="big pipes" type="GridMap" parent="Walls"]
+mesh_library = ExtResource("6_5jidd")
+cell_size = Vector3(0.5, 0.5, 0.5)
+cell_scale = 0.01
+data = {
+"cells": PackedInt32Array(131076, 65527, 327684, 393220, 65527, 65540, 393222, 65527, 524289, 589828, 65527, 458763, 458759, 65527, 65543, 655367, 65527, 65546, 4, 65527, 196608)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Fire" parent="." instance=ExtResource("16_3u0vc")]
-transform = Transform3D(0.999999, 0, -0.00127409, 0, 1, 0, 0.00127409, 0, 0.999999, -2.02527, -0.201765, -2.22804)
+[node name="small pipes" type="GridMap" parent="Walls/big pipes"]
+mesh_library = ExtResource("7_1wynt")
+cell_size = Vector3(0.05, 0.1, 0.05)
+cell_scale = 0.01
+data = {
+"cells": PackedInt32Array(2752579, 65463, 1376258, 2752587, 65463, 1441794, 2752594, 65463, 1441794, 2424914, 65473, 983040, 2293835, 65473, 196612, 983122, 65473, 458764, 1966155, 65473, 589829, 655442, 65473, 458756, 655442, 65468, 1048578, 327762, 65473, 458757, 327762, 65458, 458763, -130990, 65458, 196614, -130990, 65473, 65547, 2752569, 65473, 917504, 2752524, 65473, 393219, 2752524, 65469, 1179650, 2752514, 65473, 917507, 2818040, 65473, 1114116, 2752514, 65468, 1179650, 2818040, 65468, 1179650, 2818040, 65478, 1507328, 2752514, 65478, 1507328, 2752524, 65478, 1507328, 2818040, 65523, 1179660, 2752514, 65523, 1179660, 2752524, 65523, 1310732, 2818038, 65528, 1310722, 2752524, 65528, 1310722, 2752514, 65528, 1310722, 3145720, 65458, 851979, 3080194, 65458, 851979, 3080204, 65459, 851979, 3080204, 2, 851979, 3080194, 2, 851979, 3145718, 2, 851979, 2293830, 65473, 131072, 2293790, 65473, 917505, 2293785, 65478, 1310721, 2424857, 65483, 327680, 1507403, 65473, 196618, 1638475, 65473, 327694)
+}
+metadata/_editor_floor_ = Vector3(0, 25, 0)
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -214,14 +219,13 @@ spot_angle_attenuation = 0.307786
 [node name="Props" type="Node3D" parent="."]
 
 [node name="desk console" parent="Props" instance=ExtResource("8_3u458")]
-unique_name_in_owner = true
-transform = Transform3D(-0.8, 0, -7.54979e-08, 0, 0.5, 0, 1.20797e-07, 0, -0.5, 1.60051, 0.112187, 6.57953)
+transform = Transform3D(-0.8, 0, -7.54979e-08, 0, 0.5, 0, 1.20797e-07, 0, -0.5, 2.56952, 0.112187, 3.99628)
 
 [node name="mess pile" type="Node3D" parent="Props"]
-transform = Transform3D(0.281353, 0, -0.959604, 0, 1, 0, 0.959604, 0, 0.281353, 6.44847, 0, -1.26566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1.68005)
 
 [node name="metal_tool_chest_1k" parent="Props/mess pile" instance=ExtResource("4_hn4r0")]
-transform = Transform3D(0.8555, 0, 0.517803, 0, 1, 0, -0.517803, 0, 0.8555, -0.0689031, 0, -0.345018)
+transform = Transform3D(0.831944, 0, -0.554859, 0, 1, 0, 0.554859, 0, 0.831944, -0.173393, 0, 0.0113637)
 
 [node name="corona bottle yellow" parent="Props/mess pile" instance=ExtResource("9_0nin3")]
 transform = Transform3D(0.947434, 0, -0.319952, 0, 1, 0, 0.319952, 0, 0.947434, -1.27655, 0.0203025, -0.651723)
@@ -236,7 +240,7 @@ transform = Transform3D(0.882275, 0, 0.470735, 0, 1, 0, -0.470735, 0, 0.882275, 
 transform = Transform3D(0.777242, 0.164755, -0.607248, 0.615662, -4.64242e-08, 0.788011, 0.129829, -0.986334, -0.101433, -1.95451, 0.0830399, -0.244385)
 
 [node name="Door Dark" parent="Props" instance=ExtResource("6_dif8w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.46578, 0, 3.71378)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 0.312893)
 
 [node name="intercom" parent="Props/Door Dark" instance=ExtResource("7_i1qts")]
 transform = Transform3D(-0.005, 0, -4.37114e-10, 0, 0.005, 0, 4.37114e-10, 0, -0.005, 2.76294, 1.5745, -0.0299997)
@@ -251,41 +255,27 @@ transform = Transform3D(-0.001, 0, -8.74228e-11, 0, 0.001, 0, 8.74228e-11, 0, -0
 transform = Transform3D(0.5, 0, 3.55271e-15, 0, 0.5, 0, -3.55271e-15, 0, 0.5, 0, 0, 0)
 
 [node name="wrench set" parent="Props/Door Dark" instance=ExtResource("13_mcdm0")]
-transform = Transform3D(3.82137e-15, 8.74228e-08, 2, 2, -8.74228e-08, 0, 8.74228e-08, 2, -8.74228e-08, -1.64513, 1.28562, -0.0505099)
+transform = Transform3D(3.82137e-15, 8.74228e-08, 2, 2, -8.74228e-08, 0, 8.74228e-08, 2, -8.74228e-08, 3.92746, 1.15656, -0.0505099)
 
 [node name="toon tools" parent="Props/Door Dark/wrench set" instance=ExtResource("8_ye4ug")]
-transform = Transform3D(-2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0, 0.5, -0.216312, 0.0102546, 0.561601)
+transform = Transform3D(-2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0, 0.5, 0.128672, 0.0102546, 0.0213327)
 
 [node name="Basic Generator" parent="Props" instance=ExtResource("9_otxs2")]
-transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, 0.123233, -0.2, -5.54534)
-
-[node name="barrels2" type="Node3D" parent="Props"]
-transform = Transform3D(0.696965, 0, 0.717105, 0, 1, 0, -0.717105, 0, 0.696965, -2.87205, -2.38419e-07, -0.970485)
-
-[node name="glass barrel" parent="Props/barrels2" instance=ExtResource("18_cmm1p")]
-transform = Transform3D(0.48, 0, -3.72529e-08, 0, 0.48, 0, 3.72529e-08, 0, 0.48, 1.04461, 0.266639, -1.15027)
-
-[node name="glass barrel2" parent="Props/barrels2" instance=ExtResource("18_cmm1p")]
-transform = Transform3D(0.48, 0, -4.47035e-08, 0, 0.48, 0, 4.47035e-08, 0, 0.48, 1.04461, 1.50891, -1.15027)
-
-[node name="energy barrel" parent="Props/barrels2" instance=ExtResource("19_tbpnu")]
-transform = Transform3D(0.590107, 0, 0.108507, 0, 0.6, 0, -0.108507, 0, 0.590107, 0.805183, 0.212057, 0.273268)
+transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, -2.5, -0.2, -2.9)
 
 [node name="barrels" type="Node3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24794, -4.76837e-07, -2.41428)
 
 [node name="waste barrel" parent="Props/barrels" instance=ExtResource("17_ix7pk")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.948532, -0.00116694, -4.02598)
 
-[node name="waste barrel3" parent="Props/barrels" instance=ExtResource("17_ix7pk")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.948532, -0.00116694, -1.50693)
-
-[node name="waste barrel4" parent="Props/barrels" instance=ExtResource("17_ix7pk")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.948532, -0.00116694, -0.237335)
-
 [node name="waste barrel2" parent="Props/barrels" instance=ExtResource("17_ix7pk")]
 transform = Transform3D(-0.00189729, 0.516798, 0.304821, 0.599996, 0.0022792, -0.000129661, -0.00126959, 0.304818, -0.516802, 0.831567, 0.462849, -2.83198)
 
-[node name="power button" parent="." instance=ExtResource("23_ioagd")]
-unique_name_in_owner = true
-transform = Transform3D(-0.598296, 0, 0.0451856, 0, 0.6, 0, -0.0451856, 0, -0.598296, -4.47338, -0.104594, 7.03471)
+[node name="glass barrel" parent="Props/barrels" instance=ExtResource("18_cmm1p")]
+transform = Transform3D(0.48, 0, -3.72529e-08, 0, 0.48, 0, 3.72529e-08, 0, 0.48, 1.04461, 0.266639, -1.15027)
+
+[node name="glass barrel2" parent="Props/barrels" instance=ExtResource("18_cmm1p")]
+transform = Transform3D(0.48, 0, -4.47035e-08, 0, 0.48, 0, 4.47035e-08, 0, 0.48, 1.04461, 1.50891, -1.15027)
+
+[node name="energy barrel" parent="Props/barrels" instance=ExtResource("19_tbpnu")]
+transform = Transform3D(0.590107, 0, 0.108507, 0, 0.6, 0, -0.108507, 0, 0.590107, 0.805183, 0.212057, 0.273268)

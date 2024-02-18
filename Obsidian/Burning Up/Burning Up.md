@@ -26,7 +26,7 @@ The Status Display is beside the Power Shunting Display and above the gauge rack
 - Crew details
 	- Rod Tungsten. ID: 0025. Captain. Bridge.
 	- Ace Lander. ID: 1056. Pilot. Cockpit.
-	- (PLAYER NAME). ID: 9989. Engineer. Engine room.
+	- (PLAYER NAME). ID: 9990. Engineer. Engine room.
 	- Remy Martinez. ID: 0871. Chef. Galley.
 	- Karl Langstrom. ID: 0872. Researcher. Laboratory.
 	- John Doctor. ID: 0067. Medical Officer. Crew quarters.

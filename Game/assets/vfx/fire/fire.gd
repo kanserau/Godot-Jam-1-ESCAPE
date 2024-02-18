@@ -8,7 +8,7 @@ signal fix();
 @onready var collider: StaticBody3D = $node/StaticBody3D
 
 func _ready():
-	GameManager.connect_to_signal("cd", self, "_on_event_triggered")
+	GameManager.connect_to_signal("event_triggered", self, "_on_event_triggered")
 	fix.connect(_on_fix)
 
 # TODO:

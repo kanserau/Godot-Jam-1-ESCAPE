@@ -47,6 +47,7 @@ func update_ui():
 		else:
 			icon.modulate = "#00ff00"
 	
+	engine_display.value = GameManager.stats.current_thrust
 	o2_display.value = GameManager.stats.current_atmosphere_generator
 	shields_display.value = GameManager.stats.current_shields
 	weapons_display.value = GameManager.stats.current_weapons

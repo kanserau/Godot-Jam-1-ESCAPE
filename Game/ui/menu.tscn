@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dld8sohxtqk18"]
+[gd_scene load_steps=8 format=3 uid="uid://dld8sohxtqk18"]
 
 [ext_resource type="Script" path="res://ui/menu.gd" id="1_7g5a7"]
 [ext_resource type="Texture2D" uid="uid://dvsx0gblmfclu" path="res://assets/skybox/ringed_gas_giant_planet.png" id="2_21ck3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cweh8swys8ah4" path="res://assets/jam/inside-box.png" id="4_6h6e2"]
 [ext_resource type="Texture2D" uid="uid://bf5dpgtmg35xj" path="res://assets/jam/then-the-morning-comes.png" id="5_n7lum"]
 [ext_resource type="Texture2D" uid="uid://bpo4u1kd364x6" path="res://assets/jam/66-Escape.png" id="6_aphfp"]
+[ext_resource type="AudioStream" uid="uid://pd85brsb8fpe" path="res://assets/Game Over 2.2.ogg" id="7_yw2m7"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -119,6 +120,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("6_aphfp")
 expand_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_yw2m7")
 
 [connection signal="pressed" from="MarginContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/Quit" to="." method="_on_quit_pressed"]

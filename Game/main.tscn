@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ox7maxg57gi0"]
+[gd_scene load_steps=4 format=3 uid="uid://ox7maxg57gi0"]
 
-[ext_resource type="AudioStream" uid="uid://xsqt8hlwju2i" path="res://assets/escape_the_sun.ogg" id="1_e4syv"]
 [ext_resource type="PackedScene" uid="uid://b0x8o5y6sjjl1" path="res://player/player.tscn" id="1_eg4cr"]
 [ext_resource type="Script" path="res://game.gd" id="1_oyxtc"]
-[ext_resource type="Script" path="res://environment/BGM.gd" id="1_rfk7o"]
 [ext_resource type="PackedScene" uid="uid://ue4fkbj8d010" path="res://room.tscn" id="4_deyi7"]
 
 [node name="Main" type="Node"]
@@ -21,14 +19,6 @@ one_shot = true
 one_shot = true
 
 [node name="Environment" type="Node" parent="."]
-
-[node name="BGM" type="AudioStreamPlayer" parent="Environment"]
-editor_description = "Cool space sound"
-stream = ExtResource("1_e4syv")
-volume_db = -13.0
-autoplay = true
-mix_target = 1
-script = ExtResource("1_rfk7o")
 
 [node name="Room" parent="Environment" instance=ExtResource("4_deyi7")]
 

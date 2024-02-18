@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://0x1o6uohaw0o"]
+[gd_scene load_steps=14 format=3 uid="uid://0x1o6uohaw0o"]
 
 [ext_resource type="Theme" uid="uid://duyhmdjgt61qo" path="res://resources/settings_theme.tres" id="1_bj0pt"]
 [ext_resource type="Script" path="res://ui/power_ui.gd" id="2_6xq8u"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cktlcm1idc62v" path="res://ui/icons/energy.png" id="4_8x2fn"]
 [ext_resource type="Texture2D" uid="uid://bsr3o5753fesh" path="res://ui/icons/power-4.png" id="4_58v3n"]
 [ext_resource type="Texture2D" uid="uid://bl3wka2bk5rr2" path="res://ui/icons/shields.png" id="4_jwdva"]
-[ext_resource type="Texture2D" uid="uid://btqitlouy56kl" path="res://ui/icons/power-1.png" id="5_6dnc6"]
 [ext_resource type="Texture2D" uid="uid://b5dqc340mhtqi" path="res://ui/icons/weapons.png" id="5_jhgy8"]
 [ext_resource type="Texture2D" uid="uid://b6xmy31lxl5on" path="res://ui/icons/power-2.png" id="7_nsjdc"]
 
@@ -136,8 +135,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 max_value = 4.0
 fill_mode = 3
-texture_under = ExtResource("5_6dnc6")
-texture_progress = ExtResource("5_6dnc6")
+texture_under = ExtResource("7_nsjdc")
+texture_progress = ExtResource("7_nsjdc")
 tint_under = Color(0.392157, 0.392157, 0.392157, 1)
 tint_progress = Color(0, 1, 0, 1)
 
@@ -182,10 +181,11 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-max_value = 0.0
+max_value = 4.0
+step = 0.0
 fill_mode = 3
-texture_under = ExtResource("5_6dnc6")
-texture_progress = ExtResource("5_6dnc6")
+texture_under = ExtResource("7_nsjdc")
+texture_progress = ExtResource("7_nsjdc")
 tint_under = Color(0.392157, 0.392157, 0.392157, 1)
 tint_progress = Color(0, 1, 0, 1)
 

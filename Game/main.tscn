@@ -38,3 +38,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03085, 1.44661, 2.25123)
 [connection signal="timeout" from="Game/EventTimer" to="Game" method="_on_event_timer_timeout"]
 [connection signal="timeout" from="Game/SolarFlareTimer" to="Game" method="_on_solar_flare_timer_timeout"]
 [connection signal="timeout" from="Game/DebrisTimer" to="Game" method="_on_debris_timer_timeout"]
+[node name="Captain" type="AudioStreamPlayer" parent="."]

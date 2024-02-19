@@ -51,8 +51,8 @@
 	- power to fuel ratio becomes less efficient as more power is used (or rather there is an optimal power level, and too low is bad too)
 - [ ] Player can shunt power to four separate systems within the power shunting interface. 
 	- [ ] Thrust/engine
-	- [ ] Oxygen. Should always be active. While inactive, causes Crew Damage, which kills crew if it gets too high.
-	- [ ] Shields. Consumes significant power. Protects from heat spikes/solar flares from the sun.
+	- [ ] Oxygen.
+	- [ ] Shields.
 	- [ ] Weapons. Consumes moderate power. Causes damage to space debris.
 
 Ship Integrity

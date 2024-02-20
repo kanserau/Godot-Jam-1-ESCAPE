@@ -34,7 +34,6 @@ func _process(delta):
 	apply_random_events()
 	var minutes = GameManager.stats.seconds_per_calc
 	if accumulated_time >= 1.0 * minutes:
-		print(GameManager.active_events)
 		update_game_logic(game_time)
 		accumulated_time -= 1.0 * minutes
 

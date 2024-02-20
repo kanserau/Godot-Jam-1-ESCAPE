@@ -20,14 +20,14 @@ length = 0.5
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/crowbar_01_1k")
+tracks/0/path = NodePath("Neck/Camera3D/crowbar_01_1k")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0.3, -0.2, -0.4, 0.1, 1, 0.4, -0.1, -0.4, 0.2, 1, -0.2, -0.3, -0.6, 0.5, 1, 0.3, -0.2, -0.4)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Neck/crowbar_01_1k")
+tracks/1/path = NodePath("Neck/Camera3D/crowbar_01_1k")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0.258, 0.962, 0.023, 0.084, 0.1, 1, 0.167731, 0.951251, 0.0449435, 0.254887, 0.2, 1, -0.171, -0.296, 0.47, 0.814, 0.5, 1, 0.258, 0.962, 0.023, 0.084)
@@ -67,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 
-[node name="crowbar_01_1k" parent="Neck" instance=ExtResource("2_0qgtd")]
+[node name="crowbar_01_1k" parent="Neck/Camera3D" instance=ExtResource("2_0qgtd")]
 transform = Transform3D(-0.8527, 0.492728, 0.173555, 0.500459, 0.865759, 0.000908371, -0.149809, 0.0876316, -0.984824, 0.3, -0.2, -0.4)
 
 [node name="Area3D" type="Area3D" parent="Neck"]

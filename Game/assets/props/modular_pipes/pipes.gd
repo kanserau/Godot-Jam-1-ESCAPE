@@ -15,7 +15,6 @@ func _on_event_triggered(event: GameEvent):
 			fx.emitting = true
 
 func _on_fix():
-	print("pipe fixing")
 	if not o2_failure:
 		return
 	var fixed = 0

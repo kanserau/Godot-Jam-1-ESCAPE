@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://40pwuh2funau"]
+
+[ext_resource type="PackedScene" uid="uid://capks138wgc7f" path="res://ui/crew_ui.tscn" id="1_0u3fd"]
+[ext_resource type="PackedScene" uid="uid://0x1o6uohaw0o" path="res://ui/power_ui.tscn" id="1_dc1p1"]
+[ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/Terminal.tscn" id="2_41d37"]
+[ext_resource type="PackedScene" uid="uid://b0hsmvfat6i8p" path="res://ui/screen_saver.tscn" id="2_327nx"]
+[ext_resource type="PackedScene" uid="uid://doiuo31thi3qr" path="res://ui/EventFeed.tscn" id="2_nhpce"]
+
+[node name="console" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="crew display" parent="VBoxContainer2" instance=ExtResource("1_0u3fd")]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EventFeed" parent="VBoxContainer2" instance=ExtResource("2_nhpce")]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="power display" parent="." instance=ExtResource("1_dc1p1")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="screen saver" parent="VBoxContainer" instance=ExtResource("2_327nx")]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Terminal" parent="VBoxContainer" instance=ExtResource("2_41d37")]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3

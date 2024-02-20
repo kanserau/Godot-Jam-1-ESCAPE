@@ -1,15 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://doiuo31thi3qr"]
+[gd_scene load_steps=4 format=3 uid="uid://doiuo31thi3qr"]
 
 [ext_resource type="Script" path="res://ui/EventFeed.gd" id="1_d0xib"]
-[ext_resource type="Shader" path="res://assets/vfx/screen_blur.gdshader" id="2_cm55b"]
+[ext_resource type="Texture2D" uid="uid://cuqd30axscd1h" path="res://assets/props/console/desk/textures/screen-bg.jpg" id="2_xmifq"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xw8f2"]
-shader = ExtResource("2_cm55b")
-shader_parameter/amount = 2.0
-shader_parameter/color = Color(0.82188, 0.822996, 0.978426, 1)
-shader_parameter/blend = 0.6
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_c6y1j"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eemgw"]
+bg_color = Color(0, 0, 0, 0.6)
 
 [node name="EventFeed" type="Control"]
 layout_mode = 3
@@ -21,7 +16,6 @@ grow_vertical = 2
 script = ExtResource("1_d0xib")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_xw8f2")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,27 +23,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("CanvasTexture_c6y1j")
+texture = ExtResource("2_xmifq")
+expand_mode = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_direction = 1
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
-metadata/_edit_use_anchors_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_eemgw")
 
-[node name="EventContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer"]
+layout_direction = 1
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="EventContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer"]
 layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Space" type="Control" parent="ScrollContainer/EventContainer"]
+[node name="Space" type="Control" parent="Panel/MarginContainer/ScrollContainer/EventContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 2
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="update_active_events"]

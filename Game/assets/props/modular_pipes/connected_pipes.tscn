@@ -1,12 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://ca17oq1m5usk1"]
+[gd_scene load_steps=22 format=3 uid="uid://ca17oq1m5usk1"]
 
 [ext_resource type="MeshLibrary" uid="uid://covmv81ln287d" path="res://assets/props/modular_pipes/large_pipes.meshlib" id="1_ur4av"]
 [ext_resource type="Script" path="res://assets/props/modular_pipes/pipes.gd" id="2_m87eb"]
 [ext_resource type="MeshLibrary" uid="uid://bul3bbtsdpb4k" path="res://assets/props/modular_pipes/small_pipes.meshlib" id="2_p47aa"]
+[ext_resource type="AudioStream" uid="uid://f65wkjx2pbnr" path="res://sounds/sfx/steam/steam_01.wav" id="3_6rnm5"]
 [ext_resource type="Shader" path="res://assets/vfx/steam/steam.gdshader" id="3_awj78"]
 [ext_resource type="Texture2D" uid="uid://bqmsc0tp1fnq0" path="res://assets/vfx/steam/texture.png" id="4_5cy3k"]
 [ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="4_dfisd"]
+[ext_resource type="AudioStream" uid="uid://c7y4otfvpb7sq" path="res://sounds/sfx/steam/steam_02.wav" id="4_lme0x"]
+[ext_resource type="AudioStream" uid="uid://brnkms2n8hqpu" path="res://sounds/sfx/steam/steam_03.wav" id="5_1htib"]
 [ext_resource type="Texture2D" uid="uid://bale461vgestw" path="res://assets/vfx/fire/textures/Voronoi01.png" id="5_u4l5f"]
+[ext_resource type="AudioStream" uid="uid://8rvn2nx17hw6" path="res://sounds/sfx/steam/steam_loop.wav" id="6_by5xe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sct5t"]
 render_priority = 0
@@ -81,17 +85,21 @@ scale_curve = SubResource("CurveTexture_2ravw")
 scale_over_velocity_max = 20.0
 alpha_curve = SubResource("CurveTexture_h13bo")
 
-[node name="big pipes" type="GridMap" node_paths=PackedStringArray("vfx")]
+[node name="big pipes" type="GridMap" node_paths=PackedStringArray("vfx", "sfx_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27712, 0, -2.32326)
 mesh_library = ExtResource("1_ur4av")
 cell_size = Vector3(0.5, 0.5, 0.5)
 cell_scale = 0.01
 collision_layer = 3
+collision_mask = 0
 data = {
 "cells": PackedInt32Array(131076, 65527, 327684, 393220, 65527, 65540, 393222, 65527, 524289, 589828, 65527, 458763, 458759, 65527, 65543, 655367, 65527, 65546, 4, 65527, 196608)
 }
 script = ExtResource("2_m87eb")
 vfx = [NodePath("GPUParticles3D3"), NodePath("GPUParticles3D4"), NodePath("GPUParticles3D"), NodePath("GPUParticles3D2")]
+sfx = Array[AudioStream]([ExtResource("3_6rnm5"), ExtResource("4_lme0x"), ExtResource("5_1htib")])
+sfx_loop = ExtResource("6_by5xe")
+sfx_player = NodePath("GPUParticles3D2/AudioStreamPlayer3D")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="small pipes" type="GridMap" parent="." node_paths=PackedStringArray("target")]
@@ -123,6 +131,10 @@ explosiveness = 0.4
 process_material = SubResource("ParticleProcessMaterial_ab2g5")
 draw_pass_1 = SubResource("QuadMesh_856ah")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GPUParticles3D2"]
+volume_db = -5.0
+bus = &"SFX"
+
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63754, 4.30192, -0.956301)
 material_override = SubResource("ShaderMaterial_sct5t")
@@ -139,3 +151,5 @@ emitting = false
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_2e2da")
 draw_pass_1 = SubResource("QuadMesh_856ah")
+
+[connection signal="finished" from="GPUParticles3D2/AudioStreamPlayer3D" to="." method="_on_sfx_finish"]

@@ -2,7 +2,6 @@ extends Node
 
 class_name GameSignalManager
 
-const GameTypes = preload("res://resources/templates/types.gd")
 
 var stats: GameResource
 var crew_members: Array[Crew] = []
@@ -42,12 +41,11 @@ func _ready():
 	
 	load_event_resources()
 	load_crew_resources()
-	connect_to_signal("warn_solar_flare", self, "toggle_solar_flare_min")
-	connect_to_signal("warn_debris", self, "toggle_debris_min")
-	connect_to_signal("solar_flare_hit", self, "toggle_solar_flare")
-	connect_to_signal("space_debris_hit", self, "toggle_debris")
-	connect_to_signal("event_triggered", self, "handle_failures")
-	
+	warn_solar_flare.connect(toggle_solar_flare_min)
+	warn_debris.connect(toggle_debris_min)
+	solar_flare_hit.connect(toggle_solar_flare)
+	space_debris_hit.connect(toggle_debris)
+	event_triggered.connect(handle_failures)
 
 
 ##
@@ -84,7 +82,6 @@ func load_crew_resources():
 	for crew in crew_resources:
 		crew_members.append(crew)
 
-
 func connect_to_signal(signal_name: String, target_node: Node, method_name: String):
 	if has_signal(signal_name) and target_node.has_method(method_name):
 		connect(signal_name, Callable(target_node, method_name))
@@ -99,11 +96,11 @@ func toggle_debris_min(min_left):
 
 func toggle_solar_flare():
 	solar_flare_incoming = !solar_flare_incoming
-	emit_signal("update_everything")
+	update_everything.emit()
 
 func toggle_debris():
 	debris_incoming = !debris_incoming
-	emit_signal("update_everything")
+	update_everything.emit()
 
 func handle_failures(event: GameEvent):
 	if event.event == GameTypes.Events.ENGINE:
@@ -113,7 +110,4 @@ func handle_failures(event: GameEvent):
 	elif event.event == GameTypes.Events.SHIELDS:
 		stats.current_shields = 0
 	elif event.event == GameTypes.Events.WEAPONS:
-		stats.current_weapons = 2
-
-func _process(_delta):
-	pass
+		stats.current_weapons = 0

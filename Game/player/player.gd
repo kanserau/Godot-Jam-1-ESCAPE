@@ -6,11 +6,21 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+@export var multitool_sound_src: AudioStreamPlayer3D
+@export var multitool_hits: Array[AudioStream]
+@export var multitool_misses: Array[AudioStream]
+@export var stompers: AudioStreamPlayer3D
+@export var stomps:  Array[AudioStream]
+@export var stomp_timer: Timer
+
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 
+
+
 var target_neck_rotation = 0.0
 var target_camera_rotation = 0.0
+var hit = null
 
 # Listens to everything
 func _unhandled_input(event) -> void: 
@@ -23,6 +33,7 @@ func _unhandled_input(event) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if event.is_action_pressed("fix") and not $AnimationPlayer.is_playing():
+		hit = null
 		$AnimationPlayer.queue("fix")
 	
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -52,10 +63,30 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
-
+		if is_on_floor() and (velocity.x != 0 or velocity.z != 0) and stomp_timer.time_left <= 0:
+			stompers.stream = stomps.pick_random()
+			stompers.play()
+			stompers.pitch_scale = randf_range(0.5, 1.2)
+			stomp_timer.start()
+	else:
+		velocity.x = 0
+		velocity.z = 0
 	move_and_slide()
-
 
 func _on_area_3d_body_entered(body):
 	if body.has_signal("fix"):
+		hit = body
 		body.emit_signal("fix")
+
+func _on_multitool_usage():
+	if hit == null:
+		multitool_sound_src.stream = multitool_misses.pick_random()
+	else:
+		multitool_sound_src.stream = multitool_hits.pick_random()
+	multitool_sound_src.play()
+
+
+func _on_animation_player_animation_started(anim: StringName):
+	match anim:
+		"fix":
+			get_tree().create_timer(0.15).timeout.connect(_on_multitool_usage)

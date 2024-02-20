@@ -1,18 +1,32 @@
 extends GridMap
 
 @export var vfx: Array[GPUParticles3D] = []
+@export var sfx: Array[AudioStream] = []
+@export var sfx_loop: AudioStream = null
+@export var sfx_player: AudioStreamPlayer3D = null
+
 var o2_failure: GameEvent = null
 signal fix();
 
 func _ready():
 	fix.connect(_on_fix)
-	GameManager.connect_to_signal("event_triggered", self, "_on_event_triggered")
+	GameManager.event_triggered.connect(_on_event_triggered)
 
 func _on_event_triggered(event: GameEvent):
-	if event.event == GameEvent.GameTypes.Events.ATMOSPHERE_GENERATOR:
-		o2_failure = event
-		for fx in vfx:
-			fx.emitting = true
+	if event.event != GameTypes.Events.ATMOSPHERE_GENERATOR:
+		return
+	o2_failure = event
+	for fx in vfx:
+		fx.emitting = true
+	if sfx.size() > 0:
+		sfx_player.stream = sfx.pick_random()
+	else:
+		sfx_player.stream = sfx_loop
+	sfx_player.play()
+
+func _on_sfx_finish():
+	sfx_player.stream = sfx_loop
+	sfx_player.play()
 
 func _on_fix():
 	if not o2_failure:
@@ -24,6 +38,7 @@ func _on_fix():
 			fx.emitting = false
 			break
 	if fixed == vfx.size():
+		sfx_player.stop()
 		GameManager.active_events.erase(o2_failure)
 		o2_failure = null
 

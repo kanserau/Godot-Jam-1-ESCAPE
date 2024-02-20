@@ -13,18 +13,6 @@ var debris_start: int = -1
 @onready var debris_timer = $DebrisTimer
 
 
-const GameTypes = preload("res://resources/templates/types.gd")
-
-func _unhandled_input(event) -> void: 
-	if event.is_action_pressed("events"):
-		SceneManager.add_overlay("res://ui/EventFeed.tscn")
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if event.is_action_pressed("terminal"):
-		SceneManager.add_overlay("res://ui/Terminal.tscn")
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
-	
-
 func _ready():
 	_on_event_timer_timeout()
 
@@ -74,7 +62,7 @@ func apply_ship_damage():
 		
 	GameManager.stats.ship_damage += GameManager.stats.starting_sun_damage
 	GameManager.stats.ship_damage += fire_count*GameManager.stats.fire_ship_damage
-	GameManager.emit_signal("change_ship_damage", GameManager.stats.ship_damage)
+	GameManager.change_ship_damage.emit(GameManager.stats.ship_damage)
 
 
 ##
@@ -103,7 +91,7 @@ func apply_crew_damage():
 			GameManager.dead_crew_members.append(member)
 
 	GameManager.crew_members = GameManager.crew_members.filter(func(member): return member.health > 0)
-	GameManager.emit_signal("crew_members_damaged")
+	GameManager.crew_members_damaged.emit()
 
 		
 
@@ -195,7 +183,7 @@ func trigger_emergency_cluster(cluster_size):
 				GameManager.active_event_locations[selected_event] = location_keys.pick_random()
 
 			GameManager.active_events.append(selected_event)
-			GameManager.emit_signal("event_triggered", selected_event)
+			GameManager.event_triggered.emit(selected_event)
 ##
 # Ship movement
 ##
@@ -210,7 +198,7 @@ func apply_ship_movement():
 		elif thrust == 3:
 			movement += GameManager.stats.thrust_3
 	GameManager.stats.distance += movement
-	GameManager.emit_signal("ship_moved", GameManager.stats.distance)
+	GameManager.ship_moved.emit(GameManager.stats.distance)
 
 ##
 # O2
@@ -227,7 +215,7 @@ func apply_oxygen_change():
 			GameManager.stats.current_oxygen -= GameManager.stats.oxygen_depletion_fire
 		elif event.event == GameTypes.Events.HULLBREACH:
 			GameManager.stats.current_oxygen -= GameManager.stats.oxygen_depletion_hull_breach
-	GameManager.emit_signal("change_oxygen", GameManager.stats.current_oxygen)
+	GameManager.change_oxygen.emit(GameManager.stats.current_oxygen)
 
 ## 
 # Weapons
@@ -236,7 +224,10 @@ func apply_weapons_damage():
 	if GameManager.stats.current_weapons == GameManager.stats.weapons_on:
 		if GameManager.stats.current_space_debris_health > 0:
 			GameManager.stats.current_space_debris_health -= GameManager.stats.space_debris_weapons_damage
-			GameManager.emit_signal("weapons_firing")
+			GameManager.weapons_firing.emit()
+		elif GameManager.debris_incoming:
+			# TODO: maybe signal?
+			GameManager.toggle_debris()
 
 ##
 # Random events
@@ -246,7 +237,7 @@ func apply_random_events():
 		var solar_flare_countdown = GameManager.stats.solar_flare_countdown
 
 		solar_flare_triggered = true
-		GameManager.emit_signal("warn_solar_flare", solar_flare_countdown)
+		GameManager.warn_solar_flare.emit(solar_flare_timer)
 		solar_flare_timer.start(solar_flare_countdown)
 
 	if !debris_triggered and debris_start >= random_event_timer.time_left:
@@ -256,18 +247,18 @@ func apply_random_events():
 
 		debris_triggered = true
 		GameManager.stats.current_space_debris_health = randi_range(min_debris_health, max_debris_health)
-		GameManager.emit_signal("warn_debris", debris_countdown)
+		GameManager.warn_debris.emit(debris_timer)
 		debris_timer.start(debris_countdown)
 
 
 func _on_debris_timer_timeout():
 	if GameManager.stats.current_space_debris_health > 0:
-		GameManager.emit_signal("space_debris_hit")
+		GameManager.space_debris_hit.emit()
 		GameManager.stats.ship_damage += GameManager.stats.space_debris_damage
 
 
 func _on_solar_flare_timer_timeout():
-	GameManager.emit_signal("solar_flare_hit")
+	GameManager.solar_flare_hit.emit()
 	if GameManager.stats.current_shields != GameManager.stats.shields_on:
 		trigger_emergency_cluster(GameManager.stats.solar_flare_emergencies_size)
 

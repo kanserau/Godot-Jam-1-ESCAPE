@@ -1,3 +1,5 @@
+class_name GameTypes
+
 enum SystemFailures {
 	POWER_GENERATOR,
 	ENGINE,

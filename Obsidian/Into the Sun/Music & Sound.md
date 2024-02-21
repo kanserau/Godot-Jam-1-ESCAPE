@@ -1,22 +1,24 @@
 # Music
 The theme should be ambient, forboding, lonely.
-
-
 **Idea 1**
 Low saw bass.
 occasional string section swell
 quiet synth ostinatos and ambient SFX
 
+## Tracklist
+- [x] Main Theme
+- [x] Game over theme
+- [ ] Victory/credits theme
+
 # Sound
 Should be loud and chaotic. Blaring alarms, fire, engine whirring, 
-Sound List
-
-Player
+## Sound List
+### Player
 - [x] Footsteps
 - [x] Multitool swing
 - [x] Multitool hit x3
 
-Alarms
+### Alarms
 - [x] Hull breach alarm
 - [x] Fire alarm
 - [x] Solar flare warning alarm
@@ -26,27 +28,31 @@ Alarms
 - [ ] Shields down warning
 - [ ] Weapons down warning
 
-Interface
+### Interface
 - [ ] Confirm/enter
 - [ ] Cancel/exit
 - [ ] Denied/option unavailable
 - [ ] Increase
 - [ ] Decrease
 
-Environment
+### Environment
 - [x] Fire
+- [ ] Fire whoosh
 - [x] 02 pipe leak/Steam
+- [x] Steam loop
 - [x] Engine noise
 - [x] Engine down
 - [x] Shields Active
 - [ ] Subtle electric buzzing from terminal
 - [ ] Terminal sparking
-- [x] Muffled explosions
-- [x] Voice
 
-Events
+
+### Events
 - [x] Game Over explosion
 - [ ] Solar Flare Hit
 - [ ] Solar Flare Hits Shield
 - [x] Space Debris Destroyed x2
 - [x] Space Debris hits ship
+
+### Voice
+- [x] Voice lines processed

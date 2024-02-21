@@ -9,7 +9,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_blfgm"]
 shader = ExtResource("1_dwui7")
 shader_parameter/amount = 2.0
-shader_parameter/color = Color(0.82188, 0.822996, 0.978426, 1)
+shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/blend = 0.6
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o1lf7"]
@@ -40,35 +40,36 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("CanvasTexture_o1lf7")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_direction = 1
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_direction = 1
+layout_mode = 2
 horizontal_scroll_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
 layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Space" type="Control" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Master" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_fuyow")
 split_offset = 800
 
-[node name="BGM Slider" type="HSlider" parent="ScrollContainer/VBoxContainer/HSplitContainer"]
+[node name="master_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/Master"]
 layout_mode = 2
 size_flags_vertical = 1
 mouse_filter = 1
@@ -77,7 +78,32 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
-[node name="BGM Label" type="Label" parent="ScrollContainer/VBoxContainer/HSplitContainer"]
+[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_7tijr")
+theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 16
+text = "Master
+"
+horizontal_alignment = 1
+
+[node name="BGM" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_fuyow")
+split_offset = 800
+
+[node name="bgm_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/BGM"]
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 1
+mouse_default_cursor_shape = 13
+theme = ExtResource("2_7tijr")
+min_value = -60.0
+max_value = 5.0
+
+[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/BGM"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -87,17 +113,12 @@ theme_override_font_sizes/font_size = 16
 text = "BGM"
 horizontal_alignment = 1
 
-[node name="Space2" type="Control" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="HSplitContainer2" type="HSplitContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="SFX" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_fuyow")
 split_offset = 800
 
-[node name="SFX Slider" type="HSlider" parent="ScrollContainer/VBoxContainer/HSplitContainer2"]
+[node name="sfx_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/SFX"]
 layout_mode = 2
 size_flags_vertical = 1
 mouse_filter = 1
@@ -106,7 +127,7 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
-[node name="SFX Label" type="Label" parent="ScrollContainer/VBoxContainer/HSplitContainer2"]
+[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/SFX"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -115,7 +136,33 @@ theme_type_variation = &"HeaderMedium"
 theme_override_font_sizes/font_size = 16
 text = "SFX"
 horizontal_alignment = 1
+
+[node name="Voice" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_fuyow")
+split_offset = 800
+
+[node name="voice_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/Voice"]
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 1
+mouse_default_cursor_shape = 13
+theme = ExtResource("2_7tijr")
+min_value = -60.0
+max_value = 5.0
+
+[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Voice"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_7tijr")
+theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 16
+text = "voice"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="value_changed" from="ScrollContainer/VBoxContainer/HSplitContainer/BGM Slider" to="." method="_on_bgm_value_changed"]
-[connection signal="value_changed" from="ScrollContainer/VBoxContainer/HSplitContainer2/SFX Slider" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/Master/master_slider" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/BGM/bgm_slider" to="." method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/SFX/sfx_slider" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/Voice/voice_slider" to="." method="_on_vo_value_changed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bxdo24l4ty54r"]
+[gd_scene load_steps=20 format=3 uid="uid://bxdo24l4ty54r"]
 
 [ext_resource type="PackedScene" uid="uid://c3r2eag7o8k42" path="res://assets/props/console/desk/console.gltf" id="1_qhio2"]
 [ext_resource type="Script" path="res://assets/props/console/console_power_switch.gd" id="2_bwgb5"]
 [ext_resource type="PackedScene" uid="uid://capks138wgc7f" path="res://ui/crew_ui.tscn" id="2_xgqc8"]
 [ext_resource type="PackedScene" uid="uid://b0hsmvfat6i8p" path="res://ui/screen_saver.tscn" id="3_7xlh8"]
+[ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="3_115ym"]
 [ext_resource type="PackedScene" uid="uid://0x1o6uohaw0o" path="res://ui/power_ui.tscn" id="3_ew3yg"]
 [ext_resource type="PackedScene" uid="uid://doiuo31thi3qr" path="res://ui/EventFeed.tscn" id="4_po81h"]
 [ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/Terminal.tscn" id="7_obri6"]
@@ -16,7 +17,7 @@ resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_nwqwn")
 uv1_scale = Vector3(1, -1, 1)
-uv1_offset = Vector3(-0.27, 0, 0)
+uv1_offset = Vector3(-0.4, -0.1, 0)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5asut"]
 viewport_path = NodePath("screens/screen 2")
@@ -82,8 +83,20 @@ material_override = SubResource("StandardMaterial3D_sgg7q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="console" index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0, 0, 0)
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="console/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_n4qln")
+
+[node name="terminal_trigger" type="StaticBody3D" parent="console" index="7" node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_115ym")
+target = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="console/terminal_trigger" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_n4qln")
 
@@ -97,7 +110,7 @@ size = Vector2i(1024, 1024)
 [node name="screen 2" type="SubViewport" parent="screens" index="1"]
 size = Vector2i(1024, 1024)
 
-[node name="power ui" parent="screens/screen 2" index="0" instance=ExtResource("3_ew3yg")]
+[node name="screen saver" parent="screens/screen 2" index="0" instance=ExtResource("3_7xlh8")]
 
 [node name="screen 3" type="SubViewport" parent="screens" index="2"]
 size = Vector2i(1024, 1024)
@@ -107,7 +120,8 @@ size = Vector2i(1024, 1024)
 [node name="screen 4" type="SubViewport" parent="screens" index="3"]
 size = Vector2i(512, 1024)
 
-[node name="screen saver" parent="screens/screen 4" index="0" instance=ExtResource("3_7xlh8")]
+[node name="power ui" parent="screens/screen 4" index="0" instance=ExtResource("3_ew3yg")]
+size_flags_vertical = 4
 
 [node name="screen 5" type="SubViewport" parent="screens" index="4"]
 size = Vector2i(1024, 1024)

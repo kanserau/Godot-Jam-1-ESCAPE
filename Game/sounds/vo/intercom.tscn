@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://s7kca4yjlu1p"]
+
+[ext_resource type="Script" path="res://sounds/vo/announcements.gd" id="1_3khdp"]
+[ext_resource type="AudioStream" uid="uid://c4qa0xdgq8u03" path="res://sounds/vo/engine_offline.wav" id="2_673i4"]
+[ext_resource type="AudioStream" uid="uid://7jcx160hvb1o" path="res://sounds/vo/pilot_dead.wav" id="3_oesqg"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D"]
+bus = &"VO"
+script = ExtResource("1_3khdp")
+engine_failure = ExtResource("2_673i4")
+pilot_dead = ExtResource("3_oesqg")

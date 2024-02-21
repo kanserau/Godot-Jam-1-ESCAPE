@@ -1,7 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0x8o5y6sjjl1"]
+[gd_scene load_steps=17 format=3 uid="uid://b0x8o5y6sjjl1"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_fyl6a"]
-[ext_resource type="PackedScene" uid="uid://u487vc0826f6" path="res://assets/props/crowbar/crowbar_01_1k.gltf" id="2_0qgtd"]
+[ext_resource type="PackedScene" uid="uid://u487vc0826f6" path="res://assets/props/multitool/multitool.gltf" id="2_0qgtd"]
+[ext_resource type="AudioStream" uid="uid://bw5uimuofdfd5" path="res://sounds/sfx/multitool/multitool_01.ogg" id="2_enl4l"]
+[ext_resource type="AudioStream" uid="uid://cmy4vpb1suceq" path="res://sounds/sfx/footsteps/step_01.wav" id="2_h277i"]
+[ext_resource type="AudioStream" uid="uid://djfjc6w054ern" path="res://sounds/sfx/multitool/multitool_02.ogg" id="3_gy53b"]
+[ext_resource type="AudioStream" uid="uid://c1wraqdce4osc" path="res://sounds/sfx/footsteps/step_02.wav" id="3_rexm6"]
+[ext_resource type="AudioStream" uid="uid://g06maasp2mta" path="res://sounds/sfx/footsteps/step_03.wav" id="4_2amkq"]
+[ext_resource type="AudioStream" uid="uid://4mppn28h1juj" path="res://sounds/sfx/multitool/multitool_03.ogg" id="4_mtw2j"]
+[ext_resource type="AudioStream" uid="uid://sjv2xe1j06dr" path="res://sounds/sfx/footsteps/step_04.wav" id="5_3415c"]
+[ext_resource type="AudioStream" uid="uid://bcs3nj8482b7x" path="res://sounds/sfx/multitool/multitool_miss_01.ogg" id="5_fd7yx"]
+[ext_resource type="AudioStream" uid="uid://bmje6qu2skw11" path="res://sounds/sfx/multitool/multitool_miss_02.ogg" id="6_k10q3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8ar8"]
 radius = 0.3
@@ -20,14 +29,14 @@ length = 0.5
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/crowbar_01_1k")
+tracks/0/path = NodePath("Neck/Camera3D/multitool")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0.3, -0.2, -0.4, 0.1, 1, 0.4, -0.1, -0.4, 0.2, 1, -0.2, -0.3, -0.6, 0.5, 1, 0.3, -0.2, -0.4)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Neck/crowbar_01_1k")
+tracks/1/path = NodePath("Neck/Camera3D/multitool")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0.258, 0.962, 0.023, 0.084, 0.1, 1, 0.167731, 0.951251, 0.0449435, 0.254887, 0.2, 1, -0.171, -0.296, 0.47, 0.814, 0.5, 1, 0.258, 0.962, 0.023, 0.084)
@@ -49,11 +58,17 @@ _data = {
 "fix": SubResource("Animation_ypo5g")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("multitool_sound_src", "stompers", "stomp_timer")]
 collision_layer = 2
 collision_mask = 13
 floor_stop_on_slope = false
 script = ExtResource("1_fyl6a")
+multitool_sound_src = NodePath("Neck/Camera3D/multitool/multitool_sounds")
+multitool_hits = Array[AudioStream]([ExtResource("2_enl4l"), ExtResource("3_gy53b"), ExtResource("4_mtw2j")])
+multitool_misses = Array[AudioStream]([ExtResource("5_fd7yx"), ExtResource("6_k10q3")])
+stompers = NodePath("stompers/stomps")
+stomps = Array[AudioStream]([ExtResource("2_h277i"), ExtResource("3_rexm6"), ExtResource("4_2amkq"), ExtResource("5_3415c")])
+stomp_timer = NodePath("stompers/Timer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_x8ar8")
@@ -67,8 +82,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 
-[node name="crowbar_01_1k" parent="Neck" instance=ExtResource("2_0qgtd")]
+[node name="multitool" parent="Neck/Camera3D" instance=ExtResource("2_0qgtd")]
 transform = Transform3D(-0.8527, 0.492728, 0.173555, 0.500459, 0.865759, 0.000908371, -0.149809, 0.0876316, -0.984824, 0.3, -0.2, -0.4)
+
+[node name="multitool_sounds" type="AudioStreamPlayer3D" parent="Neck/Camera3D/multitool"]
+volume_db = -35.0
+bus = &"SFX"
 
 [node name="Area3D" type="Area3D" parent="Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -0.5)
@@ -85,6 +104,16 @@ libraries = {
 "": SubResource("AnimationLibrary_ukc31")
 }
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="stompers" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.834869, 0)
+
+[node name="stomps" type="AudioStreamPlayer3D" parent="stompers"]
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="stompers"]
+wait_time = 0.4
+one_shot = true
 
 [connection signal="body_entered" from="Neck/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]

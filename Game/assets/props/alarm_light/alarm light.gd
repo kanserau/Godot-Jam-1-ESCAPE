@@ -1,9 +1,6 @@
 extends Node3D
 class_name EmergencyLight
 
-# TODO:
-# @export var color -> on set override Geam
-
 func _ready():
 	toggle(false)
 

@@ -8,13 +8,6 @@ func _ready():
 	add_child(settings)
 	load_settings()
 
-# Sound 
-func connect_sfx_volume_change_listener(listener_node, listener_method):
-	settings.connect("sfx_volume_changed", Callable(listener_node, listener_method))
-
-func connect_bgm_volume_change_listener(listener_node, listener_method):
-	settings.connect("bgm_volume_changed", Callable(listener_node, listener_method))
-
 # Persistence
 func save_settings():
 	var config = ConfigFile.new()

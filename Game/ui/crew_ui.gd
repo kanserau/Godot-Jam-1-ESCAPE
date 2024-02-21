@@ -12,7 +12,7 @@ func _ready():
 		status.name = crew.name
 		container.add_child(status)
 		labels.append(status)
-	GameManager.connect_to_signal("crew_members_damaged", self, "update_crew")
+	GameManager.crew_members_damaged.connect(update_crew)
 
 
 func update_crew():
@@ -22,9 +22,9 @@ func update_crew():
 		var status: RichTextLabel = container.get_node(crew.name)
 		status.text = (
 			crew.name
-			+ ".\nID:" + crew.id
-			+ ".\n" + crew.role
-			+ ".\n" + Crew.GameTypes.CrewStatus.find_key(crew.status)
+			+ ". ID:" + crew.id
+			+ ". " + crew.role
+			+ ". " + GameTypes.CrewStatus.find_key(crew.status)
 			+ "."
 		)
 	if labels.size() > n:

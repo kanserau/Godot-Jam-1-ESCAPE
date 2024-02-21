@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c73m8kp0ut6gv"]
+
+[ext_resource type="PackedScene" uid="uid://br6nry3u5mqa8" path="res://assets/props/intercom/scene.gltf" id="1_gelg3"]
+[ext_resource type="Script" path="res://assets/props/intercom/intercom.gd" id="2_o4ok5"]
+
+[node name="intercom" instance=ExtResource("1_gelg3")]
+script = ExtResource("2_o4ok5")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7857, -7.59481, 4.23387)

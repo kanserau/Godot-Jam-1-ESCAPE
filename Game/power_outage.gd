@@ -10,10 +10,10 @@ func _ready():
 	power_button = get_node("%power button")
 	console = get_node("%desk console")
 	power_button.power_restored.connect(_on_power_restored)
-	GameManager.connect_to_signal("event_triggered", self, "_on_event_triggered")
+	GameManager.event_triggered.connect(_on_event_triggered)
 
 func _on_event_triggered(event: GameEvent):
-	if event.event != GameEvent.GameTypes.Events.POWER_GENERATOR:
+	if event.event != GameTypes.Events.POWER_GENERATOR:
 		return
 	power_button.power_failure_triggered(event)
 	for l in emergency_lights:
@@ -21,6 +21,8 @@ func _on_event_triggered(event: GameEvent):
 	console.toggle(false)
 	for l in lights:
 		l.visible = false
+	SceneManager.remove_overlay()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _on_power_restored():
 	for l in emergency_lights:

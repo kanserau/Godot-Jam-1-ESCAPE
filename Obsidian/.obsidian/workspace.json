@@ -4,24 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "2a4da9c1f33b2e42",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "02aa133c07443d19",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Into the Sun/Notes.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "334ef16c926fd788",
         "type": "tabs",
         "children": [
@@ -34,6 +16,45 @@
                 "file": "Into the Sun/1. Mechanics.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "3d8c16a5adcd4674",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md"
+              }
+            }
+          },
+          {
+            "id": "94c1bed478cb9e28",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Into the Sun/1. Mechanics.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "0a935a6f0c04fbaa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "479812134fe8a460",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md"
               }
             }
           }
@@ -111,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Into the Sun/Notes.md",
+                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +149,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Into the Sun/Notes.md",
+                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Into the Sun/Notes.md"
+                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md"
               }
             }
           },
@@ -179,17 +200,22 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "02aa133c07443d19",
+  "active": "479812134fe8a460",
   "lastOpenFiles": [
+    "Into the Sun/1. Mechanics.md",
+    "Excalidraw/Proposed Engine Room & Ship Layout.md",
+    "Into the Sun/0. The Plan.md",
+    "Into the Sun/Notes.md",
+    "Excalidraw/Terminals & Gauges.md",
+    "Into the Sun/Music & Sound.md",
+    "Excalidraw",
     "Into the Sun/Item List.md",
     "Into the Sun/I. Reflections.md",
-    "Into the Sun/Music & Sound.md",
-    "Into the Sun/Notes.md",
     "Into the Sun/The Captain.md",
-    "Into the Sun/1. Mechanics.md",
     "Into the Sun/The Manual.md",
     "Into the Sun/Scrapped Ideas.md",
     "Into the Sun/Sound.md",
@@ -214,13 +240,9 @@
     "Role-Playing Games/Mech RPG/Concept.md",
     "Role-Playing Games/Mech RPG/Preparing the Game/Tech Ideas.md",
     "Role-Playing Games/Mech RPG/Playing the Game/RULES.md",
-    "Role-Playing Games/Characters.md",
     "Role-Playing Games/Mech RPG/Preparing the Game",
     "Role-Playing Games/Mech RPG/Playing the Game",
-    "Role-Playing Games/Mech RPG/Preparing the Game/Maps.md",
-    "Videogames/Synth Wizard/Synth Wizard Outline.md",
     "Role-Playing Games/Mech RPG",
-    "Videogames/Synth Wizard",
-    "Role-Playing Games/Yokai"
+    "Videogames/Synth Wizard"
   ]
 }

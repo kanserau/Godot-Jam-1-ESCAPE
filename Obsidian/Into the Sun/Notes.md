@@ -8,6 +8,7 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 - I will polish the existing tracks and aim to write a third track.
 ## game.tres
 - Set target distance to 50,000
+- Disable damage from thrust level 3 (not needed)
 ## Style notes
 ### Ending Screen
 - display ship distance as %
@@ -21,9 +22,12 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 - Crowbar needs to move up with camera
 - "Resolve" command should be named "Reboot"
 - It's not very obvious that the left wall is a window, it just seems blank. Additionally, it seems to suggest that the ship's thruster is pointing parallel to the orbit path, as opposed to perpendicular.
-- there is an infinite self-defib-exploit.
-	- could be fixed by implementing secondary loss state (ship damage maxxed)
-	- alternatively, implement terminal breakdown
+- there is an infinite self-defib-exploit. Potential fixes:
+	- implement secondary loss state (ship damage maxxed)
+	- implement terminal breakdown
+	- prevent defib from working on crew still taking damage
+	- add defib cooldown per crew member
+	- defib costs one power
 
 ## Space Debris & Solar Flares
 - Solar flares when they hit should cause power outages and system failures.
@@ -45,6 +49,12 @@ Consider implementing a command to move crew members around the ship.
 - To avoid sticking all crew members in the healing area and leaving them there, there are a few solutions:
 	- Give each room a crew capacity
 	- Give each room a function which is lost without the crew member there
+
+### Treat Command
+If the Medical Officer is not in critical condition or dead, you can use this command on a location. After a delay, the character at the location is treated by the Medical Officer, healing to full health.
+- The treat command has a cooldown.
+
+
 ## Bugs
 - Sometimes defibbing breaks (captain, cook)
 - ?Characters dying, but still displaying critical

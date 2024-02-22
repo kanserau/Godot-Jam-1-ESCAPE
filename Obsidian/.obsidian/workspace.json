@@ -4,47 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "334ef16c926fd788",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "1731eb6169beb7ea",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Into the Sun/1. Mechanics.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3d8c16a5adcd4674",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md"
-              }
-            }
-          },
-          {
-            "id": "94c1bed478cb9e28",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Into the Sun/1. Mechanics.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
         "id": "0a935a6f0c04fbaa",
         "type": "tabs",
         "children": [

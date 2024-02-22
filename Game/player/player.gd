@@ -6,9 +6,10 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@export var multitool_sound_src: AudioStreamPlayer3D
+@export var multitool_hit_src: AudioStreamPlayer3D
+@export var multitool_swing_src: AudioStreamPlayer3D
 @export var multitool_hits: Array[AudioStream]
-@export var multitool_misses: Array[AudioStream]
+@export var multitool_swings: Array[AudioStream]
 @export var stompers: AudioStreamPlayer3D
 @export var stomps:  Array[AudioStream]
 @export var stomp_timer: Timer
@@ -20,7 +21,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var target_neck_rotation = 0.0
 var target_camera_rotation = 0.0
-var hit = null
 
 # Listens to everything
 func _unhandled_input(event) -> void: 
@@ -33,8 +33,9 @@ func _unhandled_input(event) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if event.is_action_pressed("fix") and not $AnimationPlayer.is_playing():
-		hit = null
 		$AnimationPlayer.queue("fix")
+		multitool_swing_src.stream = multitool_swings.pick_random()
+		multitool_swing_src.play()
 	
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
@@ -75,18 +76,6 @@ func _physics_process(delta):
 
 func _on_area_3d_body_entered(body):
 	if body.has_signal("fix"):
-		hit = body
 		body.emit_signal("fix")
-
-func _on_multitool_usage():
-	if hit == null:
-		multitool_sound_src.stream = multitool_misses.pick_random()
-	else:
-		multitool_sound_src.stream = multitool_hits.pick_random()
-	multitool_sound_src.play()
-
-
-func _on_animation_player_animation_started(anim: StringName):
-	match anim:
-		"fix":
-			get_tree().create_timer(0.15).timeout.connect(_on_multitool_usage)
+		multitool_hit_src.stream = multitool_hits.pick_random()
+		multitool_hit_src.play()

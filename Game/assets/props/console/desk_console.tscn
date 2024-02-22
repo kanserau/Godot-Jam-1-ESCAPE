@@ -2,35 +2,35 @@
 
 [ext_resource type="PackedScene" uid="uid://c3r2eag7o8k42" path="res://assets/props/console/desk/console.gltf" id="1_qhio2"]
 [ext_resource type="Script" path="res://assets/props/console/console_power_switch.gd" id="2_bwgb5"]
-[ext_resource type="PackedScene" uid="uid://capks138wgc7f" path="res://ui/crew_ui.tscn" id="2_xgqc8"]
-[ext_resource type="PackedScene" uid="uid://b0hsmvfat6i8p" path="res://ui/screen_saver.tscn" id="3_7xlh8"]
+[ext_resource type="PackedScene" uid="uid://capks138wgc7f" path="res://ui/console/crew_ui.tscn" id="2_xgqc8"]
+[ext_resource type="PackedScene" uid="uid://b0hsmvfat6i8p" path="res://ui/console/screen_saver.tscn" id="3_7xlh8"]
 [ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="3_115ym"]
-[ext_resource type="PackedScene" uid="uid://0x1o6uohaw0o" path="res://ui/power_ui.tscn" id="3_ew3yg"]
-[ext_resource type="PackedScene" uid="uid://doiuo31thi3qr" path="res://ui/EventFeed.tscn" id="4_po81h"]
-[ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/Terminal.tscn" id="7_obri6"]
+[ext_resource type="PackedScene" uid="uid://0x1o6uohaw0o" path="res://ui/console/power_ui.tscn" id="3_ew3yg"]
+[ext_resource type="PackedScene" uid="uid://doiuo31thi3qr" path="res://ui/console/EventFeed.tscn" id="4_po81h"]
+[ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/console/Terminal.tscn" id="7_obri6"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nwqwn"]
-viewport_path = NodePath("screens/screen 1")
+viewport_path = NodePath("screens/screen_1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mmdv"]
 resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_nwqwn")
 uv1_scale = Vector3(1, -1, 1)
-uv1_offset = Vector3(-0.4, -0.1, 0)
+uv1_offset = Vector3(-0.38, -0.03, 0)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5asut"]
-viewport_path = NodePath("screens/screen 2")
+viewport_path = NodePath("screens/screen_2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syd2j"]
 resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_5asut")
 uv1_scale = Vector3(1, -1, 1)
-uv1_offset = Vector3(-0.05, -0.15, 0)
+uv1_offset = Vector3(-0.07, -0.15, 0)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gq5sw"]
-viewport_path = NodePath("screens/screen 3")
+viewport_path = NodePath("screens/screen_3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_liaff"]
 resource_local_to_scene = true
@@ -39,7 +39,7 @@ albedo_texture = SubResource("ViewportTexture_gq5sw")
 uv1_scale = Vector3(1, -1, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2uxu6"]
-viewport_path = NodePath("screens/screen 4")
+viewport_path = NodePath("screens/screen_4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7akmk"]
 resource_local_to_scene = true
@@ -48,7 +48,7 @@ albedo_texture = SubResource("ViewportTexture_2uxu6")
 uv1_scale = Vector3(-1, -1, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6cd24"]
-viewport_path = NodePath("screens/screen 5")
+viewport_path = NodePath("screens/screen_5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgg7q"]
 resource_local_to_scene = true
@@ -102,28 +102,32 @@ shape = SubResource("ConvexPolygonShape3D_n4qln")
 
 [node name="screens" type="Node3D" parent="." index="1"]
 
-[node name="screen 1" type="SubViewport" parent="screens" index="0"]
-size = Vector2i(1024, 1024)
+[node name="screen_1" type="SubViewport" parent="screens" index="0"]
+size = Vector2i(640, 360)
 
-[node name="crew display" parent="screens/screen 1" index="0" instance=ExtResource("2_xgqc8")]
+[node name="crew display" parent="screens/screen_1" index="0" instance=ExtResource("2_xgqc8")]
 
-[node name="screen 2" type="SubViewport" parent="screens" index="1"]
-size = Vector2i(1024, 1024)
+[node name="screen_2" type="SubViewport" parent="screens" index="1"]
+size = Vector2i(640, 360)
 
-[node name="screen saver" parent="screens/screen 2" index="0" instance=ExtResource("3_7xlh8")]
+[node name="EventFeed" parent="screens/screen_2" index="0" instance=ExtResource("4_po81h")]
 
-[node name="screen 3" type="SubViewport" parent="screens" index="2"]
-size = Vector2i(1024, 1024)
+[node name="screen_3" type="SubViewport" parent="screens" index="2"]
+size = Vector2i(640, 360)
 
-[node name="EventFeed" parent="screens/screen 3" index="0" instance=ExtResource("4_po81h")]
+[node name="screen saver" parent="screens/screen_3" index="0" instance=ExtResource("3_7xlh8")]
 
-[node name="screen 4" type="SubViewport" parent="screens" index="3"]
+[node name="screen_4" type="SubViewport" parent="screens" index="3"]
 size = Vector2i(512, 1024)
 
-[node name="power ui" parent="screens/screen 4" index="0" instance=ExtResource("3_ew3yg")]
+[node name="power ui" parent="screens/screen_4" index="0" instance=ExtResource("3_ew3yg")]
 size_flags_vertical = 4
 
-[node name="screen 5" type="SubViewport" parent="screens" index="4"]
-size = Vector2i(1024, 1024)
+[node name="screen_5" type="SubViewport" parent="screens" index="4"]
+size = Vector2i(640, 320)
 
-[node name="Terminal" parent="screens/screen 5" index="0" instance=ExtResource("7_obri6")]
+[node name="Terminal" parent="screens/screen_5" index="0" instance=ExtResource("7_obri6")]
+
+[node name="Camera3D" type="Camera3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.87462, 0.48481, 0, -0.48481, 0.87462, 0, 4, 2.2)
+size = 0.371

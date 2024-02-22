@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmp42r0d06uf7"]
 
-[ext_resource type="Script" path="res://ui/InputResponse.gd" id="1_4x7u2"]
+[ext_resource type="Script" path="res://ui/console/InputResponse.gd" id="1_4x7u2"]
 [ext_resource type="FontFile" uid="uid://dafnrwg4yatol" path="res://assets/fonts/IBMPlexMono-SemiBoldItalic.ttf" id="1_otn6m"]
 [ext_resource type="FontVariation" uid="uid://dkso7qb2tnmny" path="res://assets/fonts/plex_mono_bold.tres" id="2_jmc40"]
 

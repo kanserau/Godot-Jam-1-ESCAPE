@@ -58,14 +58,15 @@ _data = {
 "fix": SubResource("Animation_ypo5g")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("multitool_sound_src", "stompers", "stomp_timer")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("multitool_hit_src", "multitool_swing_src", "stompers", "stomp_timer")]
 collision_layer = 2
 collision_mask = 13
 floor_stop_on_slope = false
 script = ExtResource("1_fyl6a")
-multitool_sound_src = NodePath("Neck/Camera3D/multitool/multitool_sounds")
+multitool_hit_src = NodePath("Neck/Camera3D/multitool/multitool_hit")
+multitool_swing_src = NodePath("Neck/Camera3D/multitool/multitool_swing")
 multitool_hits = Array[AudioStream]([ExtResource("2_enl4l"), ExtResource("3_gy53b"), ExtResource("4_mtw2j")])
-multitool_misses = Array[AudioStream]([ExtResource("5_fd7yx"), ExtResource("6_k10q3")])
+multitool_swings = Array[AudioStream]([ExtResource("5_fd7yx"), ExtResource("6_k10q3")])
 stompers = NodePath("stompers/stomps")
 stomps = Array[AudioStream]([ExtResource("2_h277i"), ExtResource("3_rexm6"), ExtResource("4_2amkq"), ExtResource("5_3415c")])
 stomp_timer = NodePath("stompers/Timer")
@@ -81,11 +82,16 @@ mesh = SubResource("CapsuleMesh_53mmj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+current = true
 
 [node name="multitool" parent="Neck/Camera3D" instance=ExtResource("2_0qgtd")]
 transform = Transform3D(-0.8527, 0.492728, 0.173555, 0.500459, 0.865759, 0.000908371, -0.149809, 0.0876316, -0.984824, 0.3, -0.2, -0.4)
 
-[node name="multitool_sounds" type="AudioStreamPlayer3D" parent="Neck/Camera3D/multitool"]
+[node name="multitool_swing" type="AudioStreamPlayer3D" parent="Neck/Camera3D/multitool"]
+volume_db = -35.0
+bus = &"SFX"
+
+[node name="multitool_hit" type="AudioStreamPlayer3D" parent="Neck/Camera3D/multitool"]
 volume_db = -35.0
 bus = &"SFX"
 

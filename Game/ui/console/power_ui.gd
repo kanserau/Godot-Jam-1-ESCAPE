@@ -44,8 +44,10 @@ func update_ui():
 		var icon: Button = event_mapping[event_name]
 		if active_events.has(event_name):
 			icon.modulate = "#ff0000"
+			icon.disabled = true
 		else:
 			icon.modulate = "#00ff00"
+			icon.disabled = false
 	
 	engine_display.value = GameManager.stats.current_thrust
 	o2_display.value = GameManager.stats.current_atmosphere_generator
@@ -91,6 +93,7 @@ func _on_o2_gui_input(event):
 		event, GameTypes.Events.ATMOSPHERE_GENERATOR,
 		GameManager.stats.current_atmosphere_generator, 1, 2
 	)
+	update_ui()
 
 
 func _on_engine_gui_input(event):
@@ -98,3 +101,4 @@ func _on_engine_gui_input(event):
 		event, GameTypes.Events.ENGINE,
 		GameManager.stats.current_thrust, 1, 3
 	)
+	update_ui()

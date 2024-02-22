@@ -1,6 +1,6 @@
 extends Control
 
-const InputResponse = preload("res://ui/InputResponse.tscn")
+const InputResponse = preload("res://ui/console/InputResponse.tscn")
 
 @onready var input = $MarginContainer/VBoxContainer/InputArea/HBoxContainer/Input
 @onready var history_rows = $MarginContainer/VBoxContainer/GameInfo/Scroll/HistoryRows
@@ -13,7 +13,6 @@ func _ready():
 	scrollbar.connect("changed", Callable(self, "handle_scrollbar_changed"))
 	var input_response = InputResponse.instantiate()
 	input_response.initial(handle_text_response("help"))
-	input_response.initial(handle_text_response("info"))
 	history_rows.add_child(input_response)
 	
 func handle_scrollbar_changed():

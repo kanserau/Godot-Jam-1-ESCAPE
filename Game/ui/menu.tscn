@@ -55,7 +55,7 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("6_aphfp")
-expand_mode = 1
+expand_mode = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -67,21 +67,20 @@ theme_override_constants/margin_bottom = 5
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 375
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2"]
 clip_contents = true
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 texture = ExtResource("4_6h6e2")
-expand_mode = 1
+expand_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2"]
 clip_contents = true
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 texture = ExtResource("5_n7lum")
-expand_mode = 1
+expand_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

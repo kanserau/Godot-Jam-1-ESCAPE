@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://cov354ofq62bt"]
+
+[resource]
+CrewUIText/base_type = &"RichTextLabel"
+CrewUIText/colors/default_color = Color(0, 1, 0, 1)
+CrewUIText/font_sizes/normal_font_size = 16
+GridContainer/constants/h_separation = 10
+GridContainer/constants/v_separation = 5
+PowerShuntButton/base_type = &"Button"
+PowerShuntButton/colors/icon_disabled_color = Color(1, 1, 1, 0.501961)
+PowerShuntButton/colors/icon_focus_color = Color(1, 1, 1, 0.501961)
+PowerShuntButton/colors/icon_hover_color = Color(1, 1, 1, 0.752941)
+PowerShuntButton/colors/icon_normal_color = Color(1, 1, 1, 0.501961)
+PowerShuntButton/colors/icon_pressed_color = Color(1, 1, 1, 1)

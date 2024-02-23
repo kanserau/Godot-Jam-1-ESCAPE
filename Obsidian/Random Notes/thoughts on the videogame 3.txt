@@ -1,0 +1,20 @@
+Identify compromises and reverse them.
+Identify what didn't work, revise, rebuild.
+THEN implement missing features based on revision.
+Reassess and make changes.
+
+
+
+Point system to events? Each cluster is X points?
+fire is like a bleeding wound. Fire should be prioritised as it harms the crew, ship, and reduces oxygen.
+hull breaches don't damage the ship, but they do tank the oxygen. lower priority than fire.
+space debris causes hull breaches.
+solar flares cause fires and shutdowns.
+
+
+
+Should player be able to compensate for poor management early on?
+And how?
+Poor mgmt: lots of ship damage, crew loss.
+good mgmt: recovered ship damage.
+autorepair: fixes breaches at targeted location. then passively repairs ship if left on.

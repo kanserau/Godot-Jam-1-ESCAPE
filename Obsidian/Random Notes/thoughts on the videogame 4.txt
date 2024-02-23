@@ -1,0 +1,39 @@
+Execute Maintenance command - repairs X damage over X seconds.
+info command - provides information, little easter eggs.
+All characters and systems have entries. The system also has an entry, as well as database planets.
+'info system'
+'info ship'
+'info captain'
+'info engineer'
+
+Shortened commands
+All 6 commands have a cooldown and are location based. They use the location selector.
+
+s - suppress
+h - heal
+r - repair
+i - info
+m - maintenance
+p - provide refreshment
+
+r1/co - cockpit
+r2/br - bridge
+r3/rl - research lab
+r4/cq - crew quarters
+r5/cb - cargo bay
+r6/ga - galley
+r7/mc - maintenance corridor
+r8/er - engine room
+e.g. "s r7", "r r1", "r er", "s cb"
+
+
+Accepted info commands:
+- captain
+- engineer
+ - Data corrupted.
+- pilot
+- gunner
+- medical officer
+- researcher
+- second technician
+- cook

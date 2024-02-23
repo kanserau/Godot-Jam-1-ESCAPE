@@ -1,0 +1,17 @@
+Feedback: Use text in combination with colour.
+
+- Hull breach detected in bridge, . Ship integrity compromised. Crew safety compromised.
+- Fire detected in cargo bay, cockpit. Crew safety, ship integrity, oxygen levels compromised.
+- Low oxygen detected. Crew safety compromised.
+- High oxygen detected. Fire intensity increased.
+
+Commands
+- Scan: Displays info about a system or value.
+ - integrity or int: Displays ship integrity and sources of damage.
+ - hazards or haz: Displays threats to crew safety.
+
+Note:
+Prologue:
+- if engineer dies, random splash text based. With your death, the captain, cook and pilot tried fruitlessly to escape the sun and perished.
+- display cause of death for each crew member based on active sources of damage at time of death (fire, pressure, oxygen) (X was burned, crushed and suffocated).
+- display cause of death as ship explosion if ship damage  (X turned to dust).

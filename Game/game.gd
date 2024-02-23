@@ -11,6 +11,9 @@ var debris_start: int = -1
 @onready var random_event_timer = $EventTimer
 @onready var solar_flare_timer = $SolarFlareTimer
 @onready var debris_timer = $DebrisTimer
+@onready var hull_breach_audio = $hull_breach_audio
+@onready var weapons_audio = $weapons_audio
+@onready var weapons_destroy_audio = $weapons_destroy_audio
 
 
 func _ready():
@@ -172,7 +175,7 @@ func trigger_emergency_cluster(cluster_size):
 		for event in possible_events:
 			cumulative_weight += event.weight
 			if random_weight < cumulative_weight:
-				selected_event = event
+				selected_event = event.duplicate()
 				break
 
 		if selected_event != null:
@@ -225,9 +228,12 @@ func apply_weapons_damage():
 		if GameManager.stats.current_space_debris_health > 0:
 			GameManager.stats.current_space_debris_health -= GameManager.stats.space_debris_weapons_damage
 			GameManager.weapons_firing.emit()
-		elif GameManager.debris_incoming:
-			# TODO: maybe signal?
-			GameManager.toggle_debris()
+			if GameManager.stats.current_space_debris_health > 0:
+				weapons_audio.play()
+			else:
+				# TODO: maybe signal
+				GameManager.toggle_debris()
+				weapons_destroy_audio.play()
 
 ##
 # Random events
@@ -254,6 +260,7 @@ func apply_random_events():
 func _on_debris_timer_timeout():
 	if GameManager.stats.current_space_debris_health > 0:
 		GameManager.space_debris_hit.emit()
+		hull_breach_audio.play()
 		GameManager.stats.ship_damage += GameManager.stats.space_debris_damage
 
 

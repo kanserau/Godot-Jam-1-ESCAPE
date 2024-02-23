@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bpx1ryy6sdgef" path="res://assets/vfx/fire/textures/Flame01.png" id="2_832x7"]
 [ext_resource type="Texture2D" uid="uid://bale461vgestw" path="res://assets/vfx/fire/textures/Voronoi01.png" id="3_8m637"]
 [ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="6_obofb"]
-[ext_resource type="AudioStream" uid="uid://crgh7wjhrjtqg" path="res://sounds/sfx/fire/fire_big.ogg" id="8_7m1ds"]
-[ext_resource type="AudioStream" uid="uid://b6jir7jsihtt1" path="res://sounds/sfx/fire/fire_small.ogg" id="9_esbph"]
-[ext_resource type="AudioStream" uid="uid://5m1u5yp7hotd" path="res://sounds/sfx/fire/fire_medium.ogg" id="9_vni02"]
+[ext_resource type="AudioStream" uid="uid://crgh7wjhrjtqg" path="res://audio/sfx/fire/fire_big.ogg" id="8_7m1ds"]
+[ext_resource type="AudioStream" uid="uid://b6jir7jsihtt1" path="res://audio/sfx/fire/fire_small.ogg" id="9_esbph"]
+[ext_resource type="AudioStream" uid="uid://5m1u5yp7hotd" path="res://audio/sfx/fire/fire_medium.ogg" id="9_vni02"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_px4q5"]
 render_priority = 0
@@ -564,8 +564,8 @@ script = ExtResource("1_6giyp")
 [node name="smoke" type="GPUParticles3D" parent="node"]
 material_override = SubResource("ShaderMaterial_px4q5")
 cast_shadow = 0
+emitting = false
 amount = 1000
-lifetime = 4.0
 preprocess = 10.0
 process_material = SubResource("ParticleProcessMaterial_tofni")
 draw_pass_1 = SubResource("QuadMesh_p8y2q")
@@ -573,6 +573,7 @@ draw_pass_1 = SubResource("QuadMesh_p8y2q")
 [node name="base flame" type="GPUParticles3D" parent="node"]
 material_override = SubResource("ShaderMaterial_vi18t")
 cast_shadow = 0
+emitting = false
 amount = 200
 lifetime = 0.8
 process_material = SubResource("ParticleProcessMaterial_p0v3n")
@@ -582,15 +583,16 @@ draw_pass_1 = SubResource("QuadMesh_p8y2q")
 material_override = SubResource("ShaderMaterial_jr0wc")
 cast_shadow = 0
 gi_mode = 0
+emitting = false
 amount = 1000
-lifetime = 2.5
+lifetime = 0.8
 process_material = SubResource("ParticleProcessMaterial_slm3h")
 draw_pass_1 = SubResource("QuadMesh_p8y2q")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.604615, 0)
 light_color = Color(1, 0.509804, 0.223529, 1)
-light_energy = 5.0
+light_energy = 0.0
 omni_range = 10.0
 omni_attenuation = 0.34151
 
@@ -602,6 +604,7 @@ target = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="node/StaticBody3D"]
 shape = SubResource("SphereShape3D_ol74u")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -610,5 +613,4 @@ libraries = {
 autoplay = "fire_none"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_7m1ds")
 bus = &"SFX"

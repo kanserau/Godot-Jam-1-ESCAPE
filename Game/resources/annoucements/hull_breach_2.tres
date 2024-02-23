@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FailureAnnoucement" load_steps=3 format=3 uid="uid://cx5rjw1pw8l23"]
+
+[ext_resource type="AudioStream" uid="uid://dot44g16ukup6" path="res://audio/vo/debrishitship.wav" id="1_wl504"]
+[ext_resource type="Script" path="res://resources/templates/failure_annoucement.gd" id="2_6bv4v"]
+
+[resource]
+script = ExtResource("2_6bv4v")
+trigger = 6
+audio = ExtResource("1_wl504")

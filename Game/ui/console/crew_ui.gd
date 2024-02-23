@@ -12,14 +12,16 @@ func _ready():
 		status.name = crew.name
 		container.add_child(status)
 		labels.append(status)
+	update_crew()
 	GameManager.crew_members_damaged.connect(update_crew)
 
 
 func update_crew():
 	var n = 0
+	var active = []
 	for crew in GameManager.crew_members:
-		n += 1
 		var status: RichTextLabel = container.get_node(crew.name)
+		active.append(crew.name)
 		status.text = (
 			crew.name
 			+ ". ID:" + crew.id
@@ -27,5 +29,6 @@ func update_crew():
 			+ ". " + GameTypes.CrewStatus.find_key(crew.status)
 			+ "."
 		)
-	if labels.size() > n:
-		labels = labels.slice(0, n)
+	for l in labels.filter(func(l): return l.name not in active):
+		labels.erase(l)
+		l.queue_free()

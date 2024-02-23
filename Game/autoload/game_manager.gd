@@ -8,6 +8,7 @@ var crew_members: Array[Crew] = []
 var dead_crew_members: Array[Crew] = []
 var events: Array[GameEvent] = []
 var active_events: Array[GameEvent] 
+var terminal_history: Array[Node] = []
 var active_event_locations = {}
 var solar_flare_incoming = false
 var debris_incoming = false
@@ -28,6 +29,8 @@ signal weapons_firing
 signal change_oxygen(current_units)
 
 signal update_everything
+
+signal terminal_history_updated()
 # Unused
 signal change_available_power(new_value)
 signal change_thrust(new_value)
@@ -52,34 +55,12 @@ func _ready():
 # Utilities
 ## 
 
-var event_resources = [
-	preload("res://resources/events/atmosphere_generator.tres"),
-	preload("res://resources/events/atmosphere_generator.tres"),
-	preload("res://resources/events/engine.tres"),
-	preload("res://resources/events/fire.tres"),
-	preload("res://resources/events/hull_breach.tres"),
-	preload("res://resources/events/power_generator.tres"),
-	preload("res://resources/events/shields.tres"),
-	preload("res://resources/events/terminal.tres"),
-	preload("res://resources/events/weapons.tres"),
-]
-
 func load_event_resources():
-	for event in event_resources:
+	for event in DynamicLoader.load_from("res://resources/events"):
 		events.append(event)
 
-var crew_resources = [
-		 preload("res://resources/crew/john_doctor.tres")
-		 ,preload("res://resources/crew/player.tres")
-		 ,preload('res://resources/crew/rod_tungsten.tres')
-		 ,preload("res://resources/crew/harold_carter.tres")
-		 ,preload("res://resources/crew/karl_langstrom.tres")
-		 ,preload('res://resources/crew/remy_martinez.tres')
-		 ,preload('res://resources/crew/william_bannon.tres')
-]
-
 func load_crew_resources():
-	for crew in crew_resources:
+	for crew in DynamicLoader.load_from("res://resources/crew/"):
 		crew_members.append(crew)
 
 func connect_to_signal(signal_name: String, target_node: Node, method_name: String):

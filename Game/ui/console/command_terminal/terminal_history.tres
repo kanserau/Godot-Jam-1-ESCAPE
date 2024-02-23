@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="TerminalHistory" load_steps=2 format=3 uid="uid://dw55fotmgsvie"]
+
+[ext_resource type="Script" path="res://ui/console/command_terminal/terminal_history.gd" id="1_y5wmw"]
+
+[resource]
+script = ExtResource("1_y5wmw")

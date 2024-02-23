@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3kscwmkeqm7i"]
+
+[ext_resource type="Shader" path="res://assets/vfx/sparks/sparks.gdshader" id="1_frm7i"]
+[ext_resource type="Material" uid="uid://c2xhr6jir5tt0" path="res://assets/vfx/sparks/sparks_particles.tres" id="2_8d00l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bbupg"]
+render_priority = 0
+shader = ExtResource("1_frm7i")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6uqoa"]
+size = Vector2(0.1, 0.1)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149894, 0.375801, 0.220125)
+material_override = SubResource("ShaderMaterial_bbupg")
+amount = 400
+lifetime = 3.0
+explosiveness = 0.5
+trail_lifetime = 2.0
+process_material = ExtResource("2_8d00l")
+draw_pass_1 = SubResource("QuadMesh_6uqoa")

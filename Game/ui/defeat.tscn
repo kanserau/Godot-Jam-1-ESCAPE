@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dvsx0gblmfclu" path="res://assets/skybox/ringed_gas_giant_planet.png" id="1_kxibt"]
 [ext_resource type="Script" path="res://ui/defeat.gd" id="1_yhc1b"]
 [ext_resource type="FontVariation" uid="uid://dkso7qb2tnmny" path="res://assets/fonts/plex_mono_bold.tres" id="2_1v6p6"]
-[ext_resource type="AudioStream" uid="uid://pd85brsb8fpe" path="res://sounds/bgm/Game Over.ogg" id="4_oeyda"]
+[ext_resource type="AudioStream" uid="uid://pd85brsb8fpe" path="res://audio/bgm/Game Over.ogg" id="4_oeyda"]
 
 [node name="Defeat" type="Control"]
 layout_mode = 3

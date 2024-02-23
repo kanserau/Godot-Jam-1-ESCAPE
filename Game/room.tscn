@@ -18,13 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://dsnxggtutf120" path="res://assets/props/bottles/corona_bottle_green.tscn" id="11_ipgdo"]
 [ext_resource type="PackedScene" uid="uid://myncs6tc1cu1" path="res://assets/props/tools/wrench_set/scene.gltf" id="13_mcdm0"]
 [ext_resource type="PackedScene" uid="uid://balok5b4ubm81" path="res://assets/props/alarm_light/alarm_light.tscn" id="14_ar27j"]
-[ext_resource type="PackedScene" uid="uid://s7kca4yjlu1p" path="res://sounds/vo/intercom.tscn" id="15_t6g4m"]
+[ext_resource type="PackedScene" uid="uid://s7kca4yjlu1p" path="res://audio/vo/intercom.tscn" id="15_t6g4m"]
 [ext_resource type="PackedScene" uid="uid://s8e1guti158n" path="res://assets/vfx/fire/fire.tscn" id="16_3u0vc"]
 [ext_resource type="PackedScene" uid="uid://bk86ug0hqp3f6" path="res://assets/props/barrels/waste_barrel.tscn" id="17_ix7pk"]
-[ext_resource type="PackedScene" uid="uid://cfrfspmmjdgpr" path="res://sounds/sfx/alarms/alarms.tscn" id="17_xmrfo"]
+[ext_resource type="PackedScene" uid="uid://cfrfspmmjdgpr" path="res://audio/sfx/alarms/alarms.tscn" id="17_xmrfo"]
 [ext_resource type="PackedScene" uid="uid://chbwdyjgvjcur" path="res://assets/props/barrels/glass_barrel.tscn" id="18_cmm1p"]
 [ext_resource type="PackedScene" uid="uid://7ufllpb3x3eq" path="res://assets/props/barrels/energy_barrel.tscn" id="19_tbpnu"]
-[ext_resource type="PackedScene" uid="uid://4hjlqtjuul48" path="res://sounds/sfx/engine/engine_sfx.tscn" id="22_gi5pe"]
+[ext_resource type="PackedScene" uid="uid://4hjlqtjuul48" path="res://audio/sfx/engine/engine_sfx.tscn" id="22_gi5pe"]
 [ext_resource type="PackedScene" uid="uid://dcxmd3esc5qg1" path="res://assets/props/button/button.tscn" id="23_ioagd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_03s7o"]
@@ -127,6 +127,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Ground/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ju46t")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/Ground"]
+size = Vector3(15, 0.1, 15)
+
 [node name="Ceiling" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 mesh = SubResource("QuadMesh_aafbo")
@@ -147,6 +150,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/West Window/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rr3vs")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/West Window"]
+size = Vector3(0.1, 5, 15)
+
 [node name="North Wall" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 7.5)
 mesh = SubResource("QuadMesh_my1u6")
@@ -157,6 +163,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/North Wall/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_fnbql")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/North Wall"]
+size = Vector3(15, 5, 0.1)
+
 [node name="South Wall" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -7.5)
 mesh = SubResource("QuadMesh_132bq")
@@ -166,6 +175,9 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/South Wall/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_su80x")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/South Wall"]
+size = Vector3(15, 5, 0.1)
 
 [node name="East Wall" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, 0)
@@ -178,8 +190,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/East Wall/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_iocsb")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/East Wall"]
+size = Vector3(0.1, 5, 15)
+
 [node name="big pipes" parent="Walls" instance=ExtResource("6_5xoou")]
-metadata/_editor_floor_ = Vector3(0, 1, 0)
+metadata/_editor_floor_ = Vector3(0, 2, 0)
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)

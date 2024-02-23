@@ -13,17 +13,26 @@ config_version=5
 config/name="Into The Sun"
 run/main_scene="res://ui/menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+run/max_fps=120
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="res://sounds/default_bus_layout.tres"
+buses/default_bus_layout="res://audio/default_bus_layout.tres"
 
 [autoload]
 
 SettingsManager="*res://autoload/settings_manager.gd"
 SceneManager="*res://autoload/scene_manager.gd"
 GameManager="*res://autoload/game_manager.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/borderless=true
 
 [importer_defaults]
 
@@ -76,10 +85,16 @@ fix={
 
 [layer_names]
 
+2d_physics/layer_1="world"
 3d_physics/layer_1="walls"
+2d_physics/layer_2="fixable"
 3d_physics/layer_2="player"
+2d_physics/layer_3="player"
 3d_physics/layer_3="interactive"
 
 [rendering]
 
 renderer/rendering_method.mobile="forward_plus"
+anti_aliasing/quality/use_taa=true
+anti_aliasing/quality/use_debanding=true
+occlusion_culling/use_occlusion_culling=true

@@ -4,17 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "0a935a6f0c04fbaa",
+        "id": "7ad3d6578d0065ad",
         "type": "tabs",
         "children": [
           {
-            "id": "479812134fe8a460",
+            "id": "08f1d832b9c21b86",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -91,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Excalidraw/Proposed Engine Room & Ship Layout.md"
-              }
+              "state": {}
             }
           },
           {
@@ -163,12 +157,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "479812134fe8a460",
+  "active": "08f1d832b9c21b86",
   "lastOpenFiles": [
-    "Into the Sun/1. Mechanics.md",
-    "Excalidraw/Proposed Engine Room & Ship Layout.md",
-    "Into the Sun/0. The Plan.md",
     "Into the Sun/Notes.md",
+    "Excalidraw/Proposed Engine Room & Ship Layout.md",
+    "Into the Sun/1. Mechanics.md",
+    "Into the Sun/0. The Plan.md",
     "Excalidraw/Terminals & Gauges.md",
     "Into the Sun/Music & Sound.md",
     "Excalidraw",

@@ -3,14 +3,14 @@
 [ext_resource type="MeshLibrary" uid="uid://covmv81ln287d" path="res://assets/props/modular_pipes/large_pipes.meshlib" id="1_ur4av"]
 [ext_resource type="Script" path="res://assets/props/modular_pipes/pipes.gd" id="2_m87eb"]
 [ext_resource type="MeshLibrary" uid="uid://bul3bbtsdpb4k" path="res://assets/props/modular_pipes/small_pipes.meshlib" id="2_p47aa"]
-[ext_resource type="AudioStream" uid="uid://f65wkjx2pbnr" path="res://sounds/sfx/steam/steam_01.wav" id="3_6rnm5"]
+[ext_resource type="AudioStream" uid="uid://f65wkjx2pbnr" path="res://audio/sfx/steam/steam_01.wav" id="3_6rnm5"]
 [ext_resource type="Shader" path="res://assets/vfx/steam/steam.gdshader" id="3_awj78"]
 [ext_resource type="Texture2D" uid="uid://bqmsc0tp1fnq0" path="res://assets/vfx/steam/texture.png" id="4_5cy3k"]
 [ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="4_dfisd"]
-[ext_resource type="AudioStream" uid="uid://c7y4otfvpb7sq" path="res://sounds/sfx/steam/steam_02.wav" id="4_lme0x"]
-[ext_resource type="AudioStream" uid="uid://brnkms2n8hqpu" path="res://sounds/sfx/steam/steam_03.wav" id="5_1htib"]
+[ext_resource type="AudioStream" uid="uid://c7y4otfvpb7sq" path="res://audio/sfx/steam/steam_02.wav" id="4_lme0x"]
+[ext_resource type="AudioStream" uid="uid://brnkms2n8hqpu" path="res://audio/sfx/steam/steam_03.wav" id="5_1htib"]
 [ext_resource type="Texture2D" uid="uid://bale461vgestw" path="res://assets/vfx/fire/textures/Voronoi01.png" id="5_u4l5f"]
-[ext_resource type="AudioStream" uid="uid://8rvn2nx17hw6" path="res://sounds/sfx/steam/steam_loop.wav" id="6_by5xe"]
+[ext_resource type="AudioStream" uid="uid://8rvn2nx17hw6" path="res://audio/sfx/steam/steam_loop.wav" id="6_by5xe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sct5t"]
 render_priority = 0
@@ -132,7 +132,6 @@ process_material = SubResource("ParticleProcessMaterial_ab2g5")
 draw_pass_1 = SubResource("QuadMesh_856ah")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GPUParticles3D2"]
-volume_db = -5.0
 bus = &"SFX"
 
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="."]

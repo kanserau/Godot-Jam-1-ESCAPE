@@ -144,6 +144,9 @@ Walkways ^3W5N1yeI
 Repair Points
 (First floor) ^67yzaF4f
 
+The raised surface is maybe 0.5-1m off the ground.
+It's just to serve as a viewing platform form the terminal. ^Kbhvin1b
+
 %%
 # Drawing
 ```json
@@ -5771,6 +5774,43 @@ Repair Points
 			"baseline": 19
 		},
 		{
+			"id": "Kbhvin1b",
+			"type": "text",
+			"x": 1408.8732201711368,
+			"y": 65.48991848723995,
+			"width": 691.40625,
+			"height": 48,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "dotted",
+			"roughness": 0,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 33540196,
+			"version": 287,
+			"versionNonce": 243641692,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1708596993326,
+			"link": null,
+			"locked": false,
+			"text": "The raised surface is maybe 0.5-1m off the ground.\nIt's just to serve as a viewing platform form the terminal.",
+			"rawText": "The raised surface is maybe 0.5-1m off the ground.\nIt's just to serve as a viewing platform form the terminal.",
+			"fontSize": 20,
+			"fontFamily": 3,
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"baseline": 43,
+			"containerId": null,
+			"originalText": "The raised surface is maybe 0.5-1m off the ground.\nIt's just to serve as a viewing platform form the terminal.",
+			"lineHeight": 1.2
+		},
+		{
 			"type": "rectangle",
 			"version": 896,
 			"versionNonce": 392542308,
@@ -6070,6 +6110,43 @@ Repair Points
 					414.7890900806665
 				]
 			]
+		},
+		{
+			"id": "qdQKOcyT",
+			"type": "text",
+			"x": 1433.456686385296,
+			"y": 93.85545642665443,
+			"width": 11.71875,
+			"height": 24,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "dotted",
+			"roughness": 0,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1281948636,
+			"version": 6,
+			"versionNonce": 1178718564,
+			"isDeleted": true,
+			"boundElements": null,
+			"updated": 1708595511188,
+			"link": null,
+			"locked": false,
+			"text": "",
+			"rawText": "",
+			"fontSize": 20,
+			"fontFamily": 3,
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"baseline": 19,
+			"containerId": null,
+			"originalText": "",
+			"lineHeight": 1.2
 		}
 	],
 	"appState": {
@@ -6081,14 +6158,14 @@ Repair Points
 		"currentItemStrokeWidth": 2,
 		"currentItemStrokeStyle": "dotted",
 		"currentItemRoughness": 0,
-		"currentItemOpacity": 50,
+		"currentItemOpacity": 100,
 		"currentItemFontFamily": 3,
 		"currentItemFontSize": 20,
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": "triangle",
 		"currentItemEndArrowhead": "triangle",
-		"scrollX": -349.89313709966495,
-		"scrollY": 1445.5659254936486,
+		"scrollX": 833.8953129052298,
+		"scrollY": 1511.7521806856157,
 		"zoom": {
 			"value": 0.5288107009300619
 		},

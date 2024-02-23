@@ -175,7 +175,7 @@ func trigger_emergency_cluster(cluster_size):
 		for event in possible_events:
 			cumulative_weight += event.weight
 			if random_weight < cumulative_weight:
-				selected_event = event
+				selected_event = event.duplicate()
 				break
 
 		if selected_event != null:

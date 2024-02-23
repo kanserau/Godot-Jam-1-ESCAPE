@@ -85,12 +85,9 @@ fix={
 
 [layer_names]
 
-2d_physics/layer_1="world"
-3d_physics/layer_1="walls"
-2d_physics/layer_2="fixable"
-3d_physics/layer_2="player"
-2d_physics/layer_3="player"
-3d_physics/layer_3="interactive"
+3d_physics/layer_1="worlds"
+3d_physics/layer_2="interactive"
+3d_physics/layer_3="player"
 
 [rendering]
 

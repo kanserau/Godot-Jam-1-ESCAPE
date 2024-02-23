@@ -59,8 +59,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("multitool_hit_src", "multitool_swing_src", "stompers", "stomp_timer")]
-collision_layer = 2
-collision_mask = 13
+collision_layer = 4
 floor_stop_on_slope = false
 script = ExtResource("1_fyl6a")
 multitool_hit_src = NodePath("Neck/Camera3D/multitool/multitool_hit")

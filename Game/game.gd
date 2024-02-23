@@ -60,9 +60,9 @@ func apply_ship_damage():
 	for event in GameManager.active_events:
 		if event.event == GameTypes.Events.FIRE:
 			fire_count += 1
-	if GameManager.stats.current_thrust == 3:
-		GameManager.stats.ship_damage += GameManager.stats.thrust_3_damage
-		
+	#if GameManager.stats.current_thrust == 3:
+		#GameManager.stats.ship_damage += GameManager.stats.thrust_3_damage
+		#
 	GameManager.stats.ship_damage += GameManager.stats.starting_sun_damage
 	GameManager.stats.ship_damage += fire_count*GameManager.stats.fire_ship_damage
 	GameManager.change_ship_damage.emit(GameManager.stats.ship_damage)

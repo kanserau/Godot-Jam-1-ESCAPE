@@ -103,14 +103,7 @@ func get_help() -> String:
 	return """Available commands: 
 
 Game info: Manage your spaceship and crew to survive. Navigate through space, handle emergencies, and ensure the survival of your crew!
-
 Look at event feed to know location of fires and hull breaches.
-Locations are case insensitive.
-
-ENGINE affects thrust.
-ATMOSPERIC GENERATOR affects oxygen levels.
-SHIELDS affects shield levels.
-WEAPONS affect weapon levels.
 
 - help: Displays this help message.
 - info: Shows ship information.
@@ -177,15 +170,17 @@ func reboot_system(instructions: String) -> String:
 	keys.erase("HULLBREACH")
 	keys.erase("FIRE")
 	keys.erase("ATMOSPHERE_GENERATOR")
+	keys.erase("ENGINE")
+	keys.erase("TERMINAL")
 
 	if instructions.is_empty() or event_name not in keys:
-		return "Usage: reboot [event name]"
+		return "Usage: reboot [system]"
 	for i in range(GameManager.active_events.size()):
 		if GameManager.active_events[i].event == GameTypes.Events[event_name]:
 			GameManager.active_events.erase(GameManager.active_events[i])
 			GameManager.update_everything.emit()
-			return "Event " + instructions + " rebooted."
-	return "Event not found or cannot be rebooted."
+			return instructions + " system rebooted."
+	return "System not found or cannot be rebooted."
 
 func handle_seal(instructions: String) -> String:
 	if instructions.is_empty() or instructions.to_upper().replace(" ", "_") not in GameTypes.Locations.keys():

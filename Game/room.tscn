@@ -127,6 +127,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Ground/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ju46t")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/Ground"]
+size = Vector3(15, 0.1, 15)
+
 [node name="Ceiling" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 mesh = SubResource("QuadMesh_aafbo")
@@ -147,6 +150,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/West Window/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rr3vs")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/West Window"]
+size = Vector3(0.1, 5, 15)
+
 [node name="North Wall" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 7.5)
 mesh = SubResource("QuadMesh_my1u6")
@@ -157,6 +163,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/North Wall/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_fnbql")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/North Wall"]
+size = Vector3(15, 5, 0.1)
+
 [node name="South Wall" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -7.5)
 mesh = SubResource("QuadMesh_132bq")
@@ -166,6 +175,9 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/South Wall/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_su80x")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/South Wall"]
+size = Vector3(15, 5, 0.1)
 
 [node name="East Wall" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, 0)
@@ -178,8 +190,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/East Wall/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_iocsb")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Walls/East Wall"]
+size = Vector3(0.1, 5, 15)
+
 [node name="big pipes" parent="Walls" instance=ExtResource("6_5xoou")]
-metadata/_editor_floor_ = Vector3(0, 1, 0)
+metadata/_editor_floor_ = Vector3(0, 2, 0)
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)

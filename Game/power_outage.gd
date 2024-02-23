@@ -3,7 +3,7 @@ extends Node3D
 @export var lights: Array[Light3D] = []
 @export var emergency_lights: Array[EmergencyLight] = []
 var power_button: PowerButton
-var console: ConsolePowerSwitch
+var console: Console
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

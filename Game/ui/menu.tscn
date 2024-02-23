@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cweh8swys8ah4" path="res://assets/jam/inside-box.png" id="4_6h6e2"]
 [ext_resource type="Texture2D" uid="uid://bf5dpgtmg35xj" path="res://assets/jam/then-the-morning-comes.png" id="5_n7lum"]
 [ext_resource type="Texture2D" uid="uid://bpo4u1kd364x6" path="res://assets/jam/66-Escape.png" id="6_aphfp"]
-[ext_resource type="AudioStream" uid="uid://c7u4xt6boj5xa" path="res://sounds/bgm/escape the sun.ogg" id="7_q48up"]
+[ext_resource type="AudioStream" uid="uid://c7u4xt6boj5xa" path="res://audio/bgm/escape the sun.ogg" id="7_q48up"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

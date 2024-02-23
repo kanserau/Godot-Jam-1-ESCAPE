@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bpx1ryy6sdgef" path="res://assets/vfx/fire/textures/Flame01.png" id="2_832x7"]
 [ext_resource type="Texture2D" uid="uid://bale461vgestw" path="res://assets/vfx/fire/textures/Voronoi01.png" id="3_8m637"]
 [ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="6_obofb"]
-[ext_resource type="AudioStream" uid="uid://crgh7wjhrjtqg" path="res://sounds/sfx/fire/fire_big.ogg" id="8_7m1ds"]
-[ext_resource type="AudioStream" uid="uid://b6jir7jsihtt1" path="res://sounds/sfx/fire/fire_small.ogg" id="9_esbph"]
-[ext_resource type="AudioStream" uid="uid://5m1u5yp7hotd" path="res://sounds/sfx/fire/fire_medium.ogg" id="9_vni02"]
+[ext_resource type="AudioStream" uid="uid://crgh7wjhrjtqg" path="res://audio/sfx/fire/fire_big.ogg" id="8_7m1ds"]
+[ext_resource type="AudioStream" uid="uid://b6jir7jsihtt1" path="res://audio/sfx/fire/fire_small.ogg" id="9_esbph"]
+[ext_resource type="AudioStream" uid="uid://5m1u5yp7hotd" path="res://audio/sfx/fire/fire_medium.ogg" id="9_vni02"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_px4q5"]
 render_priority = 0

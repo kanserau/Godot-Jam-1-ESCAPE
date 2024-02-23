@@ -12,6 +12,9 @@ class_name GameResource
 @export var ship_damage: float = 0.0
 @export var max_ship_damage: float = 10000.0
 
+func ship_integrity_percent():
+	return 100.0 * (max_ship_damage - ship_damage)/max_ship_damage
+
 @export var thrust_1: int = 100
 @export var thrust_2: int = 400
 @export var thrust_3: int = 600
@@ -35,6 +38,9 @@ class_name GameResource
 
 @export var distance: float = 0.0
 @export var target_distance: float = 270000
+
+func distance_percent():
+	return 100.0 * distance/target_distance
 
 @export var sun_gravity: int = 100
 @export var starting_sun_damage: float = 10

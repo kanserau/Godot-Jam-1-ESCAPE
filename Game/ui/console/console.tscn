@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://capks138wgc7f" path="res://ui/console/crew_ui.tscn" id="1_0u3fd"]
 [ext_resource type="PackedScene" uid="uid://0x1o6uohaw0o" path="res://ui/console/power_ui.tscn" id="1_dc1p1"]
-[ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/console/Terminal.tscn" id="2_41d37"]
+[ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/console/command_terminal/Terminal.tscn" id="2_41d37"]
 [ext_resource type="PackedScene" uid="uid://b0hsmvfat6i8p" path="res://ui/console/screen_saver.tscn" id="2_327nx"]
 [ext_resource type="PackedScene" uid="uid://doiuo31thi3qr" path="res://ui/console/EventFeed.tscn" id="2_nhpce"]
 

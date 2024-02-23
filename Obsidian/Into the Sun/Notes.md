@@ -7,8 +7,8 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 - Terminal failure needs to be implemented (this also doesn't need to show up in the alert feed as the alert feed would also fail)
 - I will polish the existing tracks and aim to write a third track.
 ## game.tres
-- Set target distance to 50,000
-- Disable damage from thrust level 3 (not needed)
+- [x] Set target distance to 50,000
+- [x] Disable damage from thrust level 3 (not needed)
 ## Style notes
 ### Ending Screen
 - display ship distance as %
@@ -19,9 +19,9 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 - Considering adding 'endings' based on which crew are alive/dead when the player dies.
 - Consider animating the background?
 ### Fixes/problems
-- Crowbar needs to move up with camera
-- "Resolve" command should be named "Reboot"
-- It's not very obvious that the left wall is a window, it just seems blank. Additionally, it seems to suggest that the ship's thruster is pointing parallel to the orbit path, as opposed to perpendicular.
+- [x] Crowbar needs to move up with camera
+- [x] "Resolve" command should be named "Reboot"
+-  It's not very obvious that the left wall is a window, it just seems blank. Additionally, it seems to suggest that the ship's thruster is pointing parallel to the orbit path, as opposed to perpendicular.
 - there is an infinite self-defib-exploit. Potential fixes:
 	- implement secondary loss state (ship damage maxxed)
 	- implement terminal breakdown
@@ -36,7 +36,7 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 	- If teleport mechanic is implemented, this can be used as insurance against space debris.
 - Screen shake when space debris or solar flare hits
 ## Terminals
-Consider displaying multiple screens at once when interacting with the terminal.
+- [x] Consider displaying multiple screens at once when interacting with the terminal.
 ## Crew Healing
 I think crew should be able to heal, since currently the only way to recover crew is to wait until they're critical and then defib them. This could be passive, or by having a teleport mechanic to move people around the ship.
 ### Passive Implementation
@@ -56,11 +56,11 @@ If the Medical Officer is not in critical condition or dead, you can use this co
 
 
 ## Bugs
-- Sometimes defibbing breaks (captain, cook)
-- ?Characters dying, but still displaying critical
+- [x] Sometimes defibbing breaks (captain, cook)
+- [x] ?Characters dying, but still displaying critical
 - At some point events stop appearing in event feed, sometimes. Needs more testing.
-- Terminal still works if power off.
-- Character continues moving when opening the ESC menu.
+- [x] Terminal still works if power off.
+- [x] Character continues moving when opening the ESC menu.
 
 ## New Intro
 Instead of launching the player right into the emergency, we can have a brief introduction.

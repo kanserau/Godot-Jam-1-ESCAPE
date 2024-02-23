@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7u4xt6boj5xa"
+path="res://.godot/imported/escape the sun.ogg-d21018c64a1b435a4cf4f57de4e14e7d.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/bgm/escape the sun.ogg"
+dest_files=["res://.godot/imported/escape the sun.ogg-d21018c64a1b435a4cf4f57de4e14e7d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

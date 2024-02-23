@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="3_115ym"]
 [ext_resource type="PackedScene" uid="uid://0x1o6uohaw0o" path="res://ui/console/power_ui.tscn" id="3_ew3yg"]
 [ext_resource type="PackedScene" uid="uid://doiuo31thi3qr" path="res://ui/console/EventFeed.tscn" id="4_po81h"]
-[ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/console/Terminal.tscn" id="7_obri6"]
+[ext_resource type="PackedScene" uid="uid://biy3ncc6g35lq" path="res://ui/console/command_terminal/Terminal.tscn" id="7_obri6"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nwqwn"]
 viewport_path = NodePath("screens/screen_1")

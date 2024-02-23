@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clo8tyvdvtado"
+path="res://.godot/imported/fix drive.wav-6c2aa257d655e4ea66d6eb9c0c8bba93.sample"
+
+[deps]
+
+source_file="res://audio/vo/fix drive.wav"
+dest_files=["res://.godot/imported/fix drive.wav-6c2aa257d655e4ea66d6eb9c0c8bba93.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -24,14 +24,20 @@ func update_active_events():
 		label.queue_free()
 	event_labels.clear()
 	for event in GameManager.active_events:
-		var event_label = create_label("Event Active: " + GameTypes.Events.keys()[event.event].replace("_", " "))
+		var event_text = GameTypes.Events.keys()[event.event].replace("_", " ")
+		var event_label = create_label("")
 		if event.event == GameTypes.Events.FIRE || event.event == GameTypes.Events.HULLBREACH:
-			event_label.text += " - location: "
-			event_label.text += GameManager.active_event_locations[event]
+			event_label.text = "%s detected @ %s" % [
+				event_text,
+				GameManager.active_event_locations[event]
+			]
 			# TODO: CRITICAL BUG!!
 			# active events contains duplicate objects
 			# locations are overwritten when objects duplicate events are added
 			# when one of duplicate is resolved, the remaining events have no locations
+		else:
+			event_label.text = "System down: %s." % event_text
+			
 		container.add_child(event_label)
 		event_labels.append(event_label)
 	if GameManager.solar_flare_incoming:

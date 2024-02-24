@@ -182,7 +182,7 @@ func trigger_emergency_cluster(cluster_size):
 		for event in possible_events:
 			cumulative_weight += event.weight
 			if random_weight < cumulative_weight:
-				selected_event = event.duplicate()
+				selected_event = event
 				break
 
 		if selected_event != null:
@@ -190,6 +190,9 @@ func trigger_emergency_cluster(cluster_size):
 				possible_events.erase(selected_event)
 			else:
 				var location_keys = GameTypes.Locations.keys()
+				if selected_event.event == GameTypes.Events.HULLBREACH:
+					location_keys.erase("ENGINE_ROOM")
+				selected_event = selected_event.duplicate()
 				GameManager.active_event_locations[selected_event] = location_keys.pick_random()
 
 			GameManager.active_events.append(selected_event)

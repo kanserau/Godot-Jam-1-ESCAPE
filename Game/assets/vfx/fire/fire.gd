@@ -29,10 +29,6 @@ func _on_event_triggered(event: GameEvent):
 
 
 func _on_fix():
-	if captured_event.size() > 1:
-		GameManager.active_events.erase(captured_event.pop_back())
-		return
-	
 	match state:
 		FireState.BIG:
 			state = FireState.MEDIUM
@@ -43,5 +39,7 @@ func _on_fix():
 		FireState.SMOKE:
 			state = FireState.NONE
 			animation.queue("fire_none")
-			
-			GameManager.active_events.erase(captured_event.pop_back())
+			for c in captured_event:
+				GameManager.active_event_locations.erase(c)
+				GameManager.active_events.erase(c)
+			captured_event.clear()

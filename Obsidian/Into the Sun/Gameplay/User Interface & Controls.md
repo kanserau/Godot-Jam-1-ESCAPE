@@ -12,7 +12,7 @@
 ## Main Menu
 - [x] Start Game
 - [ ] High Scores
-- [ ] How to Play
+- [x] How to Play
 - [ ] Settings
 	- [ ] Audio Sliders
 	- [ ] Keybindings
@@ -31,7 +31,7 @@
 - [ ] Quit Game
 ## Pause Menu
 - [ ] Resume
-- [ ] How to Play
+- [x] How to Play
 - [ ] Settings
 	- [x] Audio Sliders
 	- [ ] Keybindings

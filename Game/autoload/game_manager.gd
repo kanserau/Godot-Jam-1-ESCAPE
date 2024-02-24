@@ -9,7 +9,7 @@ var dead_crew_members: Array[Crew] = []
 var events: Array[GameEvent] = []
 var active_events: Array[GameEvent] 
 var terminal_history: Array[Node] = []
-var active_event_locations = {}
+var active_event_locations: Dictionary = {}
 var solar_flare_incoming = false
 var debris_incoming = false
 var ui_active = false

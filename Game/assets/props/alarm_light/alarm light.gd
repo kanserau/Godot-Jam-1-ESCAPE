@@ -6,12 +6,12 @@ func _ready():
 
 func toggle(on: bool):
 	if on:
-		get_node("%glow").visible = true
-		get_node("%beam1").visible = true
-		get_node("%beam2").visible = true
+		%glow.visible = true
+		%beam1.visible = true
+		%beam2.visible = true
 		$Sketchfab_model/AnimationPlayer.play("spin")
 	else:
-		get_node("%glow").visible = false
-		get_node("%beam1").visible = false
-		get_node("%beam2").visible = false
+		%glow.visible = false
+		%beam1.visible = false
+		%beam2.visible = false
 		$Sketchfab_model/AnimationPlayer.play("off")

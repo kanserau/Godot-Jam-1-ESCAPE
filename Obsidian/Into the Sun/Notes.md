@@ -21,6 +21,12 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 ### Fixes/problems
 - [x] Crowbar needs to move up with camera
 - [x] "Resolve" command should be named "Reboot"
+- [ ] Lag when loading main scene
+- [ ] Lag when light turns off?
+- [ ] player stuck?
+- [ ] tutorial
+- [ ] power shunting buttons +/-
+- [ ] subtitles
 -  It's not very obvious that the left wall is a window, it just seems blank. Additionally, it seems to suggest that the ship's thruster is pointing parallel to the orbit path, as opposed to perpendicular.
 - there is an infinite self-defib-exploit. Potential fixes:
 	- implement secondary loss state (ship damage maxxed)

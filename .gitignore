@@ -1,1 +1,9 @@
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
 export/*
+# Obsidian plugins are stored under .obsidian/plugins/$plugin_name. They
+# contain metadata (manifest.json), application code (main.js), stylesheets
+# (styles.css), and user-configuration data (data.json).
+# We want to exclude all plugin-related files, so we can exclude everything
+# under this directory.
+.obsidian/plugins/**/*

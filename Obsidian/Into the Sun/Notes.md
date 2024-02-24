@@ -27,6 +27,7 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 - [ ] tutorial
 - [ ] power shunting buttons +/-
 - [ ] subtitles
+- [ ] Terminal - highlight if input is not focused
 -  It's not very obvious that the left wall is a window, it just seems blank. Additionally, it seems to suggest that the ship's thruster is pointing parallel to the orbit path, as opposed to perpendicular.
 - there is an infinite self-defib-exploit. Potential fixes:
 	- implement secondary loss state (ship damage maxxed)

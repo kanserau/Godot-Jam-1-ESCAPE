@@ -62,17 +62,23 @@ horizontal_scroll_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
-layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Master" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="AudioControls" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Master" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls"]
 layout_mode = 2
 theme = SubResource("Theme_fuyow")
 split_offset = 800
 
-[node name="master_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/Master"]
+[node name="master_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Master"]
 layout_mode = 2
 size_flags_vertical = 1
 mouse_filter = 1
@@ -81,10 +87,10 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/Master/master_slider"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Master/master_slider"]
 stream = ExtResource("4_t6jso")
 
-[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Master"]
+[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Master"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -95,12 +101,12 @@ text = "Master
 "
 horizontal_alignment = 1
 
-[node name="BGM" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="BGM" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls"]
 layout_mode = 2
 theme = SubResource("Theme_fuyow")
 split_offset = 800
 
-[node name="bgm_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/BGM"]
+[node name="bgm_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/BGM"]
 layout_mode = 2
 size_flags_vertical = 1
 mouse_filter = 1
@@ -109,11 +115,11 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/BGM/bgm_slider"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/BGM/bgm_slider"]
 stream = ExtResource("4_djw3f")
 bus = &"BGM"
 
-[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/BGM"]
+[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/BGM"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -123,12 +129,12 @@ theme_override_font_sizes/font_size = 16
 text = "BGM"
 horizontal_alignment = 1
 
-[node name="SFX" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="SFX" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls"]
 layout_mode = 2
 theme = SubResource("Theme_fuyow")
 split_offset = 800
 
-[node name="sfx_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/SFX"]
+[node name="sfx_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/SFX"]
 layout_mode = 2
 size_flags_vertical = 1
 mouse_filter = 1
@@ -137,11 +143,11 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/SFX/sfx_slider"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/SFX/sfx_slider"]
 stream = ExtResource("6_52xm0")
 bus = &"SFX"
 
-[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/SFX"]
+[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/SFX"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -151,12 +157,12 @@ theme_override_font_sizes/font_size = 16
 text = "SFX"
 horizontal_alignment = 1
 
-[node name="Voice" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Voice" type="HSplitContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls"]
 layout_mode = 2
 theme = SubResource("Theme_fuyow")
 split_offset = 800
 
-[node name="voice_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/Voice"]
+[node name="voice_slider" type="HSlider" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Voice"]
 layout_mode = 2
 size_flags_vertical = 1
 mouse_filter = 1
@@ -165,11 +171,11 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/Voice/voice_slider"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Voice/voice_slider"]
 stream = ExtResource("4_t6jso")
 bus = &"VO"
 
-[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Voice"]
+[node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Voice"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -180,11 +186,26 @@ text = "voice"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/Master/master_slider" to="." method="_on_master_slider_mouse_exited"]
-[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/Master/master_slider" to="." method="_on_master_value_changed"]
-[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/BGM/bgm_slider" to="." method="_on_bgm_slider_mouse_exited"]
-[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/BGM/bgm_slider" to="." method="_on_bgm_value_changed"]
-[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/SFX/sfx_slider" to="." method="_on_sfx_slider_mouse_exited"]
-[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/SFX/sfx_slider" to="." method="_on_sfx_value_changed"]
-[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/Voice/voice_slider" to="." method="_on_voice_slider_mouse_exited"]
-[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/Voice/voice_slider" to="." method="_on_vo_value_changed"]
+[node name="How to play" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/How to play"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7tijr")
+theme_type_variation = &"Title"
+text = "How to play"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollContainer/VBoxContainer/How to play"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Master/master_slider" to="." method="_on_master_slider_mouse_exited"]
+[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Master/master_slider" to="." method="_on_master_value_changed"]
+[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/BGM/bgm_slider" to="." method="_on_bgm_slider_mouse_exited"]
+[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/BGM/bgm_slider" to="." method="_on_bgm_value_changed"]
+[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/SFX/sfx_slider" to="." method="_on_sfx_slider_mouse_exited"]
+[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/SFX/sfx_slider" to="." method="_on_sfx_value_changed"]
+[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Voice/voice_slider" to="." method="_on_voice_slider_mouse_exited"]
+[connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Voice/voice_slider" to="." method="_on_vo_value_changed"]

@@ -1,14 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://0x1o6uohaw0o"]
+[gd_scene load_steps=17 format=3 uid="uid://0x1o6uohaw0o"]
 
 [ext_resource type="Theme" uid="uid://duyhmdjgt61qo" path="res://resources/settings_theme.tres" id="1_bj0pt"]
 [ext_resource type="Script" path="res://ui/console/power_ui.gd" id="2_6xq8u"]
 [ext_resource type="Texture2D" uid="uid://caxvblfeamx4w" path="res://ui/console/icons/oxygen.png" id="3_8b8si"]
 [ext_resource type="Texture2D" uid="uid://dvj2n15cawvgp" path="res://ui/console/icons/engine.png" id="3_52mdt"]
+[ext_resource type="AudioStream" uid="uid://oi5p1kypn8a" path="res://audio/sfx/power_shunt/UI_shunt_error.ogg" id="3_asih4"]
 [ext_resource type="Texture2D" uid="uid://cswfjcprdhh8d" path="res://assets/props/console/model/textures/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg" id="3_c6kjy"]
 [ext_resource type="Texture2D" uid="uid://b644atuxjclve" path="res://ui/console/icons/power-3.png" id="3_n3oht"]
 [ext_resource type="Texture2D" uid="uid://cktlcm1idc62v" path="res://ui/console/icons/energy.png" id="4_8x2fn"]
 [ext_resource type="Texture2D" uid="uid://bsr3o5753fesh" path="res://ui/console/icons/power-4.png" id="4_58v3n"]
 [ext_resource type="Texture2D" uid="uid://bl3wka2bk5rr2" path="res://ui/console/icons/shields.png" id="4_jwdva"]
+[ext_resource type="AudioStream" uid="uid://dhf3s4gt403t1" path="res://audio/sfx/power_shunt/UI_increase_power.ogg" id="4_ufhxc"]
+[ext_resource type="AudioStream" uid="uid://b2d357cjxgbdk" path="res://audio/sfx/power_shunt/UI_decrease_power.ogg" id="5_2txau"]
 [ext_resource type="Texture2D" uid="uid://b5dqc340mhtqi" path="res://ui/console/icons/weapons.png" id="5_jhgy8"]
 [ext_resource type="Theme" uid="uid://cov354ofq62bt" path="res://ui/console/console_theme.tres" id="7_f106u"]
 [ext_resource type="Texture2D" uid="uid://b6xmy31lxl5on" path="res://ui/console/icons/power-2.png" id="7_nsjdc"]
@@ -30,6 +33,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_bj0pt")
 script = ExtResource("2_6xq8u")
+shunt_error_sfx = ExtResource("3_asih4")
+shunt_up_sfx = ExtResource("4_ufhxc")
+shunt_down_sfx = ExtResource("5_2txau")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -214,6 +220,9 @@ flat = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
 
 [connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/Engine/Engine" to="." method="_on_engine_gui_input"]
 [connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/O2/O2" to="." method="_on_o2_gui_input"]

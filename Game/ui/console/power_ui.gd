@@ -1,18 +1,23 @@
 extends Control
 class_name Power_UI
 
-@onready var engine_icon: Button = get_node('%Engine/Engine')
-@onready var o2_icon: Button = get_node('%O2/O2')
-@onready var shields_icon: Button = get_node('%Shields/Shields')
-@onready var weapons_icon: Button = get_node('%Weapons/Weapons')
-@onready var power_icon: Button = get_node('%Power/Button')
+@onready var engine_icon: Button = %Engine/Engine
+@onready var o2_icon: Button = %O2/O2
+@onready var shields_icon: Button = %Shields/Shields
+@onready var weapons_icon: Button = %Weapons/Weapons
+@onready var power_icon: Button = %Power/Button
 var event_mapping: Dictionary = {}
 
-@onready var engine_display: TextureProgressBar = get_node('%Engine/TextureProgressBar')
-@onready var o2_display: TextureProgressBar = get_node('%O2/TextureProgressBar')
-@onready var shields_display: TextureProgressBar = get_node('%Shields/TextureProgressBar')
-@onready var weapons_display: TextureProgressBar = get_node('%Weapons/TextureProgressBar')
-@onready var power_display: TextureProgressBar = get_node('%Power/TextureProgressBar')
+@onready var engine_display: TextureProgressBar = %Engine/TextureProgressBar
+@onready var o2_display: TextureProgressBar = %O2/TextureProgressBar
+@onready var shields_display: TextureProgressBar = %Shields/TextureProgressBar
+@onready var weapons_display: TextureProgressBar = %Weapons/TextureProgressBar
+@onready var power_display: TextureProgressBar = %Power/TextureProgressBar
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+
+@export var shunt_error_sfx: AudioStream
+@export var shunt_up_sfx: AudioStream
+@export var shunt_down_sfx: AudioStream
 
 
 # Called when the node enters the scene tree for the first time.
@@ -59,17 +64,23 @@ func has_active_event(event_type):
 	return GameManager.active_events.any(func(c): return c.event == event_type)
 
 func adjust_system_power(gui_event, system, current, step, maximum):
-	if has_active_event(system):
-		return current
 	if not (gui_event is InputEventMouseButton and gui_event.pressed):
+		return current
+	if has_active_event(system):
+		audio_player.stream = shunt_error_sfx
+		audio_player.play()
 		return current
 	var available = available_power()
 	match gui_event.button_index:
 		MOUSE_BUTTON_LEFT:
-			if available >= step and current < maximum:
+			if available >= step and current < maximum:		
+				audio_player.stream = shunt_up_sfx
+				audio_player.play()
 				return current + step
 		MOUSE_BUTTON_RIGHT:
 			if current >= step:
+				audio_player.stream = shunt_down_sfx
+				audio_player.play()
 				return current - step
 	return current
 

@@ -43,6 +43,10 @@ func game_over() -> bool:
 	if GameManager.stats.distance >= GameManager.stats.target_distance:
 		SceneManager.change_scene_and_delete("res://ui/defeat.tscn")
 		return true
+	
+	if GameManager.stats.ship_damage >= GameManager.stats.max_ship_damage:
+		SceneManager.change_scene_and_delete("res://ui/defeat.tscn")
+		return true
 		
 	if len(GameManager.crew_members) == 0:
 		SceneManager.change_scene_and_delete("res://ui/defeat.tscn")
@@ -64,7 +68,7 @@ func apply_ship_damage():
 			fire_count += 1
 	#if GameManager.stats.current_thrust == 3:
 		#GameManager.stats.ship_damage += GameManager.stats.thrust_3_damage
-		#
+		
 	GameManager.stats.ship_damage += GameManager.stats.starting_sun_damage
 	GameManager.stats.ship_damage += fire_count*GameManager.stats.fire_ship_damage
 	GameManager.change_ship_damage.emit(GameManager.stats.ship_damage)

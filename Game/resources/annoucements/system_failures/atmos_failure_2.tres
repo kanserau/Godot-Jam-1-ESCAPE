@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FailureAnnoucement" load_steps=3 format=3 uid="uid://dik3qsgdmffl5"]
 
 [ext_resource type="AudioStream" uid="uid://cvfamvk5m4mdc" path="res://audio/vo/system_down/atmo icing.wav" id="1_kx745"]
-[ext_resource type="Script" path="res://resources/templates/system_down_annoucement.gd" id="2_53tkk"]
+[ext_resource type="Script" path="res://resources/templates/system_down_announcement.gd" id="2_53tkk"]
 
 [resource]
 script = ExtResource("2_53tkk")

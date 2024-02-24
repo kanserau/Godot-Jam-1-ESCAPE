@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FailureAnnoucement" load_steps=3 format=3 uid="uid://blxd7xbg7uftl"]
 
 [ext_resource type="AudioStream" uid="uid://d4e0nv8i7p5wi" path="res://audio/vo/system_down/weapons down.wav" id="1_a1hjm"]
-[ext_resource type="Script" path="res://resources/templates/system_down_annoucement.gd" id="2_4jwdx"]
+[ext_resource type="Script" path="res://resources/templates/system_down_announcement.gd" id="2_4jwdx"]
 
 [resource]
 script = ExtResource("2_4jwdx")

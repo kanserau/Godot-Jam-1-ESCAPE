@@ -1,10 +1,9 @@
 extends Control
 
-@onready var master_slider = $"MarginContainer/ScrollContainer/VBoxContainer/Master/master_slider"
-@onready var bgm_slider = $"MarginContainer/ScrollContainer/VBoxContainer/BGM/bgm_slider"
-@onready var sfx_slider = $"MarginContainer/ScrollContainer/VBoxContainer/SFX/sfx_slider"
-@onready var voice_slider = $"MarginContainer/ScrollContainer/VBoxContainer/Voice/voice_slider"
-
+@onready var master_slider = %AudioControls/Master/master_slider
+@onready var bgm_slider = %AudioControls/BGM/bgm_slider
+@onready var sfx_slider = %AudioControls/SFX/sfx_slider
+@onready var voice_slider = %AudioControls/Voice/voice_slider
 
 func _unhandled_input(event):
 	if event.is_action_pressed("escape") and not event.is_echo():
@@ -12,7 +11,6 @@ func _unhandled_input(event):
 		SceneManager.remove_overlay()
 		SceneManager.unpause_game()
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 
 func _ready():
 	self.process_mode = Node.PROCESS_MODE_WHEN_PAUSED

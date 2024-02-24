@@ -11,8 +11,12 @@
             "id": "37db2e3e8e6dcce0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Into the Sun/Gameplay/1. Stage 1 Mechanics.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Into the Sun/Gameplay/1. Stage 1 Mechanics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Into the Sun/Gameplay/1. Stage 1 Mechanics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Into the Sun/Gameplay/1. Stage 1 Mechanics.md"
+              }
             }
           },
           {
@@ -159,6 +167,15 @@
   },
   "active": "37db2e3e8e6dcce0",
   "lastOpenFiles": [
+    "Into the Sun/Scrapped Ideas.md",
+    "Into the Sun/STAGE 3.md",
+    "Slingsby.t67c.panel.g-bocm.arp.jpg",
+    "Pasted image 20240223224512.png",
+    "INFO LORE.md",
+    "To Do Lists/Sam's To do List.md",
+    "Excalidraw/Proposed Engine Room & Ship Layout.md",
+    "Excalidraw/Terminals & Gauges.md",
+    "Into the Sun/0. The Plan.md",
     "Content/The Manual V2.md",
     "Content/How to Play.md",
     "Into the Sun/Gameplay/Difficulty Values.md",
@@ -172,20 +189,11 @@
     "Into the Sun/Notes.md",
     "Into the Sun/Gameplay/1. Stage 1 Mechanics.md",
     "Into the Sun/I. Reflections.md",
-    "To Do Lists/Sam's To do List.md",
     "Content",
     "To Do Lists",
     "Into the Sun/Controls.md",
-    "Into the Sun/0. The Plan.md",
     "Into the Sun/Item List.md",
-    "Into the Sun/STAGE 3.md",
-    "Pasted image 20240223224512.png",
-    "Slingsby.t67c.panel.g-bocm.arp.jpg",
-    "INFO LORE.md",
-    "Excalidraw/Proposed Engine Room & Ship Layout.md",
-    "Excalidraw/Terminals & Gauges.md",
     "Excalidraw",
-    "Into the Sun/Scrapped Ideas.md",
     "Pasted image 20240204194651.png",
     "Pasted image 20240204194654.png",
     "Role-Playing Games/Mech RPG/Notes/On Justifying Mechs.md",
@@ -195,7 +203,6 @@
     "Role-Playing Games/Dark Souls RPG/Dark Souls RPG.md",
     "Role-Playing Games/Mech RPG/Design.md",
     "Role-Playing Games/Dark Souls RPG",
-    "Role-Playing Games/Mech RPG/Appendix N.md",
     "Role-Playing Games/Mech RPG/Notes",
     "Role-Playing Games/Mech RPG/Lore",
     "Videogames/Space Cafe"

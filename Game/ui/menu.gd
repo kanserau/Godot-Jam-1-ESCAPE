@@ -10,6 +10,5 @@ func _on_quit_pressed():
 func _on_start_mouse_entered():
 	%Start.text = 'Disengage warp drive'
 
-
 func _on_start_mouse_exited():
 	%Start.text = 'Start'

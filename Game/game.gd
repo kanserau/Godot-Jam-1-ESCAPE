@@ -78,7 +78,6 @@ func apply_ship_damage():
 # Crew damage
 ##
 func apply_crew_damage():
-	print('calculating damage')
 	for member in GameManager.crew_members:
 		if GameManager.stats.current_oxygen <= GameManager.stats.low_oxygen:
 			member.health -= GameManager.stats.crew_damage_low_oxygen

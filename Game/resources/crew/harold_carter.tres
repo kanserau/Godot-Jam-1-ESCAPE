@@ -9,3 +9,4 @@ name = "Harold Carter"
 role = "Second Technician"
 location = 3
 status = 0
+health = 100

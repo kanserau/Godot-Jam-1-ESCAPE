@@ -9,3 +9,4 @@ name = "Ace Lander"
 role = "Pilot"
 location = 0
 status = 0
+health = 100

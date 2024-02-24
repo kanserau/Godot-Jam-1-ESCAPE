@@ -55,19 +55,26 @@ Minimum one for each of the following emergencies. These can be shorter as emerg
 
 ### Variations
 Need a few variations of each of the following voice lines to avoid things becoming repetitive.
-- [ ] Engine fault
-- [ ] Atmosphere generator down
-- [ ] Shield failure
-- [ ] Weapons failure
-- [ ] Solar flare detected
-- [ ] Space debris detected
+- [ ] Engine fault v2
+- [ ] Engine fault v3
+- [ ] Atmosphere generator down v2
+- [ ] Atmosphere generator down v3
+- [ ] Shield failure v2
+- [ ] Shield failure v3
+- [ ] Weapons failure v2
+- [ ] Weapons failure v3
+- [ ] Solar flare detected v2
+- [ ] Solar flare detected v3
+- [ ] Space debris detected v2
+- [ ] Space debris detected v3
 - [ ] Fire generic v2
 - [ ] Fire generic v3
-- [ ] Hull breach generic
-- [ ] Solar flare blocked by shield
-- [ ] Solar flare hits the ship
-- [ ] Space debris destroyed by weapons
-- [ ] Space debris hits the ship
+- [ ] Hull breach generic v2
+- [ ] Hull breach generic v3
+- [ ] Solar flare blocked by shield v2
+- [ ] Solar flare hits the ship v2
+- [ ] Space debris destroyed by weapons v2
+- [ ] Space debris hits the ship v2
 ### Stretch goal emergencies
 One for each of the following location specific emergencies. These ones can be short as well. This is for if you get time.
 - Fire

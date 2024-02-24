@@ -198,8 +198,96 @@ theme_type_variation = &"Title"
 text = "How to play"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollContainer/VBoxContainer/How to play"]
+custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 3
+theme = ExtResource("2_7tijr")
+theme_override_font_sizes/bold_italics_font_size = 32
+bbcode_enabled = true
+text = "Welcome to the Into the Sun game manual. We didn’t have time to make a tutorial, so you get this instead.
+
+To win, you need to get away from the Sun, which is quickly and painfully melting your ship and crew. From the engine room, you’ll fix pretty much everything that can go wrong both near and far.
+
+[color=#00ff00][b][i]The Engine Room[/i][/b][/color]
+
+In the engine room you’ll find a computer terminal, the engine, atmospheric pipes, and the power reset button. Many of these will break frequently, and need to be fixed. You can do so by using the [color=#ffff00]multitool[/color]. Sometimes hazards like fires will appear 
+- you can deal with these using your [color=#ffff00]multitool[/color].
+
+[color=#00ff00][b][i]The Computer Terminal[/i][/b][/color]
+
+These terminals display all relevant information and allow you to interact with the ship in various ways.
+- The alert feed will display any problems you need to deal with and where that problem is located. Make sure to keep an eye on it.
+- The crew status display will give you relevant information about the crew, such as where they are, their identity, and whether they’re alive or not.
+- The power shunting terminal will allow you to divert power to different ship systems.
+- The command terminal will allow you to deal with problems in other areas of the ship remotely.
+
+[color=#00ff00][b][i]Power Shunting[/i][/b][/color]
+
+You can route or divert power from various systems by interacting with this terminal. The ship has a power supply of 4 units.
+- [color=#ffff00]Thrust[/color]: The engine has three levels of thrust, costing 1, 2 and 3 power. 1 power is the least efficient, and 2 and 3 power are both equally efficient.
+- [color=#ffff00]Atmosphere Generator[/color]: The atmosphere has two levels of power. At 1 power, oxygen levels are maintained. At 2 power, oxygen levels increase. You need to make sure oxygen levels stay in the safe zone.
+- [color=#ffff00]Shield Generator[/color]: This one is either on or off, and consumes 2 power. You’ll need this to protect from solar flares.
+- [color=#ffff00]Weapons[/color]: These are also either on or off, and consume 2 power. You’ll need these to protect from stray space debris.
+
+[color=#00ff00][b][i]Terminal Commands[/i][/b][/color]
+
+- help 
+- Display a list of commands
+- info 
+- Displays information about the ship including:
+- Ship distance/escape progress
+- Ship integrity
+- Current oxygen levels
+- Number of active emergencies
+- Number of location based emergencies
+- locations 
+- Displays a list of game locations for fire and breach handling.
+- cockpit
+- crew quarters
+- bridge
+- engine room
+- maintenance corridor
+- cargo bay
+- galley
+- laboratory
+- crew 
+- displays crew details
+- defib [crew member ID] 
+- Revive a crew member at critical condition.
+- reboot [system] 
+- Restore a failed system. Works on weapons or power.
+- suppress [location] 
+- Extinguish all fire at a given location.
+- repair [location] 
+- Repair all hull breaches at a given location. See above for options.
+
+[color=#00ff00][b][i]Common Emergencies[/i][/b][/color]
+
+Here’s a list of things that commonly go wrong, and how to fix them:
+- [color=#ffff00]Fire[/color]: Fire will damage the ship, the crew, and deplete oxygen.- Fix: Use the suppress command on the terminal.
+- Note: There’s no suppression in the engine room, so you’ll need to use the multitool.
+- [color=#ffff00]Hull breaches[/color]: Ship damage and rapid oxygen loss.
+- Fix: Use the repair command on the terminal.
+- Note: The engine room is extra reinforced and won’t experience hull breaches.
+- [color=#ffff00]Dangerous oxygen levels[/color]: If oxygen levels are too high or low, the crew will take damage.
+- Fix: Adjust the atmosphere generator in the power shunting terminal.
+- [color=#ffff00]Broken terminal/engine/atmos gen/engine room fire[/color]: Use the multitool in the engine room.
+- [color=#ffff00]Failed shield generator/weapons[/color]: This will prevent you from shunting power to the relevant system.
+- Fix: Use the reboot command on the terminal.
+- Note: You will need to shunt power again manually.
+- [color=#ffff00]Crew member in critical condition[/color]: Crew members with a health status of 25% or below are in critical condition, and very close to dying.
+- Fix: Use the defib command on the terminal. Be quick about it.
+- Note: A deceased crew member cannot be defibrillated. If you lose all of your crew, it’s over.
+- Note: You can’t defib a crew member with a health status more than 25%.
+- [color=#ffff00]Solar flare[/color]: If a solar flare hits the ship, it’ll cause significant damage to the ship.
+- Fix: Divert power to the shield generator for protection.
+- [color=#ffff00]Space debris[/color]: If space debris hits the ship, it’ll cause significant damage to the ship.
+- Fix: Divert power to weapons for protection.
+
+[color=#00ff00][b][i]Things to Remember[/i][/b][/color]
+
+If in doubt, use the [color=#ffff00]multitool[/color].  Keep an eye on the [color=#ffff00]alert feed[/color] and [color=#ffff00]crew status display[/color]."
 
 [connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Master/master_slider" to="." method="_on_master_slider_mouse_exited"]
 [connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/AudioControls/Master/master_slider" to="." method="_on_master_value_changed"]

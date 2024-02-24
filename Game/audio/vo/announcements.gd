@@ -56,6 +56,8 @@ func on_solar_hit():
 func on_event(event: GameEvent):
 	if playing or timer != null and timer.time_left > 0:
 		return
+	if GameManager.dead_crew_members.any(func(c): return c.role == 'Captain'):
+		return
 	if not event.event in system_down.keys():
 		return
 	var lines: Array[SystemDownAnnoucement] = system_down[event.event]

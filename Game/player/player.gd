@@ -33,6 +33,7 @@ func _unhandled_input(event) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if event.is_action_pressed("fix") and not $AnimationPlayer.is_playing():
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		$AnimationPlayer.queue("fix")
 		multitool_swing_src.stream = multitool_swings.pick_random()
 		multitool_swing_src.play()

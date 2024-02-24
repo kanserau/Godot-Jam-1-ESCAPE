@@ -1,0 +1,62 @@
+We need a tutorial.
+
+Power shunting system:
+4 power available. 2 would ideally be used on 1 thrust and 1 atmos.
+FireSupp, Autorepair, Shields, Weapons - used as needed.
+Diminishing Returns for all systems.
+Screen 1:
+- Thrust: 0-2. Optimal thrust is 1. Maneuver deviation value affected by thrust. (Decreased, maintained, or exceeded).
+- Atmos: 0-2. Off/maintain/increase
+- Weapons: 0-2 - off/slow/fast
+Screen 2:
+- Fire Suppression: 0-2 off/slow/fast
+- Autorepair: 0-2 off/slow/fast
+- Autodoc: 0-2 - off/slow/fast. No defib, but should prioritise critical crew.
+Screen 3: Crew display/selector.
+Screen 4: Alerts
+Screen 5: Location Selector. Two tabs, one displaying fire, one displaying breaches. One location at a time for autorepair/fire supression.
+
+When a crew member dies, the ship loses 5% integrity (5k damage). up to x7 for 35%.
+?Death spiralling.
+
+Remove:
+- Shields: 0-1 - on/off
+Scan command: Displays detail about selected events. E.g. "scan fire" displays all fires and their locations. Scan breach displays all breaches. Scan debris displays the size and distance of the debris. Scan flare displays the intensity of the flare.
+
+Player decision making:
+- Do I repair now, or optimise the power settings?
+(7 systems). Game is setting the optimal power settings for a given situation and responding to changes.
+Additionally increase the available power.
+Consider removing terminal entirely.
+
+Atmospheric Pressure & Oxygen Levels:
+- These values rise in tandem.
+- Atmospheric pressure can be too low or high.
+- High or low atmospheric pressure does damage.
+- Oxygen can be too low, but not too high.
+- Low oxygen does damage.
+- Fire changes oxygen but not pressure.
+- Hull breaches change both oxygen and pressure.
+
+Stage 3 mechanic:
+Difficulty settings?
+ESCAPE MODE:
+- Must reach a target distance.
+- difficulty sets a starting and maximum cluster rate and multiplier.
+- lower difficulties have certain events disabled
+MANEUVER MODE:
+- Instead of distance, tracks average speed.
+- If you drop below an average speed, you die.
+SPEED MODE:
+- ship begins with a set of problems.
+- fix them as quickly as possible, or sustaining as little damage as possible
+
+Emergencies broken down into three types:
+- Those that damage crew.
+- Those that damage the ship.
+- Those that do both.
+
+Both crew damage and ship damage make the other more likely to occur, causing a natural ramp in difficulty.
+There is also a constant ramp in difficulty from the sun.
+The player's job is to minimise damage. Some damage is unavoidable, but the efficient player will prevent some.
+When there is no damage from any source, emergencies stop.

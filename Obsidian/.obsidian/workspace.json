@@ -11,8 +11,30 @@
             "id": "08f1d832b9c21b86",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Into the Sun/The Captain.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "8bbf4bc6f0538db9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ec2d0c3ed34b235",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Into the Sun/Music & Sound.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Into the Sun/The Captain.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Into the Sun/The Captain.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +150,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Into the Sun/The Captain.md"
+              }
             }
           },
           {
@@ -159,17 +185,27 @@
   },
   "active": "08f1d832b9c21b86",
   "lastOpenFiles": [
-    "Into the Sun/Notes.md",
-    "Excalidraw/Proposed Engine Room & Ship Layout.md",
-    "Into the Sun/1. Mechanics.md",
-    "Into the Sun/0. The Plan.md",
-    "Excalidraw/Terminals & Gauges.md",
     "Into the Sun/Music & Sound.md",
-    "Excalidraw",
-    "Into the Sun/Item List.md",
-    "Into the Sun/I. Reflections.md",
     "Into the Sun/The Captain.md",
-    "Into the Sun/The Manual.md",
+    "To Do Lists/Sam's To do List.md",
+    "Content/The Manual.md",
+    "Content",
+    "Into the Sun/User Interface & Controls.md",
+    "To Do Lists",
+    "Into the Sun/Controls.md",
+    "Into the Sun/1. Stage 1 Mechanics.md",
+    "Into the Sun/Untitled",
+    "Into the Sun/0. The Plan.md",
+    "Into the Sun/Notes.md",
+    "Into the Sun/I. Reflections.md",
+    "Into the Sun/Item List.md",
+    "Into the Sun/STAGE 3.md",
+    "Pasted image 20240223224512.png",
+    "Slingsby.t67c.panel.g-bocm.arp.jpg",
+    "INFO LORE.md",
+    "Excalidraw/Proposed Engine Room & Ship Layout.md",
+    "Excalidraw/Terminals & Gauges.md",
+    "Excalidraw",
     "Into the Sun/Scrapped Ideas.md",
     "Into the Sun/Sound.md",
     "Pasted image 20240204194651.png",
@@ -185,17 +221,8 @@
     "Role-Playing Games/Mech RPG/Playing the Game/Combat.md",
     "Role-Playing Games/Mech RPG/Notes/On Infrared vs Radar Missiles.md",
     "Role-Playing Games/Mech RPG/Notes",
-    "Role-Playing Games/Mech RPG/Lore/World.md",
     "Role-Playing Games/Mech RPG/Lore",
-    "Videogames/Space Cafe/Pitch.md",
     "Videogames/Space Cafe",
-    "Role-Playing Games/Mech RPG/Preparing the Game/MECHS.md",
-    "Role-Playing Games/Mech RPG/Concept.md",
-    "Role-Playing Games/Mech RPG/Preparing the Game/Tech Ideas.md",
-    "Role-Playing Games/Mech RPG/Playing the Game/RULES.md",
-    "Role-Playing Games/Mech RPG/Preparing the Game",
-    "Role-Playing Games/Mech RPG/Playing the Game",
-    "Role-Playing Games/Mech RPG",
-    "Videogames/Synth Wizard"
+    "Role-Playing Games/Mech RPG/Preparing the Game"
   ]
 }

@@ -28,7 +28,10 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 	- prevent defib from working on crew still taking damage
 	- add defib cooldown per crew member
 	- defib costs one power
-
+### How to Play
+- how to play option in the menu
+- list of controls, explanation of the game flow
+- in as few words as possible
 ## Space Debris & Solar Flares
 - Solar flares when they hit should cause power outages and system failures.
 - Space debris should hit a location, cause hull breaches, a chunk of ship damage, and high crew damage to any crew located there.
@@ -68,3 +71,12 @@ This wouldn't be a tutorial per se, but it would allow the player a chance to fa
 Then, to begin the game, the engage the warp drive.
 - Consider implementing warp VFX outside ship window.
 
+
+## Repair Methods
+#stage3
+### The Engine
+- #stage2 The engine has multiple repair points.
+	- 2 ground floor
+	- #stage3 2 top floor
+- All repair points must be repaired to fix the engine, one interaction each.
+- #stage2 The engine can fail multiple times, each triggering another repair point

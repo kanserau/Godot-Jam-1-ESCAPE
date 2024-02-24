@@ -1,0 +1,1 @@
+- [ ] write the high score calculation and make a diagram

@@ -9,6 +9,6 @@ static func load_from(path: String) -> Array[Resource]:
 	var data: Array[Resource] = []
 	while file != "":
 		if file.ends_with('.tres') or file.ends_with('.tres.remap'):
-			data.append(load(path + '/' + file))
+			data.append(load(path + '/' + file.replace('.remap', '')))
 		file = dir.get_next()
 	return data

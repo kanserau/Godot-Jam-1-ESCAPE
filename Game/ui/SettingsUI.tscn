@@ -211,8 +211,7 @@ To win, you need to get away from the Sun, which is quickly and painfully meltin
 
 [color=#00ff00][b][i]The Engine Room[/i][/b][/color]
 
-In the engine room you’ll find a computer terminal, the engine, atmospheric pipes, and the power reset button. Many of these will break frequently, and need to be fixed. You can do so by using the [color=#ffff00]multitool[/color]. Sometimes hazards like fires will appear 
-- you can deal with these using your [color=#ffff00]multitool[/color].
+In the engine room you’ll find a computer terminal, the engine, atmospheric pipes, and the power reset button. Many of these will break frequently, and need to be fixed. You can do so by using the [color=#ffff00]multitool[/color]. Sometimes hazards like fires will appear - you can deal with these using your [color=#ffff00]multitool[/color].
 
 [color=#00ff00][b][i]The Computer Terminal[/i][/b][/color]
 
@@ -233,57 +232,58 @@ You can route or divert power from various systems by interacting with this term
 [color=#00ff00][b][i]Terminal Commands[/i][/b][/color]
 
 - help 
-- Display a list of commands
+    - Display a list of commands
 - info 
-- Displays information about the ship including:
-- Ship distance/escape progress
-- Ship integrity
-- Current oxygen levels
-- Number of active emergencies
-- Number of location based emergencies
+    - Displays information about the ship including:
+        - Ship distance/escape progress
+        - Ship integrity
+        - Current oxygen levels
+        - Number of active emergencies
+        - Number of location based emergencies
 - locations 
-- Displays a list of game locations for fire and breach handling.
-- cockpit
-- crew quarters
-- bridge
-- engine room
-- maintenance corridor
-- cargo bay
-- galley
-- laboratory
-- crew 
-- displays crew details
+    - Displays a list of game locations for fire and breach handling.
+        - cockpit
+        - crew quarters
+        - bridge
+        - engine room
+        - maintenance corridor
+        - cargo bay
+        - galley
+        - laboratory
+- crew
+    - displays crew details
 - defib [crew member ID] 
-- Revive a crew member at critical condition.
+    - Revive a crew member at critical condition.
 - reboot [system] 
-- Restore a failed system. Works on weapons or power.
+    - Restore a failed system. Works on weapons or power.
 - suppress [location] 
-- Extinguish all fire at a given location.
+    - Extinguish all fire at a given location.
 - repair [location] 
-- Repair all hull breaches at a given location. See above for options.
+    - Repair all hull breaches at a given location. See above for options.
 
 [color=#00ff00][b][i]Common Emergencies[/i][/b][/color]
 
 Here’s a list of things that commonly go wrong, and how to fix them:
-- [color=#ffff00]Fire[/color]: Fire will damage the ship, the crew, and deplete oxygen.- Fix: Use the suppress command on the terminal.
-- Note: There’s no suppression in the engine room, so you’ll need to use the multitool.
+- [color=#ffff00]Fire[/color]: Fire will damage the ship, the crew, and deplete oxygen.
+    - Fix: Use the suppress command on the terminal.
+    - Note: There’s no suppression in the engine room, so you’ll need to use the multitool.
 - [color=#ffff00]Hull breaches[/color]: Ship damage and rapid oxygen loss.
-- Fix: Use the repair command on the terminal.
-- Note: The engine room is extra reinforced and won’t experience hull breaches.
+    - Fix: Use the repair command on the terminal.
+    - Note: The engine room is extra reinforced and won’t experience hull breaches.
 - [color=#ffff00]Dangerous oxygen levels[/color]: If oxygen levels are too high or low, the crew will take damage.
-- Fix: Adjust the atmosphere generator in the power shunting terminal.
+    - Fix: Adjust the atmosphere generator in the power shunting terminal.
 - [color=#ffff00]Broken terminal/engine/atmos gen/engine room fire[/color]: Use the multitool in the engine room.
 - [color=#ffff00]Failed shield generator/weapons[/color]: This will prevent you from shunting power to the relevant system.
-- Fix: Use the reboot command on the terminal.
-- Note: You will need to shunt power again manually.
+    - Fix: Use the reboot command on the terminal.
+    - Note: You will need to shunt power again manually.
 - [color=#ffff00]Crew member in critical condition[/color]: Crew members with a health status of 25% or below are in critical condition, and very close to dying.
-- Fix: Use the defib command on the terminal. Be quick about it.
-- Note: A deceased crew member cannot be defibrillated. If you lose all of your crew, it’s over.
-- Note: You can’t defib a crew member with a health status more than 25%.
+    - Fix: Use the defib command on the terminal. Be quick about it.
+    - Note: A deceased crew member cannot be defibrillated. If you lose all of your crew, it’s over.
+    - Note: You can’t defib a crew member with a health status more than 25%.
 - [color=#ffff00]Solar flare[/color]: If a solar flare hits the ship, it’ll cause significant damage to the ship.
-- Fix: Divert power to the shield generator for protection.
+    - Fix: Divert power to the shield generator for protection.
 - [color=#ffff00]Space debris[/color]: If space debris hits the ship, it’ll cause significant damage to the ship.
-- Fix: Divert power to weapons for protection.
+    - Fix: Divert power to weapons for protection.
 
 [color=#00ff00][b][i]Things to Remember[/i][/b][/color]
 

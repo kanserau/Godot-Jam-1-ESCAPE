@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="FailureAnnoucement" load_steps=3 format=3 uid="uid://dcxekfdt5iydt"]
-
-[ext_resource type="AudioStream" uid="uid://cjleew0gqbqot" path="res://audio/vo/hullbreach.wav" id="1_5nvfy"]
-[ext_resource type="Script" path="res://resources/templates/failure_annoucement.gd" id="2_kda7s"]
-
-[resource]
-script = ExtResource("2_kda7s")
-trigger = 6
-audio = ExtResource("1_5nvfy")

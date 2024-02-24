@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3kipjhpcnkqq"
+path="res://.godot/imported/shields down.wav-611bcc11c6e2edd705c85c8a2b984ba6.sample"
+
+[deps]
+
+source_file="res://audio/vo/system_down/shields down.wav"
+dest_files=["res://.godot/imported/shields down.wav-611bcc11c6e2edd705c85c8a2b984ba6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

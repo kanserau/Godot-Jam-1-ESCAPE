@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ue4fkbj8d010"]
+[gd_scene load_steps=45 format=3 uid="uid://ue4fkbj8d010"]
 
 [ext_resource type="Texture2D" uid="uid://g6hw45rrlylj" path="res://assets/skybox/plain_starfield_1.png" id="1_fb1y0"]
 [ext_resource type="Script" path="res://power_outage.gd" id="1_p3enf"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://balok5b4ubm81" path="res://assets/props/alarm_light/alarm_light.tscn" id="14_ar27j"]
 [ext_resource type="PackedScene" uid="uid://s7kca4yjlu1p" path="res://audio/vo/intercom.tscn" id="15_t6g4m"]
 [ext_resource type="PackedScene" uid="uid://s8e1guti158n" path="res://assets/vfx/fire/fire.tscn" id="16_3u0vc"]
+[ext_resource type="AudioStream" uid="uid://bwafoitnrlc7u" path="res://audio/vo/intro.wav" id="16_5gubu"]
 [ext_resource type="PackedScene" uid="uid://bk86ug0hqp3f6" path="res://assets/props/barrels/waste_barrel.tscn" id="17_ix7pk"]
 [ext_resource type="PackedScene" uid="uid://cfrfspmmjdgpr" path="res://audio/sfx/alarms/alarms.tscn" id="17_xmrfo"]
 [ext_resource type="PackedScene" uid="uid://chbwdyjgvjcur" path="res://assets/props/barrels/glass_barrel.tscn" id="18_cmm1p"]
@@ -267,6 +268,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.465
 transform = Transform3D(-0.005, 0, -4.37114e-10, 0, 0.005, 0, 4.37114e-10, 0, -0.005, 2.76294, 1.5745, -0.0299997)
 
 [node name="AudioStreamPlayer3D" parent="Props/Door Dark/intercom" instance=ExtResource("15_t6g4m")]
+volume_db = -10.0
+intro = ExtResource("16_5gubu")
 
 [node name="alarm light" parent="Props/Door Dark" instance=ExtResource("14_ar27j")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.37587, 3.07547, 0)

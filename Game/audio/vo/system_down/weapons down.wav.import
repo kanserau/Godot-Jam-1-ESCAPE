@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4e0nv8i7p5wi"
+path="res://.godot/imported/weapons down.wav-816037c0269b43b59696273d48b6c2ce.sample"
+
+[deps]
+
+source_file="res://audio/vo/system_down/weapons down.wav"
+dest_files=["res://.godot/imported/weapons down.wav-816037c0269b43b59696273d48b6c2ce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

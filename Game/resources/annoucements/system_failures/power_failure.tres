@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FailureAnnoucement" load_steps=3 format=3 uid="uid://baff5tm5cod3k"]
+
+[ext_resource type="AudioStream" uid="uid://de6ihylj3ljxx" path="res://audio/vo/system_down/atmospheregendown.wav" id="1_3yap7"]
+[ext_resource type="Script" path="res://resources/templates/system_down_annoucement.gd" id="2_5li5l"]
+
+[resource]
+script = ExtResource("2_5li5l")
+trigger = 2
+audio = ExtResource("1_3yap7")

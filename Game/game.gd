@@ -20,6 +20,8 @@ func _ready():
 	_on_event_timer_timeout()
 
 func _process(delta):
+	if not GameManager.intro_finished:
+		return
 	game_time += delta
 	accumulated_time += delta
 	apply_random_events()
@@ -239,6 +241,9 @@ func apply_weapons_damage():
 # Random events
 ##
 func apply_random_events():
+	# TODO
+	# if this function is triggered by timer
+	# it should be triggered by timer signal rather than main loop
 	if !solar_flare_triggered and solar_flare_start >= random_event_timer.time_left:
 		var solar_flare_countdown = GameManager.stats.solar_flare_countdown
 

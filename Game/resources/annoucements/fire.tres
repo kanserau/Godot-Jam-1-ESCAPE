@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="FailureAnnoucement" load_steps=3 format=3 uid="uid://c7om0x0wbueqs"]
-
-[ext_resource type="AudioStream" uid="uid://cc6i34rgna8ry" path="res://audio/vo/fire generic.wav" id="1_xwnrg"]
-[ext_resource type="Script" path="res://resources/templates/failure_annoucement.gd" id="2_4bd1u"]
-
-[resource]
-script = ExtResource("2_4bd1u")
-trigger = 7
-audio = ExtResource("1_xwnrg")

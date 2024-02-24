@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bk4loo2h4dec1"
+path="res://.godot/imported/solare flare detected.wav-6a97c5c05afba055f255c22b9b52c2ee.sample"
+
+[deps]
+
+source_file="res://audio/vo/external_detected/solare flare detected.wav"
+dest_files=["res://.godot/imported/solare flare detected.wav-6a97c5c05afba055f255c22b9b52c2ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

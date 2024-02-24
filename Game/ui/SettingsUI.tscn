@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://i7xq588f64tv"]
+[gd_scene load_steps=11 format=3 uid="uid://i7xq588f64tv"]
 
 [ext_resource type="Script" path="res://ui/SettingsUI.gd" id="1_5k8dg"]
 [ext_resource type="Shader" path="res://assets/vfx/screen_blur.gdshader" id="1_dwui7"]
 [ext_resource type="Theme" uid="uid://duyhmdjgt61qo" path="res://resources/settings_theme.tres" id="2_7tijr"]
+[ext_resource type="AudioStream" uid="uid://pd85brsb8fpe" path="res://audio/bgm/Game Over.ogg" id="4_djw3f"]
+[ext_resource type="AudioStream" uid="uid://dko3reillosvb" path="res://audio/vo/prerecorded.wav" id="4_t6jso"]
+[ext_resource type="AudioStream" uid="uid://dlywe8jdxkihx" path="res://audio/sfx/alarms/fire_alarm.ogg" id="6_52xm0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6wxl"]
 
@@ -78,6 +81,9 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/Master/master_slider"]
+stream = ExtResource("4_t6jso")
+
 [node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Master"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -103,6 +109,10 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/BGM/bgm_slider"]
+stream = ExtResource("4_djw3f")
+bus = &"BGM"
+
 [node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/BGM"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -126,6 +136,10 @@ mouse_default_cursor_shape = 13
 theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/SFX/sfx_slider"]
+stream = ExtResource("6_52xm0")
+bus = &"SFX"
 
 [node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/SFX"]
 layout_mode = 2
@@ -151,6 +165,10 @@ theme = ExtResource("2_7tijr")
 min_value = -60.0
 max_value = 5.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/ScrollContainer/VBoxContainer/Voice/voice_slider"]
+stream = ExtResource("4_t6jso")
+bus = &"VO"
+
 [node name="label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Voice"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -162,7 +180,11 @@ text = "voice"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/Master/master_slider" to="." method="_on_master_slider_mouse_exited"]
 [connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/Master/master_slider" to="." method="_on_master_value_changed"]
+[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/BGM/bgm_slider" to="." method="_on_bgm_slider_mouse_exited"]
 [connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/BGM/bgm_slider" to="." method="_on_bgm_value_changed"]
+[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/SFX/sfx_slider" to="." method="_on_sfx_slider_mouse_exited"]
 [connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/SFX/sfx_slider" to="." method="_on_sfx_value_changed"]
+[connection signal="mouse_exited" from="MarginContainer/ScrollContainer/VBoxContainer/Voice/voice_slider" to="." method="_on_voice_slider_mouse_exited"]
 [connection signal="value_changed" from="MarginContainer/ScrollContainer/VBoxContainer/Voice/voice_slider" to="." method="_on_vo_value_changed"]

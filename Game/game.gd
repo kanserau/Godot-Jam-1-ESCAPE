@@ -78,19 +78,20 @@ func apply_ship_damage():
 # Crew damage
 ##
 func apply_crew_damage():
+	print('calculating damage')
 	for member in GameManager.crew_members:
 		if GameManager.stats.current_oxygen <= GameManager.stats.low_oxygen:
 			member.health -= GameManager.stats.crew_damage_low_oxygen
 		elif GameManager.stats.current_oxygen >= GameManager.stats.high_oxygen:
 			member.health -= GameManager.stats.crew_damage_high_oxygen
 
-		if member.location in GameManager.active_event_locations.values():
+		if GameTypes.Locations.find_key(member.location) in GameManager.active_event_locations.values():
 			var fire_count = 0
 			for event in GameManager.active_event_locations:
 				if event.event == GameTypes.Events.FIRE:
 					fire_count += 1
 			member.health -= GameManager.stats.fire_crew_damage * fire_count
-		
+
 		if member.health > GameManager.stats.crew_defib_window:
 			member.status = GameTypes.CrewStatus.VITALS_NORMAL
 		elif member.health <= GameManager.stats.crew_defib_window and member.health > 0:

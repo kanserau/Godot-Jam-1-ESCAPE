@@ -58,6 +58,9 @@ func handle_text_response(text) -> String:
 			return handle_extinguish(args)
 		"repair":
 			return handle_seal(args)
+		"skip":
+			GameManager.intro_finished = true
+			return "Intro skipped"
 		_:
 			return "Unknown command: " + command
 

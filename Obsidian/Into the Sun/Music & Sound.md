@@ -42,9 +42,12 @@ Should be loud and chaotic. Blaring alarms, fire, engine whirring,
 - [x] Steam loop
 - [x] Engine noise
 - [x] Engine down
+- [ ] Engine up
 - [x] Shields Active
 - [ ] Subtle electric buzzing from terminal
 - [ ] Terminal sparking
+- [ ] Engine sparking
+- [ ] General background ambience
 
 
 ### Events

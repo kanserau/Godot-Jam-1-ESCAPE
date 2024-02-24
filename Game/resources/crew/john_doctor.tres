@@ -9,3 +9,4 @@ name = "John Doctor"
 role = "Medical Officer"
 location = 0
 status = 0
+health = 100

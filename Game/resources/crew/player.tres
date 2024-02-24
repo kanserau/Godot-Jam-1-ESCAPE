@@ -9,4 +9,4 @@ name = "Dave Dallas"
 role = "Engineer"
 location = 2
 status = 0
-health = 50
+health = 100

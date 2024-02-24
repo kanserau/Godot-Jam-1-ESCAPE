@@ -9,3 +9,4 @@ name = "Karl Langstrom"
 role = "Researcher"
 location = 6
 status = 0
+health = 100

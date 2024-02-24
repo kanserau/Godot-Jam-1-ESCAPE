@@ -9,3 +9,4 @@ name = "William Bannon"
 role = "Gunner"
 location = 4
 status = 0
+health = 100

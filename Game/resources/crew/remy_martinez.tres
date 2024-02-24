@@ -9,4 +9,4 @@ name = "Remy Cook"
 role = "Chef"
 location = 5
 status = 0
-health = 50
+health = 100

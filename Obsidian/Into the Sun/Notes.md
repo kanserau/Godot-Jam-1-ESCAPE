@@ -32,6 +32,11 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 - how to play option in the menu
 - list of controls, explanation of the game flow
 - in as few words as possible
+
+### Alert Feed
+- Similar events should be grouped
+- Every 10% loss of ship integrity should be displayed as a warning
+	- Warning: ship integrity at 90%
 ## Space Debris & Solar Flares
 - Solar flares when they hit should cause power outages and system failures.
 - Space debris should hit a location, cause hull breaches, a chunk of ship damage, and high crew damage to any crew located there.

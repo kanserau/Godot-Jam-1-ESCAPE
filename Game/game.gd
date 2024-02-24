@@ -84,12 +84,12 @@ func apply_crew_damage():
 		elif GameManager.stats.current_oxygen >= GameManager.stats.high_oxygen:
 			member.health -= GameManager.stats.crew_damage_high_oxygen
 
-		var fire_count =  GameManager.active_event_locations.filter(
+		var fire_count = GameManager.active_event_locations.keys().filter(
 			func (e): return (
 				e.event == GameTypes.Events.FIRE
 				and GameManager.active_event_locations[e] == GameTypes.Locations.find_key(member.location)
 			)
-		)
+		).size()
 		member.health -= GameManager.stats.fire_crew_damage * fire_count
 
 		if member.health > GameManager.stats.crew_defib_window:

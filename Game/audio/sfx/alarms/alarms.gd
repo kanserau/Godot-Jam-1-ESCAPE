@@ -11,7 +11,7 @@ func _ready():
 	GameManager.update_everything.connect(update)
 
 func update():
-	if not GameManager.solar_flare_incoming or GameManager.stats.current_shields:
+	if not GameManager.solar_flare_incoming:
 		solar_flare.stop()
 	if not GameManager.debris_incoming:
 		space_debris.stop()

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0h1qv62aic8m"
-path.s3tc="res://.godot/imported/MaterialFBXASC032FBXASC0352142146907_metallicRoughness.png-c2cc30e718833a9c6e3a72563d1c433d.s3tc.ctex"
+uid="uid://cr5jhg5oejpad"
+path.s3tc="res://.godot/imported/MaterialFBXASC032FBXASC0352142146907_baseColor.jpeg-01a9dbe6ae3f37fd22bab04dd95c8c4f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/props/console/desk/textures/MaterialFBXASC032FBXASC0352142146907_metallicRoughness.png"
-dest_files=["res://.godot/imported/MaterialFBXASC032FBXASC0352142146907_metallicRoughness.png-c2cc30e718833a9c6e3a72563d1c433d.s3tc.ctex"]
+source_file="res://assets/props/console/model/textures/MaterialFBXASC032FBXASC0352142146907_baseColor.jpeg"
+dest_files=["res://.godot/imported/MaterialFBXASC032FBXASC0352142146907_baseColor.jpeg-01a9dbe6ae3f37fd22bab04dd95c8c4f.s3tc.ctex"]
 
 [params]
 

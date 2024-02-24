@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcxmd3esc5qg1"]
 
 [ext_resource type="PackedScene" uid="uid://baljgsc4kjxwa" path="res://assets/props/button/scifi_button.glb" id="1_gf1l4"]
-[ext_resource type="Script" path="res://assets/props/button/button.gd" id="2_v7xy5"]
+[ext_resource type="Script" path="res://assets/props/button/generator.gd" id="2_v7xy5"]
 [ext_resource type="Script" path="res://assets/props/pass_fix.gd" id="3_kymt8"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tqv2c"]

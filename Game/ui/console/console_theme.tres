@@ -2,8 +2,8 @@
 
 [resource]
 CrewUIText/base_type = &"RichTextLabel"
-CrewUIText/colors/default_color = Color(0, 1, 0, 1)
-CrewUIText/font_sizes/normal_font_size = 16
+CrewUIText/colors/default_color = Color(1, 1, 1, 1)
+CrewUIText/font_sizes/normal_font_size = 14
 GridContainer/constants/h_separation = 10
 GridContainer/constants/v_separation = 5
 PowerShuntButton/base_type = &"Button"

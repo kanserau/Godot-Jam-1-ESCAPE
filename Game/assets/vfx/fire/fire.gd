@@ -10,7 +10,7 @@ enum FireState {
 signal fix();
 @onready var animation: AnimationPlayer = $AnimationPlayer
 var state = FireState.NONE
-var captured_event: GameEvent = null
+var captured_event: Array[GameEvent] = []
 
 func _ready():
 	GameManager.event_triggered.connect(_on_event_triggered)
@@ -22,13 +22,17 @@ func _on_event_triggered(event: GameEvent):
 		return
 	if GameManager.active_event_locations[event] != "ENGINE_ROOM":
 		return
-	captured_event = event
+	captured_event.append(event)
 	state = FireState.BIG
 	animation.queue("fire_big")
 
 
 
 func _on_fix():
+	if captured_event.size() > 1:
+		GameManager.active_events.erase(captured_event.pop_back())
+		return
+	
 	match state:
 		FireState.BIG:
 			state = FireState.MEDIUM
@@ -40,5 +44,4 @@ func _on_fix():
 			state = FireState.NONE
 			animation.queue("fire_none")
 			
-			GameManager.active_events.erase(captured_event)
-			captured_event = null
+			GameManager.active_events.erase(captured_event.pop_back())

@@ -20,15 +20,16 @@ func update_crew():
 	var n = 0
 	var active = []
 	for crew in GameManager.crew_members:
-		var status: RichTextLabel = container.get_node(crew.name)
+		var status := container.get_node(crew.name) as RichTextLabel
+		status.text = '%s. ID: %s. %s. %s. %d%%.' % [
+			crew.name,
+			crew.id,
+			crew.role,
+			GameTypes.CrewStatus.find_key(crew.status),
+			crew.health
+		]
+		status.modulate = Color(1 - crew.health/100.0, crew.health/100.0, 0.0)
 		active.append(crew.name)
-		status.text = (
-			crew.name
-			+ ". ID:" + crew.id
-			+ ". " + crew.role
-			+ ". " + GameTypes.CrewStatus.find_key(crew.status)
-			+ "."
-		)
 	for l in labels.filter(func(l): return l.name not in active):
 		labels.erase(l)
 		l.queue_free()

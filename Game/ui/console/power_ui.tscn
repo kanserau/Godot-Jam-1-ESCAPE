@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://ui/console/power_ui.gd" id="2_6xq8u"]
 [ext_resource type="Texture2D" uid="uid://caxvblfeamx4w" path="res://ui/console/icons/oxygen.png" id="3_8b8si"]
 [ext_resource type="Texture2D" uid="uid://dvj2n15cawvgp" path="res://ui/console/icons/engine.png" id="3_52mdt"]
-[ext_resource type="Texture2D" uid="uid://cswfjcprdhh8d" path="res://assets/props/console/desk/textures/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg" id="3_c6kjy"]
+[ext_resource type="Texture2D" uid="uid://cswfjcprdhh8d" path="res://assets/props/console/model/textures/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg" id="3_c6kjy"]
 [ext_resource type="Texture2D" uid="uid://b644atuxjclve" path="res://ui/console/icons/power-3.png" id="3_n3oht"]
 [ext_resource type="Texture2D" uid="uid://cktlcm1idc62v" path="res://ui/console/icons/energy.png" id="4_8x2fn"]
 [ext_resource type="Texture2D" uid="uid://bsr3o5753fesh" path="res://ui/console/icons/power-4.png" id="4_58v3n"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://duyhmdjgt61qo" path="res://resources/settings_theme.tres" id="1_dn2ec"]
 [ext_resource type="Script" path="res://ui/console/crew_ui.gd" id="2_18dmr"]
-[ext_resource type="Texture2D" uid="uid://ypot7n7sn24k" path="res://assets/props/console/desk/textures/ecgs.jpg" id="3_yn6up"]
+[ext_resource type="Texture2D" uid="uid://ypot7n7sn24k" path="res://assets/props/console/model/textures/ecgs.jpg" id="3_yn6up"]
 [ext_resource type="Theme" uid="uid://cov354ofq62bt" path="res://ui/console/console_theme.tres" id="4_f63lc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c04yk"]

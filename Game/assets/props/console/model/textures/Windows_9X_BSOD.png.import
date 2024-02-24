@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr5jhg5oejpad"
-path.s3tc="res://.godot/imported/MaterialFBXASC032FBXASC0352142146907_baseColor.jpeg-6ac85c6d340d5da7cca8b8a3a8aeccef.s3tc.ctex"
+uid="uid://ovjrci4jhqeo"
+path.s3tc="res://.godot/imported/Windows_9X_BSOD.png-2f058954a0887b05a78a92915316146a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/props/console/desk/textures/MaterialFBXASC032FBXASC0352142146907_baseColor.jpeg"
-dest_files=["res://.godot/imported/MaterialFBXASC032FBXASC0352142146907_baseColor.jpeg-6ac85c6d340d5da7cca8b8a3a8aeccef.s3tc.ctex"]
+source_file="res://assets/props/console/model/textures/Windows_9X_BSOD.png"
+dest_files=["res://.godot/imported/Windows_9X_BSOD.png-2f058954a0887b05a78a92915316146a.s3tc.ctex"]
 
 [params]
 

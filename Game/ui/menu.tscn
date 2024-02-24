@@ -99,6 +99,7 @@ layout_mode = 2
 size_flags_vertical = 8
 
 [node name="Start" type="Button" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3_i3m2u")
@@ -112,5 +113,7 @@ theme_override_fonts/font = ExtResource("3_i3m2u")
 theme_override_font_sizes/font_size = 90
 text = "QUIT"
 
+[connection signal="mouse_entered" from="VBoxContainer/MarginContainer/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/MarginContainer/Start" to="." method="_on_start_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Quit" to="." method="_on_quit_pressed"]

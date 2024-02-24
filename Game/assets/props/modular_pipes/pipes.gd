@@ -5,7 +5,7 @@ extends GridMap
 @export var sfx_loop: AudioStream = null
 @export var sfx_player: AudioStreamPlayer3D = null
 
-var o2_failure: GameEvent = null
+var o2_failure: Array[GameEvent] = []
 signal fix();
 
 func _ready():
@@ -15,7 +15,7 @@ func _ready():
 func _on_event_triggered(event: GameEvent):
 	if event.event != GameTypes.Events.ATMOSPHERE_GENERATOR:
 		return
-	o2_failure = event
+	o2_failure.append(event)
 	for fx in vfx:
 		fx.emitting = true
 	if sfx.size() > 0:
@@ -39,6 +39,6 @@ func _on_fix():
 			break
 	if fixed == vfx.size():
 		sfx_player.stop()
-		GameManager.active_events.erase(o2_failure)
-		o2_failure = null
+		while not o2_failure.is_empty():
+			GameManager.active_events.erase(o2_failure.pop_back())
 

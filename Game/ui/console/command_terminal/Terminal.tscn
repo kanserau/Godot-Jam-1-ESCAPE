@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://ui/console/command_terminal/Terminal.gd" id="1_evqg8"]
 [ext_resource type="Shader" path="res://assets/vfx/texture_blur.gdshader" id="2_fhn1t"]
 [ext_resource type="FontVariation" uid="uid://dkso7qb2tnmny" path="res://assets/fonts/plex_mono_bold.tres" id="3_rd7ox"]
-[ext_resource type="Texture2D" uid="uid://u82fb8ja7r8v" path="res://assets/props/console/desk/textures/MaterialFBXASC032FBXASC03511186_emissive.jpeg" id="3_u4c5p"]
+[ext_resource type="Texture2D" uid="uid://u82fb8ja7r8v" path="res://assets/props/console/model/textures/MaterialFBXASC032FBXASC03511186_emissive.jpeg" id="3_u4c5p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_152u5"]
 shader = ExtResource("2_fhn1t")

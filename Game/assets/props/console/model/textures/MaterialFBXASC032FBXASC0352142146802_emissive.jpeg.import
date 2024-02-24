@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cswfjcprdhh8d"
-path.s3tc="res://.godot/imported/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg-f04834df5921b94948eb2aedc12a55db.s3tc.ctex"
+path.s3tc="res://.godot/imported/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg-56480f107c6a599e73549e87def55c06.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/props/console/desk/textures/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg"
-dest_files=["res://.godot/imported/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg-f04834df5921b94948eb2aedc12a55db.s3tc.ctex"]
+source_file="res://assets/props/console/model/textures/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg"
+dest_files=["res://.godot/imported/MaterialFBXASC032FBXASC0352142146802_emissive.jpeg-56480f107c6a599e73549e87def55c06.s3tc.ctex"]
 
 [params]
 

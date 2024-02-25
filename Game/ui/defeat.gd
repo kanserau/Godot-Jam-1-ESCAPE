@@ -3,6 +3,7 @@ extends Control
 @onready var stats = $Statistics
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	stats.text = """
 	
 	-------------------
@@ -24,3 +25,9 @@ func _ready():
 	
 	for crew in GameManager.dead_crew_members:
 		stats.text += crew.name + "\n"
+
+
+func _on_retry_pressed():
+	GameManager.retry()
+	SceneManager.remove_overlay()
+	SceneManager.change_scene_and_delete("res://main.tscn")

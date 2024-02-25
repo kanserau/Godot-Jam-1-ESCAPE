@@ -4,16 +4,20 @@ class_name GameSignalManager
 
 
 var stats: GameResource
-var crew_members: Array[Crew] = []
-var dead_crew_members: Array[Crew] = []
 var events: Array[GameEvent] = []
 var active_events: Array[GameEvent] 
-var terminal_history: Array[Node] = []
 var active_event_locations: Dictionary = {}
-var solar_flare_incoming = false
-var debris_incoming = false
+
+var crew_members: Array[Crew] = []
+var dead_crew_members: Array[Crew] = []
+
+var terminal_history: Array[Node] = []
 var ui_active = false
 var intro_finished = false
+
+var solar_flare_incoming = false
+var debris_incoming = false
+
 var debug = false
 
 signal change_ship_damage(total_ship_damage)
@@ -56,7 +60,6 @@ func _ready():
 ##
 # Utilities
 ## 
-
 func load_event_resources():
 	for event in DynamicLoader.load_from("res://resources/events"):
 		events.append(event)
@@ -64,6 +67,27 @@ func load_event_resources():
 func load_crew_resources():
 	for crew in DynamicLoader.load_from("res://resources/crew/"):
 		crew_members.append(crew)
+
+func retry():
+	events = []
+	active_events = []
+	active_event_locations = {}
+
+	crew_members = []
+	dead_crew_members = []
+
+	terminal_history = []
+	ui_active = false
+	intro_finished = false
+
+	solar_flare_incoming = false
+	debris_incoming = false
+
+	debug = false
+
+	stats = load("res://resources/game.tres")
+	load_event_resources()
+	load_crew_resources()
 
 func connect_to_signal(signal_name: String, target_node: Node, method_name: String):
 	if has_signal(signal_name) and target_node.has_method(method_name):

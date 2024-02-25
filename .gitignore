@@ -7,3 +7,4 @@ export/*
 # We want to exclude all plugin-related files, so we can exclude everything
 # under this directory.
 .obsidian/plugins/**/*
+.vscode/settings.json

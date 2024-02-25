@@ -21,6 +21,8 @@ Overall we should focus on implementing bug fixes, missing mechanics, and revisi
 ### Fixes/problems
 - [x] Crowbar needs to move up with camera
 - [x] "Resolve" command should be named "Reboot"
+- [ ] Indicate weapons / shields requires 2 units
+- [ ] increase multitool volume
 - [ ] Lag when loading main scene
 - [ ] Lag when light turns off?
 - [ ] player stuck?

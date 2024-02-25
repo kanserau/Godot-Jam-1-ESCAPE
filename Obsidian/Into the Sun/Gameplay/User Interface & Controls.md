@@ -15,6 +15,7 @@
 - [x] How to Play
 - [ ] Settings
 	- [ ] Audio Sliders
+	- [ ] Camera sensitivity
 	- [ ] Keybindings
 		- [ ] Interact: E
 		- [ ] Use Multitool: L-click

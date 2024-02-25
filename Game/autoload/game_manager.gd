@@ -14,6 +14,7 @@ var solar_flare_incoming = false
 var debris_incoming = false
 var ui_active = false
 var intro_finished = false
+var debug = false
 
 signal change_ship_damage(total_ship_damage)
 signal crew_members_damaged

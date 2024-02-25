@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c69930d2750ad4cc",
+        "id": "e62ac4cc3d926d3a",
         "type": "tabs",
         "children": [
           {
-            "id": "353d8b2c9fce4057",
+            "id": "9e7a28253bb87a02",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Into the Sun/Notes.md",
+                "file": "Into the Sun/Gameplay/Difficulty Values.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.5
+    "width": 337.5,
+    "collapsed": true
   },
   "right": {
     "id": "c7043b069b8f8fc9",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Into the Sun/Notes.md",
+                "file": "Into the Sun/Gameplay/Difficulty Values.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Into the Sun/Notes.md",
+                "file": "Into the Sun/Gameplay/Difficulty Values.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Into the Sun/Notes.md"
+                "file": "Into the Sun/Gameplay/Difficulty Values.md"
               }
             }
           },
@@ -165,22 +166,24 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "353d8b2c9fce4057",
+  "active": "9e7a28253bb87a02",
   "lastOpenFiles": [
-    "Excalidraw/Proposed Engine Room & Ship Layout.md",
+    "Excalidraw/Terminals & Gauges.md",
+    "Content/The Manual V2.md",
     "Content/How to Play.md",
-    "Into the Sun/Gameplay/1. Stage 1 Mechanics.md",
+    "Untitled.canvas",
+    "Untitled 1.canvas",
     "Into the Sun/Notes.md",
     "Into the Sun/Gameplay/User Interface & Controls.md",
+    "Excalidraw/Proposed Engine Room & Ship Layout.md",
+    "Into the Sun/Gameplay/1. Stage 1 Mechanics.md",
     "Into the Sun/Scrapped Ideas.md",
     "Into the Sun/STAGE 3.md",
     "Slingsby.t67c.panel.g-bocm.arp.jpg",
     "Pasted image 20240223224512.png",
     "INFO LORE.md",
     "To Do Lists/Sam's To do List.md",
-    "Excalidraw/Terminals & Gauges.md",
     "Into the Sun/0. The Plan.md",
-    "Content/The Manual V2.md",
     "Into the Sun/Gameplay/Difficulty Values.md",
     "Into the Sun/Audio/The Captain.md",
     "Into the Sun/Audio/Music & Sound.md",

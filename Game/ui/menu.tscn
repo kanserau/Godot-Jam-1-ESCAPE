@@ -1,11 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dld8sohxtqk18"]
+[gd_scene load_steps=5 format=3 uid="uid://dld8sohxtqk18"]
 
 [ext_resource type="Script" path="res://ui/menu.gd" id="1_7g5a7"]
 [ext_resource type="Texture2D" uid="uid://dvsx0gblmfclu" path="res://assets/skybox/ringed_gas_giant_planet.png" id="2_21ck3"]
 [ext_resource type="FontVariation" uid="uid://dkso7qb2tnmny" path="res://assets/fonts/plex_mono_bold.tres" id="3_i3m2u"]
-[ext_resource type="Texture2D" uid="uid://cweh8swys8ah4" path="res://assets/jam/inside-box.png" id="4_6h6e2"]
-[ext_resource type="Texture2D" uid="uid://bf5dpgtmg35xj" path="res://assets/jam/then-the-morning-comes.png" id="5_n7lum"]
-[ext_resource type="Texture2D" uid="uid://bpo4u1kd364x6" path="res://assets/jam/66-Escape.png" id="6_aphfp"]
 [ext_resource type="AudioStream" uid="uid://c7u4xt6boj5xa" path="res://audio/bgm/escape the sun.ogg" id="7_q48up"]
 
 [node name="Menu" type="Control"]
@@ -43,47 +40,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="HBoxContainer3" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_right = 200
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("6_aphfp")
-expand_mode = 3
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2"]
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 0
-texture = ExtResource("4_6h6e2")
-expand_mode = 3
-
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2"]
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 10
-texture = ExtResource("5_n7lum")
-expand_mode = 3
+alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
 
 [node name="Game Name" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2

@@ -20,7 +20,7 @@ func _ready():
 	_on_event_timer_timeout()
 
 func _process(delta):
-	if not GameManager.intro_finished:
+	if GameManager.debug or not GameManager.intro_finished:
 		return
 	game_time += delta
 	accumulated_time += delta

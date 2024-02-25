@@ -2,7 +2,7 @@ extends Control
 
 const InputResponse = preload("res://ui/console/command_terminal/InputResponse.tscn")
 
-@onready var input = $MarginContainer/VBoxContainer/InputArea/HBoxContainer/Input
+@onready var input := $MarginContainer/VBoxContainer/InputArea/HBoxContainer/Input
 @onready var history_rows = $MarginContainer/VBoxContainer/GameInfo/Scroll/HistoryRows
 @onready var scroll = $MarginContainer/VBoxContainer/GameInfo/Scroll
 @onready var scrollbar = scroll.get_v_scroll_bar()
@@ -61,8 +61,29 @@ func handle_text_response(text) -> String:
 		"skip":
 			GameManager.intro_finished = true
 			return "Intro skipped"
+		# TODO: remove
+		"debug":
+			GameManager.debug = true
+			return "Debug mode activated"
+		"trigger":
+			if GameManager.debug:
+				return trigger(args)
+			else:
+				return "Unknown command: %s" % command
 		_:
-			return "Unknown command: " + command
+			return "Unknown command: %s" % command
+
+func trigger(args):
+	var event_type = GameTypes.Events.get(args.to_upper().replace(" ", "_"))
+	if event_type == null:
+		return "Unkown event: %s" % args
+	var event := GameEvent.new()
+	event.event = event_type
+	GameManager.active_events.append(event)
+	if event_type in [GameTypes.Events.FIRE, GameTypes.Events.HULLBREACH]:
+		GameManager.active_event_locations[event] = "ENGINE_ROOM"
+	GameManager.event_triggered.emit(event)
+	return "Triggered %s" % args
 
 func get_locations() -> String:
 	var locations_list = []

@@ -29,11 +29,12 @@ Should be loud and chaotic. Blaring alarms, fire, engine whirring,
 - [ ] Weapons down warning
 
 ### Interface
-- [ ] Confirm/enter
-- [ ] Cancel/exit
-- [ ] Denied/option unavailable
-- [ ] Increase
-- [ ] Decrease
+- [x] Navigate/hover over selection
+- [x] Confirm/enter
+- [x] Big confirm
+- [x] Cancel/exit/back
+- [x] Denied/option unavailable
+- [x] Save (settings)
 #### Power Shunting
 - [x] increase power
 - [x] decrease power

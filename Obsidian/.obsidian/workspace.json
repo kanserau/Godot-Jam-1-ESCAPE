@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Into the Sun/Gameplay/Difficulty Values.md",
+                "file": "Into the Sun/Audio/Music & Sound.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 337.5,
-    "collapsed": true
+    "width": 337.5
   },
   "right": {
     "id": "c7043b069b8f8fc9",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Into the Sun/Gameplay/Difficulty Values.md",
+                "file": "Into the Sun/Audio/Music & Sound.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Into the Sun/Gameplay/Difficulty Values.md",
+                "file": "Into the Sun/Audio/Music & Sound.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Into the Sun/Gameplay/Difficulty Values.md"
+                "file": "Into the Sun/Audio/Music & Sound.md"
               }
             }
           },
@@ -168,6 +167,9 @@
   },
   "active": "9e7a28253bb87a02",
   "lastOpenFiles": [
+    "Into the Sun/Audio/Sound.md",
+    "Into the Sun/Audio/The Captain.md",
+    "Into the Sun/Gameplay/Difficulty Values.md",
     "Excalidraw/Terminals & Gauges.md",
     "Content/The Manual V2.md",
     "Content/How to Play.md",
@@ -184,12 +186,9 @@
     "INFO LORE.md",
     "To Do Lists/Sam's To do List.md",
     "Into the Sun/0. The Plan.md",
-    "Into the Sun/Gameplay/Difficulty Values.md",
-    "Into the Sun/Audio/The Captain.md",
     "Into the Sun/Audio/Music & Sound.md",
     "Into the Sun/Gameplay",
     "Into the Sun/Audio",
-    "Into the Sun/Audio/Sound.md",
     "Into the Sun/Gameplay/Stage 2 Mechanics.md",
     "Into the Sun/I. Reflections.md",
     "Content",
